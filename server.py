@@ -7,10 +7,8 @@ class Server:
 	def __init__(self, all_words_filename, answers_filename):
 		self.all_words = Words(all_words_filename)
 		self.all_words.read_words()
-		print(" Length of ", all_words_filename, " ", self.all_words.count())
 		self.answers = Words(answers_filename)
 		self.answers.read_words()
-		print(" Length of ", answers_filename, " ", self.answers.count())
 		self.answer = "ZZZZZ"
 
 	def set_answer(self, index):

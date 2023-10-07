@@ -15,6 +15,7 @@ class Words:
         self.char_counts_total = {}
         for i in range(26):
             self.char_counts_total[chr(i + ord('A'))] = 0
+        self.word_map = {}
 
     def first_word(self):
         if len(self.words) >= 1:
@@ -41,7 +42,8 @@ class Words:
                     break
         if len(self.words) < 1:
             exit_with_message("EmptyFile")
-
+        for word in self.words:
+            self.word_map[word] = 1
     def print(self):
         for word in self.words:
             print(word)
@@ -95,7 +97,6 @@ class Words:
         return ret
 
     def create_guess(self, sorted_values, must_chars):
-        current_guess = ""
         current_words = self.words
         current_words = self.filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values)
         current_words = self.filter_guesses_by_position_in_word(current_words, self.sort_char_counts_in_position(),
@@ -154,12 +155,10 @@ class Words:
 
     def check_guess(self, guess):
         # Check guess in the list
-        found = False
-        for word in self.words:
-            if guess == word:
-                found = True
-                break
-        return found
+        value = self.word_map.get(guess)
+        if value is None:
+            return False
+        return True
 
     def determine_match(self, word_index, guess):
         answer = self.find_answer(word_index)

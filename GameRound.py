@@ -1,5 +1,5 @@
 from Words import *
-
+from Log import *
 
 class GameRound:
     def __init__(self, all_words_filename, answers_filename):
@@ -17,9 +17,10 @@ class GameRound:
     def get_guess(self, guesses, matches):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
+        Log.write("Filtered count" + filtered.count())
         filtered.count_chars()
         if filtered.count() <= 2:
             return filtered.first_word()
         sorted_values = filtered.sorted_count_chars()
         guess = self.all_words.create_guess(sorted_values, must_chars)
-        return guess
+        return guess[0]
