@@ -4,7 +4,7 @@ from GameRound import *
 def main():
 	args = sys.argv[1:]
 	if len(args) < 2:
-		sys.exit( "NeedTwoArguments" + " <word_filename>  <answers_filename" )
+		sys.exit("NeedTwoArguments" + " <word_filename>  <answers_filename")
 
 	data_filename = args[0]
 	answers_filename = args[1]
@@ -12,7 +12,7 @@ def main():
 	guesses = []
 	matches = []
 	guess = game.get_guess(guesses, matches)
-	print("initial", guess)
+	Trace.write("initial " + guess)
 	for i in range(6):
 		guess, match = input_guess_match()
 		guesses.append(guess)
@@ -23,9 +23,9 @@ def main():
 
 def input_guess_match():
 	good = False
-	guess =""
+	guess = ""
 	match = ""
-	while (not good):
+	while not good:
 		inp = input("Guess result")
 		print(inp)
 		(guess, match) = inp.split(' ')
@@ -33,13 +33,6 @@ def input_guess_match():
 			good = True
 
 	return guess, match
-
-
-##guess  = input("Guess result")
-	##print (guess)
-
-
-#	os.system("dir > temp.txt")
 
 
 if __name__ == "__main__":
