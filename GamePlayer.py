@@ -1,7 +1,7 @@
 from GameRound import *
 from server import *
 from Log import *
-
+from timer import Timer
 
 def run_a_game(game, server):
     guesses = []
@@ -53,14 +53,16 @@ def main():
     # sys.exit( "NeedTwoArguments" + " <word_filename>  <answers_filename" )
     # data_filename = args[0]
     # answers_filename = args[1]
-    log = Log()
+    log = Log("log_GamePlayer.txt")
+    trace = Trace("trace_GamePlayer.txt")
     data_filename = "words002.txt"
     answers_filename = "answers.txt"
     game = GameRound(data_filename, answers_filename)
     server = Server(data_filename, answers_filename)
     total_turns = 0
     turn_counts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    maximum = 0
+    t = Timer()
+    t.start()
     for i in range(len(game.answers.words)):
         server.set_answer(i + 1)
         Log.write("-----Answer= " + server.answer)
@@ -72,15 +74,14 @@ def main():
         else:
             Trace.write("*****Turns too many *****")
         total_turns += turns
-        if turns > maximum:
-            maximum = turns
-        Log.write("Average = " + str(total_turns / (i + 1)))
+    elapsed = t.stop()
+    print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
     average = total_turns / len(game.answers.words)
     Log.write("Average is " + str(average))
-    print(average)
     Trace.write("Turn counts " + str(turn_counts))
     log.close()
+    trace.close()
 
 
 if __name__ == "__main__":

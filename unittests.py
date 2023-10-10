@@ -1,8 +1,10 @@
 import unittest
 from GamePlayer import *
 from Words import filter_guesses_by_highest_char_occurance, filter_guesses_by_position_in_word
+from timer import Timer
 
 
+# noinspection SpellCheckingInspection
 class MyTestCase(unittest.TestCase):
 
     def test_word_read(self):
@@ -109,10 +111,11 @@ class MyTestCase(unittest.TestCase):
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         words.count_chars()
         sorted_values = words.sorted_count_chars()
+        sorted_char_counts_in_position = words.sort_char_counts_in_position()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        guess = words.create_guess(sorted_values, must_chars)
+        guess = words.create_guess(sorted_values, must_chars, sorted_char_counts_in_position)
         Trace.write(guess)
         self.assertEqual(guess, 'WREAK')
 
@@ -134,16 +137,24 @@ class MyTestCase(unittest.TestCase):
 
         words = ["FOCAL", "LOCAL", "STATE", "STEAK", "TEASE", "VOCAL", "YEAST", "LEAST", "STAVE", "TRUSS", "TRUST",
                  "CRUST", "SWEAT", "POUND", "PRIZE", "SHAVE", "SHARE", "SNARE", "SPARE", "TAUNT", "JAUNT", "HAUNT",
-                 "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE"]
+                 "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE","SNAIL"]
+        t = Timer()
 
         for word in words:
+            t.start()
             turns = test_game(word, game, server)
             print("Word ", word, " turns ", turns)
             self.assertLess(turns, 7, " For word " + word)
+            print(t.stop())
         Log.close()
 
     def setUp(self):
-        pass
+        self.log = Log("log_unittests.txt")
+        self.trace = Trace("trace_unittests.txt")
+
+    def __del__(self):
+        self.log.close()
+        self.trace.close()
 
 
 def setup_game():

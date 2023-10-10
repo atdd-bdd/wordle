@@ -138,10 +138,10 @@ class Words:
 
     last_must_char_guess_index = 0
 
-    def create_guess(self, sorted_values, must_chars):
+    def create_guess(self, sorted_values, must_chars, sorted_char_counts_in_position):
         current_words = self.words
         current_words = filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values)
-        current_words = filter_guesses_by_position_in_word(current_words, self.sort_char_counts_in_position(),
+        current_words = filter_guesses_by_position_in_word(current_words, sorted_char_counts_in_position,
                                                            sorted_values)
         return current_words[0]
 
@@ -166,7 +166,7 @@ def determine_word_with_all_characters(words, position_chars):
     to_check = 0
     for i in range(len(position_chars)):
         if len(position_chars[i]) == 0:
-            Trace.write("Unknown is "+str(i))
+            Trace.write("Unknown is " + str(i))
             to_check = i
             break
     might_have_chars = ""
@@ -186,7 +186,6 @@ def count_position_chars(position_chars):
 
 
 def filter_guesses_by_position_in_word(current_words, sorted_char_counts_in_position, sorted_values):
-
     current_word = current_words[0]
     max_count = 0
     if len(current_words) > 1:
@@ -209,7 +208,6 @@ def filter_guesses_by_position_in_word(current_words, sorted_char_counts_in_posi
 
 
 def filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values):
-
     look_for = []
     words_with_matches = [[], [], [], [], [], []]
     Trace.write("Must chars " + must_chars)

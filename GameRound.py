@@ -32,7 +32,8 @@ class GameRound:
         if len(must_chars) == 4:
             return self.guess_with_four_known_chars(filtered, not_here_chars, position_chars, must_chars)
         sorted_values = filtered.sorted_count_chars()
-        guess = self.all_words.create_guess(sorted_values, must_chars)
+        sorted_char_counts_in_position = filtered.sort_char_counts_in_position()
+        guess = self.all_words.create_guess(sorted_values, must_chars, sorted_char_counts_in_position)
         return guess
 
     def guess_with_four_known_chars(self, filtered, not_here_chars, position_chars ,must_chars):
