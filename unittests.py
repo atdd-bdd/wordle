@@ -134,7 +134,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_games(self):
         game, server = setup_game()
-
+        Trace()
+        Log()
+        Trace.write("Doing test games ")
         words = ["FOCAL", "LOCAL", "STATE", "STEAK", "TEASE", "VOCAL", "YEAST", "LEAST", "STAVE", "TRUSS", "TRUST",
                  "CRUST", "SWEAT", "POUND", "PRIZE", "SHAVE", "SHARE", "SNARE", "SPARE", "TAUNT", "JAUNT", "HAUNT",
                  "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE","SNAIL"]
@@ -147,14 +149,11 @@ class MyTestCase(unittest.TestCase):
             self.assertLess(turns, 7, " For word " + word)
             print(t.stop())
         Log.close()
+        Trace.close()
 
     def setUp(self):
-        self.log = Log("log_unittests.txt")
-        self.trace = Trace("trace_unittests.txt")
+        pass
 
-    def __del__(self):
-        self.log.close()
-        self.trace.close()
 
 
 def setup_game():

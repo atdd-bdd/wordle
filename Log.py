@@ -18,17 +18,21 @@ class Log:
 
 class Trace:
 
-    log = None
+    trace = None
 
     def __init__(self, log_filename="trace.txt"):
-        Trace.log = open(log_filename, "w")
+        print("Opening ", log_filename)
+        if Trace.trace is None:
+            Trace.trace = open(log_filename, "w")
 
     @staticmethod
     def write(message):
-        if Trace.log is None:
-            Trace.log = open("trace.txt", "w")
-        Trace.log.write(message + "\n")
+        if Trace.trace is None:
+            Trace.trace = open("trace.txt", "w")
+            print("Opening trace.txt since it is not open ")
+        Trace.trace.write(message + "\n")
 
     @staticmethod
     def close():
-        Trace.log.close()
+        Trace.trace.close()
+        print("Closing trace file")

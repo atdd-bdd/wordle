@@ -3,6 +3,7 @@ from server import *
 from Log import *
 from timer import Timer
 
+
 def run_a_game(game, server):
     guesses = []
     matches = []
