@@ -212,6 +212,12 @@ def filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_v
     words_with_matches = [[], [], [], [], [], []]
     Trace.write("Must chars " + must_chars)
 
+    # words_with_matches = [[], [], [], [], []]
+    # look_for = "abcde"
+    # current_words = "apple, train, snail, think, camel"
+    # for word in current_words:
+    #     match_count = sum(c in word for c in look_for)
+    #     words_with_matches[match_count].append(word)
     look_for = shrink_number_to_look_for(look_for, must_chars, sorted_values)
     filtered_words = []
 
