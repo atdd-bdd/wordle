@@ -1,6 +1,7 @@
 import unittest
 from GamePlayer import *
 from Words import filter_guesses_by_highest_char_occurance, filter_guesses_by_position_in_word
+
 from timer import Timer
 
 
@@ -139,13 +140,23 @@ class MyTestCase(unittest.TestCase):
         Trace.write("Doing test games ")
         words = ["FOCAL", "LOCAL", "STATE", "STEAK", "TEASE", "VOCAL", "YEAST", "LEAST", "STAVE", "TRUSS", "TRUST",
                  "CRUST", "SWEAT", "POUND", "PRIZE", "SHAVE", "SHARE", "SNARE", "SPARE", "TAUNT", "JAUNT", "HAUNT",
-                 "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE","SNAIL"]
+                 "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE", "SNAIL"]
         t = Timer()
-
-        for word in words:
+        map = {'FOCAL': 3, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 4, 'VOCAL': 5, 'YEAST': 5, 'LEAST': 3,
+               'STAVE': 3,
+               'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 4, 'POUND': 6, 'PRIZE': 4, 'SHAVE': 5, 'SHARE': 3,
+               'SNARE': 4,
+               'SPARE': 5, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 6, 'WIGHT': 6,
+               'WINCH': 6,
+               'WOUND': 6, 'GRAZE': 5, 'SNAIL': 4}
+        for index, word in enumerate(map):
+            current_turns = map[word]
+            print(" word ", word, " turns ", current_turns)
             t.start()
             turns = test_game(word, game, server)
-            print("Word ", word, " turns ", turns)
+            print("Word ", word, " turns ", turns, " current turns ", current_turns)
+            if turns != current_turns:
+                print("** Better or worse ? ")
             self.assertLess(turns, 7, " For word " + word)
             print(t.stop())
         Log.close()
@@ -153,7 +164,6 @@ class MyTestCase(unittest.TestCase):
 
     def setUp(self):
         pass
-
 
 
 def setup_game():

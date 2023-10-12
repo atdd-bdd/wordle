@@ -6,6 +6,19 @@ For SNAIL.   SHALL, SHAWL< SMELL< SNAIL   says should have picked SHALL
 
 SLATE  EYENN ,    HILLY NYYNN   SNAIL YYYYY
 
+Guess could be:  ORATE
+Guess result: orate nnnnn
+ORATE NNNNN
+Guess could be  SLILY
+Guess result: slily ennnn
+SLILY ENNNN
+Guess could be  CHUNK
+Guess result: chunk nneee
+CHUNK NNEEE
+Guess could be  SKUNK
+Guess result: skunk eeeee
+SKUNK EEEEE
+Closing trace file
 
    starting words:
    React
