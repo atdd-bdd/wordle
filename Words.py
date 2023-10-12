@@ -9,11 +9,10 @@ def list_to_str(a_list):
     if len(a_list) <= 50:
         return ' '.join([str(elem) for elem in a_list])
     else:
-        b_list = []
+        out = "[" + str(len(a_list)) + "] "
         for index in range(50):
-            b_list.append(a_list[index])
-        len1 = "[" + str(len(b_list)) + "]"
-        return len1 + ' '.join([str(elem) for elem in b_list])
+           out += ' ' + a_list[index]
+        return out
 
 
 def filter_words_by_rating(filtered_words, look_for):
