@@ -15,12 +15,12 @@ def run_a_game(game, server):
         guess, match = server_guess_match(server, guess)
         Log.write("Guess " + guess + " match " + match)
         Trace.write("Guess " + guess + " match " + match)
+        if match == 'EEEEE':
+            break
         guesses.append(guess)
         matches.append(match)
         guess = game.get_guess(guesses, matches)
-        if match == 'EEEEE':
-            break
-    Trace.write("---Answer is " + server.answer + " in turns " + str(turns))
+    Trace.write("---Answer=" + server.answer + " in turns " + str(turns))
     if turns > 6:
         Log.write("*** word " + server.answer + " not found ")
         Trace.write("*** word " + server.answer + " not found ")
@@ -64,10 +64,11 @@ def main():
     turn_counts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     t = Timer()
     t.start()
-    for i in range(len(game.answers.words)):
+    word_count = game.answers.words
+    for i in range(len(word_count)):
         server.set_answer(i + 1)
-        Log.write("-----Answer= " + server.answer)
-        Trace.write("-----Answer -----" + server.answer)
+        Log.write("---Answer= " + server.answer)
+        Trace.write("---Answer=" + server.answer)
         turns = run_a_game(game, server)
         print("Answer " + server.answer + " Turns " + str(turns))
         if turns < len(turn_counts):
@@ -78,7 +79,8 @@ def main():
     elapsed = t.stop()
     print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
-    average = total_turns / len(game.answers.words)
+    average = total_turns / len(word_count)
+    print('average ' + str(average))
     Log.write("Average is " + str(average))
     Trace.write("Turn counts " + str(turn_counts))
     log.close()

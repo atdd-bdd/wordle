@@ -22,7 +22,7 @@ class GameRound:
         Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered words " + list_to_str(filtered.words))
         if filtered.count() <= 2:
-            Trace.write("Selecting from two words")
+            Trace.write("Selecting from one or two words " + str(filtered.count()))
             return filtered.first_word()
         filtered.count_chars()
         guesses = self.all_words.create_guess(must_chars,filtered.count_and_position )
@@ -36,19 +36,3 @@ class GameRound:
             return guesses[0]
         return "ZZZZZ"
 
-    def guess_with_four_known_chars(self, filtered, not_here_chars, position_chars ,must_chars):
-        Log.write("Have 4 must_chars ")
-        ret, is_guess = filtered.create_guess_from_self(not_here_chars, position_chars, must_chars)
-        if is_guess:
-            Trace.write("Created guess from filtered")
-            return ret
-        else:
-            return self.create_guess_from_chars_in_filtered(ret, must_chars)
-
-    def create_guess_from_chars_in_filtered(self, ret, must_chars):
-        Trace.write("Need to figure out words from " + ret)
-        current_words = self.all_words.words
-        count_and_position = CountAndPosition(current_words)
-        ret = filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position)
-        Trace.write("Ret is " + list_to_str(ret))
-        return ret[0]

@@ -129,7 +129,7 @@ def count_position_chars(position_chars):
 
 
 def filter_guesses_by_position_in_word(current_words, must_chars, count_and_position):
-    if len(current_words) <=1:
+    if len(current_words) <= 1:
         return current_words
     count_and_position.zero_in_totals(must_chars)
     max_position_score = 0
@@ -141,14 +141,16 @@ def filter_guesses_by_position_in_word(current_words, must_chars, count_and_posi
         if position_score > max_position_score:
             max_words_position = [word]
             max_position_score = position_score
+    Trace.write("Words by position in word " + list_to_str(max_words_position))
+    Trace.write("Max position score is " + str(max_position_score))
     if max_position_score == 0:
-        Trace.write("@@@No scoring by char position")
-        return []
+            Trace.write("@@@No scoring by char position")
+            return []
     return max_words_position
 
 
 def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position):
-    if len(current_words) <=1:
+    if len(current_words) <= 1:
         return current_words
     Trace.write("Must chars " + must_chars)
     count_and_position.zero_in_totals(must_chars)
