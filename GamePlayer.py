@@ -20,10 +20,10 @@ def run_a_game(game, server):
         guess = game.get_guess(guesses, matches)
         if match == 'EEEEE':
             break
-    Trace.write("----Answer is " + server.answer + " in turns " + str(turns))
+    Trace.write("---Answer is " + server.answer + " in turns " + str(turns))
     if turns > 6:
-        Log.write("****** word " + server.answer + " not found ******* ")
-        Trace.write("****** word " + server.answer + " not found ******* ")
+        Log.write("*** word " + server.answer + " not found ")
+        Trace.write("*** word " + server.answer + " not found ")
     return turns
 
 
@@ -73,7 +73,7 @@ def main():
         if turns < len(turn_counts):
             turn_counts[turns - 1] += 1
         else:
-            Trace.write("*****Turns too many *****")
+            Trace.write("***Turns too many")
         total_turns += turns
     elapsed = t.stop()
     print("Elapsed time is ", elapsed)

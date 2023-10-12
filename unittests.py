@@ -1,6 +1,6 @@
 import unittest
 from GamePlayer import *
-from Words import filter_guesses_by_highest_char_occurance, filter_guesses_by_position_in_word
+from Words import filter_guesses_by_highest_char_occurrence, filter_guesses_by_position_in_word
 
 from timer import Timer
 
@@ -69,56 +69,50 @@ class MyTestCase(unittest.TestCase):
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
 
         words.count_chars()
-        self.assertEqual(words.char_counts_total, {'A': 3, 'B': 0, 'C': 2, 'D': 1, 'E': 4, 'F': 0, 'G': 0, 'H': 1,
-                                                   'I': 0, 'J': 0, 'K': 3, 'L': 0, 'M': 0, 'N': 2, 'O': 2, 'P': 0,
-                                                   'Q': 0, 'R': 5, 'S': 1, 'T': 2, 'U': 1, 'V': 1, 'W': 7, 'X': 0,
-                                                   'Y': 0, 'Z': 0})
-        sorted_char_counts_in_position = words.sort_char_counts_in_position()
-        self.assertEqual(sorted_char_counts_in_position, [['A', 2], ['B', 0], ['C', 3], ['D', 4], ['E', 2], ['F', 0],
-                                                          ['G', 0], ['H', 4], ['I', 0], ['J', 0], ['K', 4], ['L', 0],
-                                                          ['M', 0], ['N', 3], ['O', 1], ['P', 0], ['Q', 0], ['R', 1],
-                                                          ['S', 3], ['T', 3], ['U', 2], ['V', 2], ['W', 0], ['X', 0],
-                                                          ['Y', 0], ['Z', 0]])
-        sorted_values = words.sorted_count_chars()
-
-        self.assertEqual(sorted_values, ['W', 'R', 'E', 'A', 'K', 'C', 'N', 'O', 'T', 'D', 'H', 'S', 'U', 'V'])
+        self.assertEqual(words.count_and_position.totals, {'A': 3, 'B': 0, 'C': 2, 'D': 1, 'E': 4, 'F': 0,
+                                                           'G': 0,
+                                                           'H': 1,
+                                                           'I': 0, 'J': 0, 'K': 3, 'L': 0, 'M': 0, 'N': 2,
+                                                           'O': 2,
+                                                           'P': 0,
+                                                           'Q': 0, 'R': 5, 'S': 1, 'T': 2, 'U': 1, 'V': 1,
+                                                           'W': 7,
+                                                           'X': 0,
+                                                           'Y': 0, 'Z': 0})
 
     def test_filter_guesses_by_highest_char_occurrence(self):
         data_filename = "test_answers.txt"
         words = Words(data_filename)
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         words.count_chars()
-        sorted_values = words.sorted_count_chars()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         current_words = words.words
-        current_words = filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values)
-        self.assertEqual(current_words, ['WREAK'])
+        current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
+                                                                  words.count_and_position)
+        self.assertEqual(current_words, ['WREAK', 'WREST'])
 
     def test_filter_guesses_by_position_in_word(self):
         data_filename = "test_answers.txt"
         words = Words(data_filename)
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         words.count_chars()
-        sorted_values = words.sorted_count_chars()
         current_words = ['WREAK', 'WRECK', 'WREST']
-        current_words = filter_guesses_by_position_in_word(current_words, words.sort_char_counts_in_position(),
-                                                           sorted_values)
-        self.assertEqual(current_words, ['WRECK'])
+        must_chars = ''
+        current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
+        self.assertEqual(current_words, ['WRECK'] )
 
     def test_create_guess(self):
         words = words_for_testing()
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         words.count_chars()
-        sorted_values = words.sorted_count_chars()
-        sorted_char_counts_in_position = words.sort_char_counts_in_position()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        guess = words.create_guess(sorted_values, must_chars, sorted_char_counts_in_position)
-        Trace.write(guess)
-        self.assertEqual(guess, 'WREAK')
+        guesses = words.create_guess(must_chars, words.count_and_position)
+        Trace.write(list_to_str(guesses))
+        self.assertEqual(guesses, ['WREST'])
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -138,20 +132,27 @@ class MyTestCase(unittest.TestCase):
         Trace()
         Log()
         Trace.write("Doing test games ")
-        words = ["FOCAL", "LOCAL", "STATE", "STEAK", "TEASE", "VOCAL", "YEAST", "LEAST", "STAVE", "TRUSS", "TRUST",
-                 "CRUST", "SWEAT", "POUND", "PRIZE", "SHAVE", "SHARE", "SNARE", "SPARE", "TAUNT", "JAUNT", "HAUNT",
-                 "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE", "SNAIL"]
-        t = Timer()
-        map = {'FOCAL': 3, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 4, 'VOCAL': 5, 'YEAST': 5, 'LEAST': 3,
-               'STAVE': 3,
-               'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 4, 'POUND': 6, 'PRIZE': 4, 'SHAVE': 5, 'SHARE': 3,
-               'SNARE': 4,
-               'SPARE': 5, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 6, 'WIGHT': 6,
-               'WINCH': 6,
-               'WOUND': 6, 'GRAZE': 5, 'SNAIL': 4}
-        for index, word in enumerate(map):
-            current_turns = map[word]
+        # words = ["FOCAL", "LOCAL", "STATE", "STEAK", "TEASE", "VOCAL", "YEAST", "LEAST", "STAVE", "TRUSS",
+        # "TRUST",
+        #          "CRUST", "SWEAT", "POUND", "PRIZE", "SHAVE", "SHARE", "SNARE", "SPARE", "TAUNT", "JAUNT",
+        #          "HAUNT",
+        #          "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE", "SNAIL"]
+        # t = Timer()
+        word_map = {'FOCAL': 3, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 4, 'VOCAL': 5, 'YEAST': 5,
+                    'LEAST': 3,
+                    'STAVE': 3,
+                    'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 4, 'POUND': 6, 'PRIZE': 4, 'SHAVE': 5,
+                    'SHARE': 3,
+                    'SNARE': 4,
+                    'SPARE': 5, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 6,
+                    'WIGHT': 6,
+                    'WINCH': 6,
+                    'WOUND': 6, 'GRAZE': 5, 'SNAIL': 4, "SKUNK": 4,
+                    'STEER': 4, 'ESTER' : 3, "RESET": 4}
+        for index, word in enumerate(word_map):
+            current_turns = word_map[word]
             print(" word ", word, " turns ", current_turns)
+            t = Timer()
             t.start()
             turns = test_game(word, game, server)
             print("Word ", word, " turns ", turns, " current turns ", current_turns)

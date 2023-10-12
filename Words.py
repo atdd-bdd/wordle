@@ -2,10 +2,18 @@ import sys
 import os
 from filter import *
 from Log import *
+from CountAndPosition import *
 
 
 def list_to_str(a_list):
-    return ' '.join([str(elem) for elem in a_list])
+    if len(a_list) <= 50:
+        return ' '.join([str(elem) for elem in a_list])
+    else:
+        b_list = []
+        for index in range(50):
+            b_list.append(a_list[index])
+        len1 = "[" + str(len(b_list)) + "]"
+        return len1 + ' '.join([str(elem) for elem in b_list])
 
 
 def filter_words_by_rating(filtered_words, look_for):
@@ -29,13 +37,8 @@ class Words:
         self.inited = False
         self.data_filename = data_filename
         self.words = []
-        self.char_counts_in_position = []
-        for i in range(26):
-            self.char_counts_in_position.append([0, 0, 0, 0, 0])
-        self.char_counts_total = {}
-        for i in range(26):
-            self.char_counts_total[chr(i + ord('A'))] = 0
         self.word_map = {}
+        self.count_and_position = CountAndPosition(self.words)
 
     def first_word(self):
         if len(self.words) >= 1:
@@ -72,78 +75,18 @@ class Words:
         return len(self.words)
 
     def count_chars(self):
-        for word in self.words:
-            for i in range(5):
-                index = ord(word[i]) - ord('A')
-                self.char_counts_in_position[index][i] += 1
-                self.char_counts_total[word[i]] += 1
-
-    def print_count_chars(self):
-        for i in range(26):
-            Trace.write(chr(i + ord('A')) + " " + str(self.char_counts_total[chr(i + ord('A'))]))
-
-            Trace.write(str(self.char_counts_in_position[i][0]) + " " + str(self.char_counts_in_position[i][1]) + " " +
-                        str(self.char_counts_in_position[i][2]) + " " + str(self.char_counts_in_position[i][3]) + " " +
-                        str(self.char_counts_in_position[i][4]))
-
-    def sort_char_counts_in_position(self):
-        sorted_char_counts_in_position = []
-        for k in range(len(self.char_counts_in_position)):
-            char_counts_in_a_position = self.char_counts_in_position[k]
-            max_count_index = 0
-            max_count = 0
-            for i in range(5):
-                if char_counts_in_a_position[i] > max_count:
-                    max_count_index = i
-                    max_count = char_counts_in_a_position[i]
-            sorted_char_counts_in_position.append([chr(k + ord('A')), max_count_index])
-        return sorted_char_counts_in_position
-
-    def sorted_count_chars(self):
-        values = []
-        for key in self.char_counts_total:
-            if self.char_counts_total[key] > 0:
-                values.append([key, self.char_counts_total[key]])
-        values.sort(key=sort_function, reverse=True)
-        sorted_values = []
-        for value in values:
-            sorted_values.append(value[0])
-        self.sort_char_counts_in_position()
-        return sorted_values
+        self.count_and_position = CountAndPosition(self.words)
 
     def create_filtered_words(self, position_chars, must_chars, not_chars, not_here_chars):
         ret = Words()
         ret.words = filter_list(self.words, position_chars, must_chars, not_chars, not_here_chars)
         return ret
 
-    def create_guess_from_self(self, not_here_chars, position_chars, must_chars):
-        Trace.write(" Creating guess from filtered answer list ")
-        Trace.write("Words " + list_to_str(self.words))
-        Trace.write("Not here " + list_to_str(not_here_chars))
-        Trace.write("Position chars " + list_to_str(position_chars))
-        if count_position_chars(position_chars) != 4:
-            return self.determine_guess_from_filtered_list(must_chars)
-        else:
-            chars_to_be_in_word = determine_word_with_all_characters(self.words, position_chars)
-            return chars_to_be_in_word, False
-
-    def determine_guess_from_filtered_list(self, must_chars):
-        Trace.write("Determining guess from filtered list ")
-        temp = Words()
-        temp.words = self.words
-        temp.count_chars()
-        sorted_values = temp.sorted_count_chars()
-        ret = filter_guesses_by_highest_char_occurance(temp.words, must_chars, sorted_values)
-        return ret[0], True
-
-    last_must_char_guess_index = 0
-
-    def create_guess(self, sorted_values, must_chars, sorted_char_counts_in_position):
+    def create_guess(self, must_chars, count_and_position):
         current_words = self.words
-        current_words = filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values)
-        current_words = filter_guesses_by_position_in_word(current_words, sorted_char_counts_in_position,
-                                                           sorted_values)
-        return current_words[0]
+        current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position)
+        current_words = filter_guesses_by_position_in_word(current_words, must_chars, count_and_position)
+        return current_words
 
     def find_answer(self, word_index):
         index = word_index
@@ -185,87 +128,47 @@ def count_position_chars(position_chars):
     return size
 
 
-def filter_guesses_by_position_in_word(current_words, sorted_char_counts_in_position, sorted_values):
-    current_word = current_words[0]
-    max_count = 0
-    if len(current_words) > 1:
-        for word in current_words:
-            count = 0
-            number_matches = 0
-            for i in range(len(word)):
-                c = word[i]
-                position = find_in_counts(sorted_char_counts_in_position, c)
-                if position == i:
-                    value = find_sort_value_weight(sorted_values, c)
-                    count += value
-                    number_matches += 1
-            if count > max_count:
-                max_count = count
-                current_word = word
-    Trace.write("Current word by position " + current_word)
-    current_words = [current_word]
-    return current_words
-
-
-def filter_guesses_by_highest_char_occurance(current_words, must_chars, sorted_values):
-    look_for = []
-    words_with_matches = [[], [], [], [], [], []]
-    Trace.write("Must chars " + must_chars)
-
-    # words_with_matches = [[], [], [], [], []]
-    # look_for = "abcde"
-    # current_words = "apple, train, snail, think, camel"
-    # for word in current_words:
-    #     match_count = sum(c in word for c in look_for)
-    #     words_with_matches[match_count].append(word)
-    look_for = shrink_number_to_look_for(look_for, must_chars, sorted_values)
-    filtered_words = []
-
+def filter_guesses_by_position_in_word(current_words, must_chars, count_and_position):
+    if len(current_words) <=1:
+        return current_words
+    count_and_position.zero_in_totals(must_chars)
+    max_position_score = 0
+    max_words_position = []
     for word in current_words:
-        match_count = 0
-        for c in look_for:
-            if c in word:
-                match_count += 1
-        words_with_matches[match_count].append(word)
-
-    for i in range(6):
-        index = 5 - i
-        if len(words_with_matches[index]) > 0:
-            filtered_words = words_with_matches[index]
-            break
-    Trace.write("Filtered words of this list " + list_to_str(filtered_words))
-    rated_words = filter_words_by_rating(filtered_words, look_for)
-    Trace.write("Rated words " + list_to_str(rated_words))
-
-    return rated_words
+        position_score = count_and_position.score_on_position_counts(word)
+        if position_score == max_position_score:
+            max_words_position.append(word)
+        if position_score > max_position_score:
+            max_words_position = [word]
+            max_position_score = position_score
+    if max_position_score == 0:
+        Trace.write("@@@No scoring by char position")
+        return []
+    return max_words_position
 
 
-def shrink_number_to_look_for(look_for, must_chars, sorted_values):
-    number_to_look_for = 0
-    for c in sorted_values:
-        if c in must_chars:
-            # Trace.write(" Skipping ", c)
-            continue
-        look_for += c
-        number_to_look_for += 1
-        if number_to_look_for > 4:
-            break
-    Trace.write("Looking for " + list_to_str(look_for))
-    return look_for
+def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position):
+    if len(current_words) <=1:
+        return current_words
+    Trace.write("Must chars " + must_chars)
+    count_and_position.zero_in_totals(must_chars)
 
-
-def find_in_counts(sorted_char_counts_in_position, c):
-    for i in range(len(sorted_char_counts_in_position)):
-        if sorted_char_counts_in_position[i][0] == c:
-            return sorted_char_counts_in_position[i][1]
-    return 0
-
-
-def find_sort_value_weight(sorted_values, c):
-    for i in range(len(sorted_values)):
-        if c == sorted_values[i]:
-            return len(sorted_values) - i + 1
-    return 0
+    max_total_score = 0
+    max_words = []
+    for word in current_words:
+        total_score = count_and_position.score_on_totals(word)
+        # print("Word ", word, " Total ", total_score)
+        if total_score == max_total_score:
+            max_words.append(word)
+        if total_score > max_total_score:
+            max_words = [word]
+            max_total_score = total_score
+    Trace.write("Words by highest char " + list_to_str(max_words))
+    Trace.write("Max score is " + str(max_total_score))
+    if max_total_score == 0:
+        Trace.write("@@@ No words found in by high chars")
+        return []
+    return max_words
 
 
 def exit_with_message(message):

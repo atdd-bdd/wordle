@@ -52,3 +52,12 @@ class Trace:
         Trace.trace.close()
         Trace.trace = None
         print("Closing trace file")
+
+
+class ResultLog:
+    @staticmethod
+    def write(message):
+        log = open("game_results.txt", "a")
+        Trace.trace.write(message + "\n")
+        log.close()
+
