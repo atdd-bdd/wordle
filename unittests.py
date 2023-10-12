@@ -101,7 +101,7 @@ class MyTestCase(unittest.TestCase):
         current_words = ['WREAK', 'WRECK', 'WREST']
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, ['WRECK'] )
+        self.assertEqual(current_words, ['WRECK'])
 
     def test_create_guess(self):
         words = words_for_testing()
@@ -138,17 +138,13 @@ class MyTestCase(unittest.TestCase):
         #          "HAUNT",
         #          "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE", "SNAIL"]
         # t = Timer()
-        word_map = {'FOCAL': 3, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 4, 'VOCAL': 5, 'YEAST': 5,
-                    'LEAST': 3,
-                    'STAVE': 3,
-                    'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 4, 'POUND': 6, 'PRIZE': 4, 'SHAVE': 5,
-                    'SHARE': 3,
-                    'SNARE': 4,
-                    'SPARE': 5, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 6,
-                    'WIGHT': 6,
-                    'WINCH': 6,
-                    'WOUND': 6, 'GRAZE': 5, 'SNAIL': 4, "SKUNK": 4,
-                    'STEER': 4, 'ESTER' : 3, "RESET": 4}
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 4, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
+                    'STAVE': 3, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
+                    'SHARE': 4, 'SNARE': 3, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
+                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 5, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
+                    'ESTER': 3, 'RESET': 4}
+
+        new_map = {}
         for index, word in enumerate(word_map):
             current_turns = word_map[word]
             print(" word ", word, " turns ", current_turns)
@@ -156,15 +152,14 @@ class MyTestCase(unittest.TestCase):
             t.start()
             turns = test_game(word, game, server)
             print("Word ", word, " turns ", turns, " current turns ", current_turns)
+            new_map[word] = turns
             if turns != current_turns:
                 print("** Better or worse ? ")
             self.assertLess(turns, 7, " For word " + word)
             print(t.stop())
+        #print(new_map)
         Log.close()
         Trace.close()
-
-    def setUp(self):
-        pass
 
 
 def setup_game():
@@ -183,13 +178,13 @@ def words_for_testing():
 
 
 def test_game(word, game, server):
-    Trace.write(" **** Test Game *****")
+    Trace.write(" *-- Test Game ")
     server.answer = word
-    Log.write("Answer " + server.answer)
-    Trace.write("Answer " + server.answer)
+    Log.write("Answer=" + server.answer)
+    Trace.write("Answer=" + server.answer)
     turns = run_a_game(game, server)
     Trace.write("Turns " + str(turns))
-    Trace.write("*** End test game ****")
+    Trace.write("---End test game ")
     return turns
 
 
