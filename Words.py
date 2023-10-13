@@ -143,8 +143,7 @@ def filter_guesses_by_position_in_word(current_words, must_chars, count_and_posi
     Trace.write("Words by position in word " + list_to_str(max_words_position))
     Trace.write("Max position score is " + str(max_position_score))
     if max_position_score == 0:
-            Trace.write("@@@No scoring by char position")
-            return []
+            Trace.write("@@@ No scoring by char position")
     return max_words_position
 
 
