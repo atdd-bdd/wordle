@@ -85,3 +85,14 @@ def add_to_string(g, not_chars):
     if match is None:
         not_chars += g
     return not_chars
+
+
+def score_on_not_here_counts(word, not_here_chars, positions):
+    i = 0
+    score = 0
+    for c in word:
+        char_score = positions[c][i]
+        if c in not_here_chars[i]:
+            score -= char_score
+        i = i + 1
+    return score

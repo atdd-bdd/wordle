@@ -40,7 +40,7 @@ def input_guess_match():
     match = ""
 
     while not good:
-        inp = input("Guess result")
+        inp = input("Enter guess result:")
         print(inp)
         (guess, match) = inp.split(' ')
         if len(guess) == 5 and len(match) == 5:

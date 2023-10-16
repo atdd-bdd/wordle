@@ -25,19 +25,6 @@ def list_list_to_str(a_list):
     return out
 
 
-def filter_words_by_rating(filtered_words, look_for):
-    rated_words = []
-    max_rating = 0
-    for word in filtered_words:
-        rating = compute_rating(word, look_for)
-        if rating > max_rating:
-            max_rating = rating
-
-    for word in filtered_words:
-        rating = compute_rating(word, look_for)
-        if rating == max_rating:
-            rated_words.append(word)
-    return rated_words
 
 
 def make_word_list_with_count(words):
@@ -105,12 +92,14 @@ class Words:
         ret.words = filter_list(self.words, position_chars, must_chars, not_chars, not_here_chars)
         return ret
 
-    def create_guess(self, must_chars, count_and_position):
+    def create_guess(self, must_chars, not_here_chars, count_and_position):
         current_words_with_count = make_word_list_with_count(self.words)
         current_words_with_count = filter_guesses_by_highest_char_occurrence(current_words_with_count, must_chars,
                                                                              count_and_position)
         current_words_with_count = filter_guesses_by_position_in_word(current_words_with_count,
                                                                       must_chars, count_and_position)
+        current_words_with_count = filter_guesses_by_not_here_in_word(current_words_with_count,
+                                                                      must_chars, not_here_chars, count_and_position)
         current_words = make_word_list_without_count(current_words_with_count)
         return current_words
 
@@ -175,6 +164,27 @@ def filter_guesses_by_position_in_word(current_words_with_count, must_chars, cou
     return out_words
 
 
+def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not_here_chars, count_and_position):
+    if len(current_words_with_count) <= 1:
+        return current_words_with_count
+    out_words = []
+    count_and_position.zero_in_totals(must_chars)
+    max_position_score = -1000
+    for item in current_words_with_count:
+        word = item[0]
+        position_score = score_on_not_here_counts(word, not_here_chars, count_and_position.positions)
+        score = item[1] + position_score
+        out_words.append([word, score])
+        if score > max_position_score:
+            max_position_score = score
+    Trace.write("Max not here score is " + str(max_position_score))
+    if max_position_score == -1000:
+        Trace.write("@@@ No scoring by not here position")
+        return current_words_with_count
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, 99)
+    return out_words
+
+
 def filter_by_percentage_maximum(current_words, max_total_score, percentage):
     cutoff = (max_total_score * percentage) / 100
     Trace.write("Cutoff is " + str(cutoff))
@@ -215,8 +225,7 @@ def exit_with_message(message):
     sys.exit(message)
 
 
-def sort_function(e):
-    return e[1]  # the count
+
 
 
 def compute_rating(word, look_for):

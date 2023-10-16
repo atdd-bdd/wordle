@@ -110,7 +110,7 @@ class MyTestCase(unittest.TestCase):
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        guesses = words.create_guess(must_chars, words.count_and_position)
+        guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
         self.assertEqual(guesses,['WREST'])
 

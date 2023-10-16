@@ -50,3 +50,5 @@ class CountAndPosition:
             score += char_score
             i = i + 1
         return score
+
+

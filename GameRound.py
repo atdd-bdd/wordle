@@ -28,7 +28,7 @@ class GameRound:
         t2 = Timer()
         t2.start()
         filtered.count_chars()
-        guesses = self.all_words.create_guess(must_chars,filtered.count_and_position )
+        guesses = self.all_words.create_guess(must_chars,not_here_chars,filtered.count_and_position )
         Trace.write("Time to create guess - all words" + str(t2.stop()) )
         if len(guesses) >= 1:
             return guesses[0]
@@ -37,7 +37,8 @@ class GameRound:
         t3.start()
         filtered.count_chars()
         # No more information from guess list,  uses the filtered answers
-        guesses = filtered.create_guess("", filtered.count_and_position)
+        not_here_chars = ["", "", "", "", ""]
+        guesses = filtered.create_guess("", not_here_chars, filtered.count_and_position)
         Trace.write("Time to create guess from filtered " + str(t3.stop()))
         if len(guesses) >= 1:
             return guesses[0]
