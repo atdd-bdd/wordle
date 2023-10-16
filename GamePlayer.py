@@ -23,7 +23,7 @@ def run_a_game(game, server, first_guess=""):
         guess = game.get_guess(guesses, matches)
     Trace.write("---Answer=" + server.answer + " in turns " + str(turns))
     if turns > 6:
-        Log.write("*** word " + server.answehr + " not found ")
+        Log.write("*** word " + server.answer + " not found ")
         Trace.write("*** word " + server.answer + " not found ")
     return turns
 
@@ -55,36 +55,39 @@ def main():
     # sys.exit( "NeedTwoArguments" + " <word_filename>  <answers_filename" )
     # data_filename = args[0]
     # answers_filename = args[1]
-    first_guesses = ["ORATE", "SLATE",
-    'REACT',
-    'ADIEU',
-    'LATER',
-    'SIRED',
-    'TEARS',
-    'ALONE',
-    'ARISE',
-    'ABOUT',
-    'ATONE',
-    'IRATE',
-    'SNARE',
-    'CREAM',
-    'PAINT',
-    'WORSE',
-    'SAUCE',
-    'ANIME',
-    'PROWL',
-    'ROAST',
-    'DRAPE',
-    'MEDIA',
-    'NOTES',
-    'CARES',
-    'TRAIN' ]
+    first_guesses = [
+        "ORATE",
+        "SLATE",
+        'REACT',
+        'ADIEU',
+        'LATER',
+        'SIRED',
+        'TEARS',
+        'ALONE',
+        'ARISE',
+        'ABOUT',
+        'ATONE',
+        'IRATE',
+        'SNARE',
+        'CREAM',
+        'PAINT',
+        'WORSE',
+        'SAUCE',
+        'ANIME',
+        'PROWL',
+        'ROAST',
+        'DRAPE',
+        'MEDIA',
+        'NOTES',
+        'CARES',
+        'TRAIN'
+        ]
 
     for first_guess in first_guesses:
         play_full_game_with_first_guess(first_guess)
 
 
-def play_full_game_with_first_guess(first_guess = "ORATE"):
+def play_full_game_with_first_guess(first_guess="ORATE"):
     log = Log("log_GamePlayer.txt")
     trace = Trace("trace_GamePlayer.txt")
     data_filename = "words002.txt"

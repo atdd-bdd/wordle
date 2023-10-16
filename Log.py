@@ -11,7 +11,7 @@ class Log:
         Log.log.write(message + "\n")
 
     @staticmethod
-    def check_for_open(log_filename = "log.txt"):
+    def check_for_open(log_filename="log.txt"):
         if Log.log is None:
             if not Log.opened:
                 Log.log = open(log_filename, "w")
@@ -39,7 +39,7 @@ class Trace:
         Trace.trace.write(message + "\n")
 
     @staticmethod
-    def check_for_open(trace_filename = "trace.txt"):
+    def check_for_open(trace_filename="trace.txt"):
         if Trace.trace is None:
             if not Trace.opened:
                 Trace.trace = open(trace_filename, "w")
@@ -60,4 +60,3 @@ class ResultLog:
         log = open("game_results.txt", "a")
         log.write(message + "\n")
         log.close()
-
