@@ -55,7 +55,31 @@ def main():
     # sys.exit( "NeedTwoArguments" + " <word_filename>  <answers_filename" )
     # data_filename = args[0]
     # answers_filename = args[1]
-    first_guesses = ["ORATE", "SLATE"]
+    first_guesses = ["ORATE", "SLATE",
+    'REACT',
+    'ADIEU',
+    'LATER',
+    'SIRED',
+    'TEARS',
+    'ALONE',
+    'ARISE',
+    'ABOUT',
+    'ATONE',
+    'IRATE',
+    'SNARE',
+    'CREAM',
+    'PAINT',
+    'WORSE',
+    'SAUCE',
+    'ANIME',
+    'PROWL',
+    'ROAST',
+    'DRAPE',
+    'MEDIA',
+    'NOTES',
+    'CARES',
+    'TRAIN' ]
+
     for first_guess in first_guesses:
         play_full_game_with_first_guess(first_guess)
 

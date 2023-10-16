@@ -21,26 +21,26 @@ SKUNK EEEEE
 Closing trace file
 
    starting words:
-   React
-Adieu
-Later
-Sired
-Tears
-Alone
-Arise
-About
-Atone
-Irate
-Snare
-Cream
-Paint
-Worse
-Sauce
-Anime
-Prowl
-Roast
-Drape
-Media
-Notes
-cares
-train
+REACT
+ADIEU
+LATER
+SIRED
+TEARS
+ALONE
+ARISE
+ABOUT
+ATONE
+IRATE
+SNARE
+CREAM
+PAINT
+WORSE
+SAUCE
+ANIME
+PROWL
+ROAST
+DRAPE
+MEDIA
+NOTES
+CARES
+TRAIN
