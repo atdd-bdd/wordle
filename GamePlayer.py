@@ -55,6 +55,12 @@ def main():
     # sys.exit( "NeedTwoArguments" + " <word_filename>  <answers_filename" )
     # data_filename = args[0]
     # answers_filename = args[1]
+    first_guesses = ["ORATE", "SLATE"]
+    for first_guess in first_guesses:
+        play_full_game_with_first_guess(first_guess)
+
+
+def play_full_game_with_first_guess(first_guess = "ORATE"):
     log = Log("log_GamePlayer.txt")
     trace = Trace("trace_GamePlayer.txt")
     data_filename = "words002.txt"
@@ -66,7 +72,6 @@ def main():
     t = Timer()
     t.start()
     word_count = game.answers.words
-    first_guess = "ORATE"
     for i in range(len(word_count)):
         server.set_answer(i + 1)
         Log.write("---Answer= " + server.answer)
@@ -82,7 +87,7 @@ def main():
     print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
     average = total_turns / len(word_count)
-    print('average ' + str(average))
+    print('average ' + str(average), " first guess ", first_guess)
     Log.write("Average is " + str(average))
     Trace.write("Turn counts " + str(turn_counts))
     ResultLog.write("Turn counts " + str(turn_counts) + " Average is " + str(average) + " first guess " + first_guess)

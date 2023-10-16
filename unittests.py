@@ -88,20 +88,20 @@ class MyTestCase(unittest.TestCase):
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        current_words = words.words
+        current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
-        self.assertEqual(current_words, ['WREAK', 'WREST'])
+        self.assertEqual(current_words, [['WREAK', 12], ['WREST', 12]])
 
     def test_filter_guesses_by_position_in_word(self):
         data_filename = "test_answers.txt"
         words = Words(data_filename)
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         words.count_chars()
-        current_words = ['WREAK', 'WRECK', 'WREST']
+        current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, ['WRECK'])
+        self.assertEqual(current_words, [ ['WRECK', 30]])
 
     def test_create_guess(self):
         words = words_for_testing()
@@ -112,7 +112,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(guesses, ['WREST'])
+        self.assertEqual(guesses,['WREST'])
 
     def test_server(self):
         answers_filename = "test_answers.txt"

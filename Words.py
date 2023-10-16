@@ -11,8 +11,18 @@ def list_to_str(a_list):
     else:
         out = "[" + str(len(a_list)) + "] "
         for index in range(50):
-           out += ' ' + a_list[index]
+            out += ' ' + a_list[index]
         return out
+
+
+def list_list_to_str(a_list):
+    maxy = len(a_list)
+    if maxy > 50:
+        maxy = 50
+    out = "[" + str(len(a_list)) + "] "
+    for index in range(maxy):
+        out += ' ' + str(a_list[index][0]) + '=' + str(a_list[index][1])
+    return out
 
 
 def filter_words_by_rating(filtered_words, look_for):
@@ -28,6 +38,20 @@ def filter_words_by_rating(filtered_words, look_for):
         if rating == max_rating:
             rated_words.append(word)
     return rated_words
+
+
+def make_word_list_with_count(words):
+    out_words = []
+    for word in words:
+        out_words.append([word, 0])
+    return out_words
+
+
+def make_word_list_without_count(words_with_count):
+    out_words = []
+    for item in words_with_count:
+        out_words.append(item[0])
+    return out_words
 
 
 class Words:
@@ -82,9 +106,12 @@ class Words:
         return ret
 
     def create_guess(self, must_chars, count_and_position):
-        current_words = self.words
-        current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position)
-        current_words = filter_guesses_by_position_in_word(current_words, must_chars, count_and_position)
+        current_words_with_count = make_word_list_with_count(self.words)
+        current_words_with_count = filter_guesses_by_highest_char_occurrence(current_words_with_count, must_chars,
+                                                                             count_and_position)
+        current_words_with_count = filter_guesses_by_position_in_word(current_words_with_count,
+                                                                      must_chars, count_and_position)
+        current_words = make_word_list_without_count(current_words_with_count)
         return current_words
 
     def find_answer(self, word_index):
@@ -127,24 +154,37 @@ def count_position_chars(position_chars):
     return size
 
 
-def filter_guesses_by_position_in_word(current_words, must_chars, count_and_position):
-    if len(current_words) <= 1:
-        return current_words
+def filter_guesses_by_position_in_word(current_words_with_count, must_chars, count_and_position):
+    if len(current_words_with_count) <= 1:
+        return current_words_with_count
+    out_words = []
     count_and_position.zero_in_totals(must_chars)
     max_position_score = 0
-    max_words_position = []
-    for word in current_words:
+    for item in current_words_with_count:
+        word = item[0]
         position_score = count_and_position.score_on_position_counts(word)
-        if position_score == max_position_score:
-            max_words_position.append(word)
-        if position_score > max_position_score:
-            max_words_position = [word]
-            max_position_score = position_score
-    Trace.write("Words by position in word " + list_to_str(max_words_position))
+        score = item[1] + position_score
+        out_words.append([word, score])
+        if score > max_position_score:
+            max_position_score = score
     Trace.write("Max position score is " + str(max_position_score))
     if max_position_score == 0:
-            Trace.write("@@@ No scoring by char position")
-    return max_words_position
+        Trace.write("@@@ No scoring by char position")
+        return current_words_with_count
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, 100)
+    return out_words
+
+
+def filter_by_percentage_maximum(current_words, max_total_score, percentage):
+    cutoff = (max_total_score * percentage) / 100
+    Trace.write("Cutoff is " + str(cutoff))
+    out_words = []
+    for item in current_words:
+        if item[1] >= cutoff:
+            out_words.append(item)
+
+    Trace.write("Words by highest maximum " + str(percentage) + " " + list_list_to_str(out_words))
+    return out_words
 
 
 def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position):
@@ -154,21 +194,21 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     count_and_position.zero_in_totals(must_chars)
 
     max_total_score = 0
-    max_words = []
-    for word in current_words:
+    out_words = []
+    for item in current_words:
+        word = item[0]
         total_score = count_and_position.score_on_totals(word)
+        out_words.append([word, total_score])
         # print("Word ", word, " Total ", total_score)
-        if total_score == max_total_score:
-            max_words.append(word)
         if total_score > max_total_score:
-            max_words = [word]
             max_total_score = total_score
-    Trace.write("Words by highest char " + list_to_str(max_words))
+
     Trace.write("Max score is " + str(max_total_score))
     if max_total_score == 0:
         Trace.write("@@@ No words found in by high chars")
         return []
-    return max_words
+    out_words = filter_by_percentage_maximum(out_words, max_total_score, 100)
+    return out_words
 
 
 def exit_with_message(message):
