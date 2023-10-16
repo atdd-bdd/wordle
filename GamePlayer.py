@@ -4,12 +4,13 @@ from Log import *
 from timer import Timer
 
 
-def run_a_game(game, server):
+def run_a_game(game, server, first_guess=""):
     guesses = []
     matches = []
     turns = 0
     guess = game.get_guess(guesses, matches)
-
+    if first_guess != "":
+        guess = first_guess
     for i in range(7):
         turns += 1
         guess, match = server_guess_match(server, guess)
@@ -22,7 +23,7 @@ def run_a_game(game, server):
         guess = game.get_guess(guesses, matches)
     Trace.write("---Answer=" + server.answer + " in turns " + str(turns))
     if turns > 6:
-        Log.write("*** word " + server.answer + " not found ")
+        Log.write("*** word " + server.answehr + " not found ")
         Trace.write("*** word " + server.answer + " not found ")
     return turns
 
@@ -65,11 +66,12 @@ def main():
     t = Timer()
     t.start()
     word_count = game.answers.words
+    first_guess = "ORATE"
     for i in range(len(word_count)):
         server.set_answer(i + 1)
         Log.write("---Answer= " + server.answer)
         Trace.write("---Answer=" + server.answer)
-        turns = run_a_game(game, server)
+        turns = run_a_game(game, server, first_guess)
         print("Answer " + server.answer + " Turns " + str(turns))
         if turns < len(turn_counts):
             turn_counts[turns - 1] += 1
@@ -83,6 +85,7 @@ def main():
     print('average ' + str(average))
     Log.write("Average is " + str(average))
     Trace.write("Turn counts " + str(turn_counts))
+    ResultLog.write("Turn counts " + str(turn_counts) + " Average is " + str(average) + " first guess " + first_guess)
     log.close()
     trace.close()
 

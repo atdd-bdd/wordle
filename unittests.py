@@ -141,22 +141,27 @@ class MyTestCase(unittest.TestCase):
         word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 4, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
                     'STAVE': 3, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
                     'SHARE': 4, 'SNARE': 3, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 5, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
+                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
                     'ESTER': 3, 'RESET': 4}
 
         new_map = {}
+        previous_total_turns = 0
+        total_turns = 0
         for index, word in enumerate(word_map):
-            current_turns = word_map[word]
-            print(" word ", word, " turns ", current_turns)
+            previous_turns = word_map[word]
+            previous_total_turns += previous_turns
+            print(" word ", word, " turns ", previous_turns)
             t = Timer()
             t.start()
             turns = test_game(word, game, server)
-            print("Word ", word, " turns ", turns, " current turns ", current_turns)
+            print("Word ", word, " turns ", turns, " previous turns ", previous_turns)
             new_map[word] = turns
-            if turns != current_turns:
+            if turns != previous_turns:
                 print("** Better or worse ? ")
+            total_turns += turns
             self.assertLess(turns, 7, " For word " + word)
             print(t.stop())
+        self.assertEqual(total_turns, previous_total_turns)
         #print(new_map)
         Log.close()
         Trace.close()
