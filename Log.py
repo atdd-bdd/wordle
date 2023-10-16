@@ -58,6 +58,6 @@ class ResultLog:
     @staticmethod
     def write(message):
         log = open("game_results.txt", "a")
-        Trace.trace.write(message + "\n")
+        log.write(message + "\n")
         log.close()
 

@@ -171,7 +171,7 @@ def filter_guesses_by_position_in_word(current_words_with_count, must_chars, cou
     if max_position_score == 0:
         Trace.write("@@@ No scoring by char position")
         return current_words_with_count
-    out_words = filter_by_percentage_maximum(out_words, max_position_score, 100)
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, 99)
     return out_words
 
 
@@ -207,7 +207,7 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     if max_total_score == 0:
         Trace.write("@@@ No words found in by high chars")
         return []
-    out_words = filter_by_percentage_maximum(out_words, max_total_score, 100)
+    out_words = filter_by_percentage_maximum(out_words, max_total_score, 99)
     return out_words
 
 
