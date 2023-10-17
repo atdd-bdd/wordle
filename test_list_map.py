@@ -23,6 +23,8 @@ def main():
     t2.start()
     position_count = CountAndPosition(words.words)
     print("Time to count all words ", t2.stop())
+    print("Count per position", position_count.positions)
+    print("totals by char ", position_count.totals)
     t3 = Timer()
     t3.start()
     out = []
