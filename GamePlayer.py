@@ -4,6 +4,11 @@ from Log import *
 from timer import Timer
 
 
+def round_to_string(a):
+    b = f"{a:.4f}"
+    return b
+
+
 def run_a_game(game, server, first_guess=""):
     guesses = []
     matches = []
@@ -81,10 +86,17 @@ def main():
         'NOTES',
         'CARES',
         'TRAIN'
-        ]
-
+    ]
+    results = []
     for first_guess in first_guesses:
-        play_full_game_with_first_guess(first_guess)
+        average = play_full_game_with_first_guess(first_guess)
+        results.append([first_guess, average])
+        results.sort(key=sort_function)
+        print(results)
+
+
+def sort_function(e):
+    return e[1]
 
 
 def play_full_game_with_first_guess(first_guess="ORATE"):
@@ -114,12 +126,15 @@ def play_full_game_with_first_guess(first_guess="ORATE"):
     print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
     average = total_turns / len(word_count)
-    print('average ' + str(average), " first guess ", first_guess)
-    Log.write("Average is " + str(average))
+    print('average ' + round_to_string(average), " first guess ", first_guess)
+    Log.write("Average is " + round_to_string(average))
     Trace.write("Turn counts " + str(turn_counts))
-    ResultLog.write("Turn counts " + str(turn_counts) + " Average is " + str(average) + " first guess " + first_guess)
+    ResultLog.write(
+        "Turn counts " + str(turn_counts) + " Average is " + round_to_string(average) + " first guess " + first_guess)
+    ResultLog.write("   Time " + round_to_string(elapsed))
     log.close()
     trace.close()
+    return average
 
 
 if __name__ == "__main__":

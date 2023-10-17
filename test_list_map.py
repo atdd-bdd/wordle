@@ -17,6 +17,9 @@ def main():
     print(out)
 
     print(" Time elapsed ", t.stop())
+    a=5.3445345
+    b = f"{a:.2f}"
+    print(b)
 
 
 if __name__ == "__main__":
