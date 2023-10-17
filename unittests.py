@@ -101,7 +101,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, [ ['WRECK', 30]])
+        self.assertEqual(current_words, [['WRECK', 30]])
 
     def test_create_guess(self):
         words = words_for_testing()
@@ -112,7 +112,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(guesses,['WREST'])
+        self.assertEqual(guesses, ['WREST'])
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -138,7 +138,8 @@ class MyTestCase(unittest.TestCase):
         #          "HAUNT",
         #          "GAUNT", "VAUNT", "WATCH", "WIGHT", "WINCH", "WOUND", "GRAZE", "SNAIL"]
         # t = Timer()
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 4, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
+        word_map = {'FOCAL': 4,
+                    'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 4, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
                     'STAVE': 3, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
                     'SHARE': 4, 'SNARE': 3, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
                     'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
@@ -162,7 +163,7 @@ class MyTestCase(unittest.TestCase):
             self.assertLess(turns, 7, " For word " + word)
             print(t.stop())
         self.assertEqual(total_turns, previous_total_turns)
-        #print(new_map)
+        # print(new_map)
         Log.close()
         Trace.close()
 

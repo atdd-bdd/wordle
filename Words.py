@@ -6,13 +6,23 @@ from CountAndPosition import *
 
 
 def list_to_str(a_list):
-    if len(a_list) <= 50:
-        return ' '.join([str(elem) for elem in a_list])
-    else:
-        out = "[" + str(len(a_list)) + "] "
-        for index in range(50):
-            out += ' ' + a_list[index]
-        return out
+    maxy = len(a_list)
+    if maxy > 50:
+        maxy = 50
+    out = "[" + str(len(a_list)) + "] "
+    for index in range(maxy):
+        out += ' ' + a_list[index]
+    return out
+
+
+def list_to_str_with_quotes(a_list):
+    maxy = len(a_list)
+    if maxy > 50:
+        maxy = 50
+    out = "[" + str(len(a_list)) + "] "
+    for index in range(maxy):
+        out += ' "' + a_list[index] + '" '
+    return out
 
 
 def list_list_to_str(a_list):
@@ -23,8 +33,6 @@ def list_list_to_str(a_list):
     for index in range(maxy):
         out += ' ' + str(a_list[index][0]) + '=' + str(a_list[index][1])
     return out
-
-
 
 
 def make_word_list_with_count(words):
@@ -177,11 +185,12 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
         out_words.append([word, score])
         if score > max_position_score:
             max_position_score = score
-    Trace.write("Max not here score is " + str(max_position_score))
+    # Trace.write("Max not here score is " + str(max_position_score) + " not here chars " +
+    #             list_to_str_with_quotes(not_here_chars))
     if max_position_score == -1000:
         Trace.write("@@@ No scoring by not here position")
         return current_words_with_count
-    out_words = filter_by_percentage_maximum(out_words, max_position_score, 99)
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, 95)
     return out_words
 
 
@@ -223,9 +232,6 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
 
 def exit_with_message(message):
     sys.exit(message)
-
-
-
 
 
 def compute_rating(word, look_for):

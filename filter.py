@@ -1,4 +1,5 @@
 import re
+from Log import *
 
 
 def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars):
@@ -92,7 +93,14 @@ def score_on_not_here_counts(word, not_here_chars, positions):
     score = 0
     for c in word:
         char_score = positions[c][i]
+        # Trace.write("char  " + c + " at index " + str(i) +
+        #             " has char score" + str(char_score) + " not here " +
+        #             not_here_chars[i])
+        if char_score == 0:
+            char_score = 1
         if c in not_here_chars[i]:
             score -= char_score
         i = i + 1
+    # Trace.write(" Not here score " + word + " " + str(score))
+
     return score

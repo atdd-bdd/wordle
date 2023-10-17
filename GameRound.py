@@ -20,7 +20,7 @@ class GameRound:
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
         Trace.write("Time to filter " + str(t1.stop()))
-        Log.write("Filtered count " + str(filtered.count()))
+        #Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered words " + list_to_str(filtered.words))
         if filtered.count() <= 2:
             Trace.write("Selecting from one or two words " + str(filtered.count()))
