@@ -1,7 +1,6 @@
 import sys
 import os
 from filter import *
-from Log import *
 from CountAndPosition import *
 from timer import Timer
 
@@ -207,8 +206,11 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
     out_words = filter_by_percentage_maximum(out_words, max_position_score, 95)
     return out_words
 
+
 def sort_function(e):
     return e[1]
+
+
 def filter_by_percentage_maximum(current_words, max_total_score, percentage):
     # current_words.sort(reverse=True,key=sort_function)
     # Trace.write("Words by highest " + list_list_to_str(current_words))
@@ -253,5 +255,3 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
 
 def exit_with_message(message):
     sys.exit(message)
-
-
