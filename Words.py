@@ -193,8 +193,11 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
     out_words = filter_by_percentage_maximum(out_words, max_position_score, 95)
     return out_words
 
-
+def sort_function(e):
+    return e[1]
 def filter_by_percentage_maximum(current_words, max_total_score, percentage):
+    current_words.sort(reverse=True,key=sort_function)
+    Trace.write("Words by highest " + list_list_to_str(current_words))
     cutoff = (max_total_score * percentage) / 100
     Trace.write("Cutoff is " + str(cutoff))
     out_words = []
@@ -202,7 +205,7 @@ def filter_by_percentage_maximum(current_words, max_total_score, percentage):
         if item[1] >= cutoff:
             out_words.append(item)
 
-    Trace.write("Words by highest maximum " + str(percentage) + " " + list_list_to_str(out_words))
+    Trace.write("Words by highest after cutoff " + str(percentage) + " " + list_list_to_str(out_words))
     return out_words
 
 
@@ -234,11 +237,3 @@ def exit_with_message(message):
     sys.exit(message)
 
 
-def compute_rating(word, look_for):
-    values = [10, 8, 6, 4, 2]
-    value = 0
-    for c in word:
-        for i in range(len(look_for)):
-            if c == look_for[i]:
-                value += values[i]
-    return value

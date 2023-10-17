@@ -1,0 +1,36 @@
+Length of words002.txt 12972
+Length of answers.txt 2315
+Time to filter  Elapsed time: 0.0273 seconds
+Filtered words [2315]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGORA AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE
+Must chars 
+Max score is 4594
+Cutoff is 4548.06
+Words by highest maximum 99 [10]  ALERT=4559 ALTER=4559 ARTEL=4559 LATER=4559 OATER=4594 ORATE=4594 RATEL=4559 REALO=4584 ROATE=4594 TALER=4559
+Max position score is 5848
+Cutoff is 5789.52
+Words by highest maximum 99 [1]  ROATE=5848
+Time to create guess - all words Elapsed time: 0.0979 seconds
+initial ROATE
+** Used ORATE
+Time to filter  Elapsed time: 0.0186 seconds
+Filtered words [50]  ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Max score is 72
+Cutoff is 71.28
+Words by highest maximum 99 [1]  LINCH=72
+*** Said TAINT would have been better
+Time to create guess - all words Elapsed time: 0.0813 seconds
+Time to filter  Elapsed time: 0.0203 seconds
+Filtered words [8]  ADULT APTLY FATAL FAULT SPLAT TALLY TUBAL VAULT
+Must chars ATL
+Max score is 10
+Cutoff is 9.9
+Words by highest maximum 99 [3]  FUBSY=10 PUDSY=10 PUFFY=10
+Max position score is 16
+Cutoff is 15.84
+Words by highest maximum 99 [1]  FUBSY=16
+** Said FAULT would have eliminated all but one word
+Time to create guess - all words Elapsed time: 0.0736 seconds
+Time to filter  Elapsed time: 0.0189 seconds
+Filtered words [2]  ADULT VAULT
+Selecting from one or two words 2
