@@ -116,7 +116,6 @@ def main():
         'RATIO',
         'REAST',
         'RECAP',
-        'ROATE',
         'ROAST',
         'SALET',
         'SAUCE',
