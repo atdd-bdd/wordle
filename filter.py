@@ -1,5 +1,4 @@
 import re
-from Log import *
 
 
 def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars):
@@ -9,8 +8,16 @@ def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars
         for i in range(len(word)):
             c = word[i]
             skip = has_not_here_char(c, i, not_here_chars, skip)
+            if skip:
+                break
             skip = does_not_have_position_chars(c, i, position_chars, skip)
+            if skip:
+                break
             skip = has_not_char(c, not_chars, skip)
+            if skip:
+                break
+        if skip:
+            continue
         skip = has_all_must_chars(must_chars, skip, word)
         if not skip:
             new_word_list.append(word)
