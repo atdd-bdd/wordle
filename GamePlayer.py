@@ -16,7 +16,7 @@ def run_a_game(game, server, first_guess=""):
     guess = game.get_guess(guesses, matches)
     if first_guess != "":
         guess = first_guess
-    for i in range(7):
+    for _ in range(7):
         turns += 1
         guess, match = server_guess_match(server, guess)
         Log.write("Guess " + guess + " match " + match)
@@ -96,7 +96,9 @@ def main():
         'MIAOU',
         'MOVIE',
         'NAIVE',
+        'OATER',
         'OCEAN',
+        'ORATE',
         'OUIJA',
         'OURIE',
         'PALER',
@@ -114,6 +116,7 @@ def main():
         'RATIO',
         'REAST',
         'RECAP',
+        'ROATE',
         'ROAST',
         'SALET',
         'SAUCE',

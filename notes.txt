@@ -2,8 +2,11 @@ list AUGHT BIGHT DIGHT EIGHT FIGHT GARTH GATCH GAVOT GHAST GHATS GHAUT GHOST GIR
 This is the list of words  for G H J T V
 It matches scrabble word finder
 
-SALET”, followed by “CRATE”, “TRACE”, “SLATE”, and “REAST”.
-
+SALET
+CRATE
+TRACE
+SLATE
+REAST
 ADIEU
 AUDIO
 AULOI

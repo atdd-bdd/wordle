@@ -18,7 +18,7 @@ def main():
 
     print(" Time elapsed ", t.stop())
     a=5.3445345
-    b = f"{a:.2f}"
+    b = f"{a: .2f}"
     print(b)
 
 
