@@ -11,7 +11,7 @@ def list_to_str(a_list):
         maxy = 50
     out = "[" + str(len(a_list)) + "] "
     for index in range(maxy):
-        out += ' ' + a_list[index]
+        out += ' ' + str(a_list[index])
     return out
 
 

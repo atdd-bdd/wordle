@@ -61,31 +61,82 @@ def main():
     # data_filename = args[0]
     # answers_filename = args[1]
     first_guesses = [
-        "ORATE",
-        "SLATE",
-        'REACT',
+        'ABUSE',
+        'ADEPT',
         'ADIEU',
-        'LATER',
-        'SIRED',
-        'TEARS',
         'ALONE',
+        'ARGUE',
         'ARISE',
-        'ABOUT',
-        'ATONE',
-        'IRATE',
-        'SNARE',
-        'CREAM',
-        'PAINT',
-        'WORSE',
-        'SAUCE',
-        'ANIME',
-        'PROWL',
-        'ROAST',
-        'DRAPE',
+        'AUDIO',
+        'AULOI',
+        'AUREI',
+        'CAMEO',
+        'CLAMP',
+        'CLASP',
+        'CLOSE',
+        'CRANE',
+        'CRATE',
+        'DEPOT',
+        'EARLY',
+        'EASEL',
+        'FUGUE',
+        'GOURD',
+        'GUIDE',
+        'HAUTE',
+        'HOUSE',
+        'IMBUE',
+        'JUICE',
+        'KOALA',
+        'LANCE',
+        'LEANT',
+        'LIEGE',
+        'LOUIE',
+        'MAUVE',
         'MEDIA',
-        'NOTES',
-        'CARES',
-        'TRAIN'
+        'MIAOU',
+        'MOVIE',
+        'NAIVE',
+        'OCEAN',
+        'OUIJA',
+        'OURIE',
+        'PALER',
+        'PATIO',
+        'PEARS',
+        'PIANO',
+        'PLAID',
+        'POETS',
+        'PRINT',
+        'QUAIL',
+        'QUIET',
+        'QUITE',
+        'RADIO',
+        'RAISE',
+        'RATIO',
+        'REAST',
+        'RECAP',
+        'ROAST',
+        'SALET',
+        'SAUCE',
+        'SAUTE',
+        'SCALP',
+        'SLATE',
+        'SLICE',
+        'STEAM',
+        'STRAP',
+        'TIARA',
+        'TRACE',
+        'TRAIL',
+        'TRAIN',
+        'TRAMP',
+        'TRICE',
+        'TRIED',
+        'UNION',
+        'URAEI',
+        'UTILE',
+        'VENUE',
+        'VIDEO',
+        'WAIVE'
+
     ]
     results = []
     for first_guess in first_guesses:
@@ -93,6 +144,7 @@ def main():
         results.append([first_guess, average])
         results.sort(key=sort_function)
         print(results)
+        ResultLog.write(list_list_to_str(results))
 
 
 def sort_function(e):
@@ -131,7 +183,7 @@ def play_full_game_with_first_guess(first_guess="ORATE"):
     Trace.write("Turn counts " + str(turn_counts))
     ResultLog.write(
         "Turn counts " + str(turn_counts) + " Average is " + round_to_string(average) + " first guess " + first_guess)
-    ResultLog.write("   Time " + round_to_string(elapsed))
+    ResultLog.write(elapsed)
     log.close()
     trace.close()
     return average
