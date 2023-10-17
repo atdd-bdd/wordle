@@ -1,5 +1,11 @@
+from Log import Trace
+from timer import Timer
+
+
 class CountAndPosition:
     def __init__(self, words):
+        t1 = Timer()
+        t1.start()
         self.positions = {}
         for c in "ABCDEFGHIJKLMNOPQRSTURVWXYZ":
             self.positions[c] = [0, 0, 0, 0, 0]
@@ -20,6 +26,7 @@ class CountAndPosition:
             for i in range(5):
                 total += counts[i]
             self.totals[char] = total
+        Trace.write("Setting up counts " + t1.stop())
         # print("totals ", self.totals)
 
     def zero_in_totals(self, char_seq):
@@ -50,5 +57,3 @@ class CountAndPosition:
             score += char_score
             i = i + 1
         return score
-
-

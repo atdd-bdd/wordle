@@ -3,6 +3,7 @@ import os
 from filter import *
 from Log import *
 from CountAndPosition import *
+from timer import Timer
 
 
 def list_to_str(a_list):
@@ -101,14 +102,27 @@ class Words:
         return ret
 
     def create_guess(self, must_chars, not_here_chars, count_and_position):
+        tall = Timer()
+        tall.start()
+        t1 = Timer()
+        t1.start()
         current_words_with_count = make_word_list_with_count(self.words)
+        Trace.write(" Making word list time " + t1.stop())
+        t2 = Timer()
+        t2.start()
         current_words_with_count = filter_guesses_by_highest_char_occurrence(current_words_with_count, must_chars,
                                                                              count_and_position)
+        Trace.write("Filter by highest occurrence  " + t2.stop())
+        t3 = Timer()
+        t3.start()
         current_words_with_count = filter_guesses_by_position_in_word(current_words_with_count,
                                                                       must_chars, count_and_position)
+        Trace.write(" Filter by position in word  " + t3.stop())
         current_words_with_count = filter_guesses_by_not_here_in_word(current_words_with_count,
                                                                       must_chars, not_here_chars, count_and_position)
         current_words = make_word_list_without_count(current_words_with_count)
+        Trace.write(" Total guess time  " + tall.stop())
+
         return current_words
 
     def find_answer(self, word_index):
@@ -196,8 +210,8 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
 def sort_function(e):
     return e[1]
 def filter_by_percentage_maximum(current_words, max_total_score, percentage):
-    current_words.sort(reverse=True,key=sort_function)
-    Trace.write("Words by highest " + list_list_to_str(current_words))
+    # current_words.sort(reverse=True,key=sort_function)
+    # Trace.write("Words by highest " + list_list_to_str(current_words))
     cutoff = (max_total_score * percentage) / 100
     Trace.write("Cutoff is " + str(cutoff))
     out_words = []
@@ -212,19 +226,23 @@ def filter_by_percentage_maximum(current_words, max_total_score, percentage):
 def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_and_position):
     if len(current_words) <= 1:
         return current_words
+    t1 = Timer()
+    t1.start()
     Trace.write("Must chars " + must_chars)
     count_and_position.zero_in_totals(must_chars)
 
     max_total_score = 0
     out_words = []
+    Trace.write("First part " + t1.stop())
+    t2 = Timer()
+    t2.start()
     for item in current_words:
         word = item[0]
         total_score = count_and_position.score_on_totals(word)
         out_words.append([word, total_score])
-        # print("Word ", word, " Total ", total_score)
         if total_score > max_total_score:
             max_total_score = total_score
-
+    Trace.write("Second part " + t2.stop())
     Trace.write("Max score is " + str(max_total_score))
     if max_total_score == 0:
         Trace.write("@@@ No words found in by high chars")

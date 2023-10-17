@@ -29,7 +29,7 @@ class GameRound:
         t2.start()
         filtered.count_chars()
         guesses = self.all_words.create_guess(must_chars,not_here_chars,filtered.count_and_position )
-        Trace.write("Time to create guess - all words" + str(t2.stop()) )
+        Trace.write("Time to create guess - all words " + str(t2.stop()) )
         if len(guesses) >= 1:
             return guesses[0]
         Trace.write("@@@No guesses from create guess - now use the words themselves. ")
