@@ -19,7 +19,7 @@ class GameRound:
         t1.start()
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
-        Trace.write("Time to filter " + str(t1.stop()))
+        # Trace.write("Time to filter " + str(t1.stop()))
         #Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered words " + list_to_str(filtered.words))
         if filtered.count() <= 2:
@@ -29,7 +29,7 @@ class GameRound:
         t2.start()
         filtered.count_chars()
         guesses = self.all_words.create_guess(must_chars,not_here_chars,filtered.count_and_position )
-        Trace.write("Time to create guess - all words " + str(t2.stop()) )
+        # Trace.write("Time to create guess - all words " + str(t2.stop()) )
         if len(guesses) >= 1:
             return guesses[0]
         Trace.write("@@@No guesses from create guess - now use the words themselves. ")
