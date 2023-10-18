@@ -1,7 +1,6 @@
 import sys
 import os
 
-from Log import Trace
 from filter import *
 from CountAndPosition import *
 from timer import Timer
@@ -174,55 +173,6 @@ def count_position_chars(position_chars):
     return size
 
 
-def filter_guesses_by_position_in_word(current_words_with_count, must_chars, count_and_position):
-    if len(current_words_with_count) <= 1:
-        return current_words_with_count
-    out_words = []
-    count_and_position.zero_in_totals(must_chars)
-    max_position_score = 0
-    for item in current_words_with_count:
-        word = item[0]
-        position_score = count_and_position.score_on_position_counts(word)
-        if Configuration.high_char_add_to_previous:
-            score = item[1] + position_score
-        else:
-            score = position_score
-        out_words.append([word, score])
-        if score > max_position_score:
-            max_position_score = score
-    # Trace.write("Max position score is " + str(max_position_score))
-    if max_position_score == 0:
-        Trace.write("@@@ No scoring by char position")
-        return current_words_with_count
-    out_words = filter_by_percentage_maximum(out_words, max_position_score, 95)
-    return out_words
-
-
-def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not_here_chars, count_and_position):
-    if len(current_words_with_count) <= 1:
-        return current_words_with_count
-    out_words = []
-    count_and_position.zero_in_totals(must_chars)
-    max_position_score = -1000
-    for item in current_words_with_count:
-        word = item[0]
-        position_score = score_on_not_here_counts(word, not_here_chars, count_and_position.positions)
-        if Configuration.position_add_to_previous:
-            score = item[1] + position_score
-        else:
-            score = position_score
-        out_words.append([word, score])
-        if score > max_position_score:
-            max_position_score = score
-    # Trace.write("Max not here score is " + str(max_position_score) + " not here chars " +
-    #             list_to_str_with_quotes(not_here_chars))
-    if max_position_score == -1000:
-        Trace.write("@@@ No scoring by not here position")
-        return current_words_with_count
-    out_words = filter_by_percentage_maximum(out_words, max_position_score, 95)
-    return out_words
-
-
 def sort_function(e):
     return e[1]
 
@@ -254,9 +204,12 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     t2.start()
     for item in current_words:
         word = item[0]
-        total_score = count_and_position.score_on_totals(word)
-        score = item[1] + total_score
-        out_words.append([word, score])
+        score = count_and_position.score_on_totals(word)
+        if Configuration.high_char_add_to_previous:
+            total_score = item[1] + score
+        else:
+            total_score = score
+        out_words.append([word, total_score])
         if total_score > max_total_score:
             max_total_score = total_score
     # Trace.write("Second part " + t2.stop())
@@ -264,7 +217,7 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     if max_total_score == 0:
         Trace.write("@@@ No words found in by high chars")
         return []
-    out_words = filter_by_percentage_maximum(out_words, max_total_score, 95)
+    out_words = filter_by_percentage_maximum(out_words, max_total_score, Configuration.cutoff_high_char)
     return out_words
 
 
@@ -276,11 +229,63 @@ def filter_guesses_by_highest_pair_occurrence(current_words, count_and_position)
     for item in current_words:
         word = item[0]
         score = count_and_position.score_on_two_letters(word)
-        total_score = item[1] + score
+        if Configuration.two_letter_add_to_previous:
+            total_score = item[1] + score
+        else:
+            total_score = score
         out_words.append([word, total_score])
         if total_score > max_total_score:
             max_total_score = total_score
-    out_words = filter_by_percentage_maximum(out_words, max_total_score, 95)
+    out_words = filter_by_percentage_maximum(out_words, max_total_score, Configuration.two_letter_add_to_previous)
+    return out_words
+
+
+def filter_guesses_by_position_in_word(current_words_with_count, must_chars, count_and_position):
+    if len(current_words_with_count) <= 1:
+        return current_words_with_count
+    out_words = []
+    count_and_position.zero_in_totals(must_chars)
+    max_position_score = 0
+    for item in current_words_with_count:
+        word = item[0]
+        score = count_and_position.score_on_position_counts(word)
+        if Configuration.position_add_to_previous:
+            total_score = item[1] + score
+        else:
+            total_score = score
+        out_words.append([word, total_score])
+        if total_score > max_position_score:
+            max_position_score = total_score
+    # Trace.write("Max position total_score is " + str(max_position_score))
+    if max_position_score == 0:
+        Trace.write("@@@ No scoring by char position")
+        return current_words_with_count
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, Configuration.cutoff_position)
+    return out_words
+
+
+def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not_here_chars, count_and_position):
+    if len(current_words_with_count) <= 1:
+        return current_words_with_count
+    out_words = []
+    count_and_position.zero_in_totals(must_chars)
+    max_position_score = -1000
+    for item in current_words_with_count:
+        word = item[0]
+        score = score_on_not_here_counts(word, not_here_chars, count_and_position.positions)
+        if Configuration.not_there_add_to_previous:
+            total_score = item[1] + score
+        else:
+            total_score = score
+        out_words.append([word, total_score])
+        if total_score > max_position_score:
+            max_position_score = total_score
+    # Trace.write("Max not here score is " + str(max_position_score) + " not here chars " +
+    #             list_to_str_with_quotes(not_here_chars))
+    if max_position_score == -1000:
+        Trace.write("@@@ No scoring by not here position")
+        return current_words_with_count
+    out_words = filter_by_percentage_maximum(out_words, max_position_score, Configuration.cutoff_not_there)
     return out_words
 
 
