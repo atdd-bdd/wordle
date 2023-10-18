@@ -4,35 +4,28 @@ from timer import Timer
 
 def main():
     Trace("trace_list_map_timing")
-    words = Words("answers.txt")
+
+    words = Words("words002.txt")
     words.read_words()
-    print("Checking against words ")
+    print("size of words", len(words.words))
+
     t = Timer()
     t.start()
     out = []
     index = 0
-    print ("size of words", len(words.words))
     for word in words.words:
-        # if 'A' in word and 'B' in word:
         out.append([word, index])
         index += 1
     print(" out length ", len(out))
-    # print(out)
+    print(" Time to append words to new list ", t.stop())
 
-    print(" Time elapsed ", t.stop())
     t2 = Timer()
     t2.start()
     position_count = CountAndPosition(words.words)
     print("Time to count all words ", t2.stop())
 
-    print("Count per position", position_count.positions)
-    print("totals by char ", position_count.totals)
-    sorted = [[k,v] for k,v in position_count.totals.items()]
-    # sorted = []
-    # for k, v in position_count.totals.items():
-    #     sorted.append([k, v])
-    sorted.sort(key=sort_function, reverse=True)
-    print("Sorted positions ", sorted)
+    # print("Count per position", position_count.positions)
+    # print("totals by char ", position_count.totals)
 
     t3 = Timer()
     t3.start()
@@ -41,9 +34,22 @@ def main():
         score = position_count.score_on_totals(word)
         out.append([word, score])
     print(" Time to score all words ", t3.stop())
-    for word in ['CRANE', 'CRATE']:
-        score = position_count.score_on_two_letters(word)
-        print(score)
+
+    t4 = Timer()
+    t4.start()
+    sorted_list = [[k, v] for k, v in position_count.totals.items()]
+    print("Time to create with comprehension", t4.stop())
+    sorted_list.sort(key=sort_function, reverse=True)
+    print("Sorted positions ", sorted_list)
+
+    t5 = Timer()
+    t5.start()
+    sorted_list1 = []
+    for k, v in position_count.totals.items():
+        sorted_list1.append([k, v])
+    print("Time to create with loop ", t5.stop())
+    sorted_list1.sort(key=sort_function, reverse=True)
+    print("Sorted positions ", sorted_list1)
 
 
 if __name__ == "__main__":
