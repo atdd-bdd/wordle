@@ -23,7 +23,7 @@ class CountAndPosition:
             for i in range(5):
                 total += counts[i]
             self.totals[char] = total
-        Trace.write("Setting up counts " + t1.stop())
+        # Trace.write("Setting up counts " + t1.stop())
         # print("totals ", self.totals)
 
         self.two_letters = {}
