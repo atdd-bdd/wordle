@@ -28,8 +28,6 @@ def play_full_game_with_first_guess(first_guess=""):
     t.start()
     word_count = game.answers.words
     for i in range(len(word_count)):
-        if i > 10:
-            break
         server.set_answer(i + 1)
         Log.write("---Answer= " + server.answer)
         Trace.write("---Answer=" + server.answer)

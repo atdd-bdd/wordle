@@ -25,13 +25,13 @@ def main():
                                                 Trace.write(Configuration.get_string())
                                                 average = play_game_for_various_starting_words(results)
                                                 results.append([Configuration.get_short_string(), average])
-                                                results.sort(reverse=True, key=sort_function)
+                                                results.sort(key=sort_function)
                                                 ResultLog.write(list_list_to_str(results))
                                                 print(list_list_to_str(results))
     log.close()
     trace.close()
     ResultLog.write(list_list_to_str(results))
-    results.sort(reverse=True,key=sort_function)
+    results.sort(key=sort_function)
     ResultLog.write(list_list_to_str(results))
     print(list_list_to_str(results))
 def play_game_for_various_starting_words(results):
@@ -51,8 +51,6 @@ def play_full_game_with_first_guess(first_guess=""):
     t.start()
     word_count = game.answers.words
     for i in range(len(word_count)):
-        if i > 10:
-            break
         server.set_answer(i + 1)
         Log.write("---Answer= " + server.answer)
         Trace.write("---Answer=" + server.answer)
