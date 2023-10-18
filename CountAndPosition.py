@@ -1,3 +1,4 @@
+from Log import Trace
 from timer import Timer
 
 
@@ -55,7 +56,9 @@ class CountAndPosition:
             scored_already += c
             char_score = self.totals.get(c, -1)
             if char_score == -1:
+                Trace.write("@@@ Did not find char in score on totals: "+ c)
                 print("***Did not find char in score on totals", c)
+                char_score = 0
             score += char_score
         return score
 
@@ -77,6 +80,7 @@ class CountAndPosition:
             char_score = self.two_letters.get(pair, -1)
             if char_score == -1:
                 print("***Did not find pair in two letters:", pair)
+                Trace.write("@@@ Did not find pair in two letters:"+ pair)
                 char_score = 0
             score += char_score / 2
             score = int(score)

@@ -4,7 +4,7 @@ from timer import Timer
 
 def main():
     Trace("trace_list_map_timing")
-    words = Words("words002.txt")
+    words = Words("answers.txt")
     words.read_words()
     print("Checking against words ")
     t = Timer()
@@ -24,8 +24,16 @@ def main():
     t2.start()
     position_count = CountAndPosition(words.words)
     print("Time to count all words ", t2.stop())
+
     print("Count per position", position_count.positions)
     print("totals by char ", position_count.totals)
+    sorted = [[k,v] for k,v in position_count.totals.items()]
+    # sorted = []
+    # for k, v in position_count.totals.items():
+    #     sorted.append([k, v])
+    sorted.sort(key=sort_function, reverse=True)
+    print("Sorted positions ", sorted)
+
     t3 = Timer()
     t3.start()
     out = []
