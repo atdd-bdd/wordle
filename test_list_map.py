@@ -3,6 +3,7 @@ from timer import Timer
 
 
 def main():
+    Trace("trace_list_map_timing")
     words = Words("words002.txt")
     words.read_words()
     print("Checking against words ")

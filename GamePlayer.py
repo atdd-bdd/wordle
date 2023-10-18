@@ -20,7 +20,7 @@ def run_a_game(game, server, first_guess=""):
         turns += 1
         guess, match = server_guess_match(server, guess)
         Log.write("Guess " + guess + " match " + match)
-        Trace.write("Guess " + guess + " match " + match)
+        Trace.write("Turn " + str(turns) + " Guess " + guess + " result match " + match)
         if match == 'EEEEE':
             break
         guesses.append(guess)

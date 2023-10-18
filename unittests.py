@@ -101,7 +101,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, [['WRECK', 30]])
+        self.assertEqual(current_words, [['WRECK', 30], ['WREAK', 29]])
 
     def test_create_guess(self):
         words = words_for_testing()
@@ -112,7 +112,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(guesses, ['WREST'])
+        self.assertEqual(guesses, ['WREST', 'WREAK'])
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -139,12 +139,16 @@ class MyTestCase(unittest.TestCase):
         #             'SHARE': 4, 'SNARE': 3, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
         #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
         #             'ESTER': 3, 'RESET': 4}
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
-                    'STAVE': 3, 'TRUSS': 3, 'TRUST': 5, 'CRUST': 4, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
-                    'SHARE': 4, 'SNARE': 4, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 4, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 5,
-                    'ESTER': 4, 'RESET': 3}
-
+        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
+        #             'STAVE': 3, 'TRUSS': 3, 'TRUST': 5, 'CRUST': 4, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
+        #             'SHARE': 4, 'SNARE': 4, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
+        #             'WATCH': 5, 'WIGHT': 4, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 5,
+        #             'ESTER': 4, 'RESET': 3}
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
+                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
+                    'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
+                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
+                    'ESTER': 3, 'RESET': 3}
         new_map = {}
         previous_total_turns = 0
         total_turns = 0
@@ -160,7 +164,7 @@ class MyTestCase(unittest.TestCase):
                 print("** Better or worse ? ")
             total_turns += turns
             self.assertLess(turns, 7, " For word " + word)
-            print(t.stop())
+            print("One game " , t.stop())
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
         print(new_map)
         self.assertEqual(total_turns, previous_total_turns)
