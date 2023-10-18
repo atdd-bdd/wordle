@@ -33,6 +33,9 @@ def main():
         score = position_count.score_on_totals(word)
         out.append([word, score])
     print(" Time to score all words ", t3.stop())
+    for word in ['CRANE', 'CRATE']:
+        score = position_count.score_on_two_letters(word)
+        print(score)
 
 
 if __name__ == "__main__":

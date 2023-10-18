@@ -1,5 +1,7 @@
 import sys
 import os
+
+from Log import Trace
 from filter import *
 from CountAndPosition import *
 from timer import Timer
@@ -114,8 +116,10 @@ class Words:
         current_words_with_count = filter_guesses_by_highest_char_occurrence(current_words_with_count, must_chars,
                                                                              count_and_position)
         # Trace.write("Filter by highest occurrence  " + t2.stop())
-        t3 = Timer()
-        t3.start()
+        Trace.write("Filter by highest pair occurrence")
+        current_words_with_count = filter_guesses_by_highest_pair_occurrence(current_words_with_count,
+                                                                             count_and_position)
+
         Trace.write("Filter by position in word ")
         current_words_with_count = filter_guesses_by_position_in_word(current_words_with_count,
                                                                       must_chars, count_and_position)
@@ -245,7 +249,8 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     for item in current_words:
         word = item[0]
         total_score = count_and_position.score_on_totals(word)
-        out_words.append([word, total_score])
+        score = item[1] + total_score
+        out_words.append([word, score])
         if total_score > max_total_score:
             max_total_score = total_score
     # Trace.write("Second part " + t2.stop())
@@ -253,6 +258,22 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     if max_total_score == 0:
         Trace.write("@@@ No words found in by high chars")
         return []
+    out_words = filter_by_percentage_maximum(out_words, max_total_score, 95)
+    return out_words
+
+
+def filter_guesses_by_highest_pair_occurrence(current_words, count_and_position):
+    if len(current_words) <= 1:
+        return current_words
+    max_total_score = 0
+    out_words = []
+    for item in current_words:
+        word = item[0]
+        score = count_and_position.score_on_two_letters(word)
+        total_score = item[1] + score
+        out_words.append([word, total_score])
+        if total_score > max_total_score:
+            max_total_score = total_score
     out_words = filter_by_percentage_maximum(out_words, max_total_score, 95)
     return out_words
 
