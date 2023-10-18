@@ -18,16 +18,12 @@ class CountAndPosition:
                 i += 1
 
         self.totals = {}
-        for position in enumerate(self.positions.keys()):
-            char = position[1]
-            counts = self.positions[char]
-
+        for char, counts in self.positions.items():
             total = 0
-
             for i in range(5):
                 total += counts[i]
             self.totals[char] = total
-        # Trace.write("Setting up counts " + t1.stop())
+        Trace.write("Setting up counts " + t1.stop())
         # print("totals ", self.totals)
 
         self.two_letters = {}
@@ -56,7 +52,7 @@ class CountAndPosition:
             scored_already += c
             char_score = self.totals.get(c, -1)
             if char_score == -1:
-                Trace.write("@@@ Did not find char in score on totals: "+ c)
+                Trace.write("@@@ Did not find char in score on totals: " + c)
                 print("***Did not find char in score on totals", c)
                 char_score = 0
             score += char_score
@@ -80,7 +76,7 @@ class CountAndPosition:
             char_score = self.two_letters.get(pair, -1)
             if char_score == -1:
                 print("***Did not find pair in two letters:", pair)
-                Trace.write("@@@ Did not find pair in two letters:"+ pair)
+                Trace.write("@@@ Did not find pair in two letters:" + pair)
                 char_score = 0
             score += char_score / 2
             score = int(score)

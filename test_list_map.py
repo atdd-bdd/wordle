@@ -8,12 +8,15 @@ def main():
     words = Words("words002.txt")
     words.read_words()
     print("size of words", len(words.words))
+    answers = Words("answers.txt")
+    answers.read_words()
+    print("size of answers", len(answers.words))
 
     t = Timer()
     t.start()
     out = []
     index = 0
-    for word in words.words:
+    for word in answers.words:
         out.append([word, index])
         index += 1
     print(" out length ", len(out))
@@ -21,8 +24,8 @@ def main():
 
     t2 = Timer()
     t2.start()
-    position_count = CountAndPosition(words.words)
-    print("Time to count all words ", t2.stop())
+    position_count = CountAndPosition(answers.words)
+    print("Time to count all answers ", t2.stop())
 
     # print("Count per position", position_count.positions)
     # print("totals by char ", position_count.totals)
