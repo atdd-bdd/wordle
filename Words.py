@@ -183,7 +183,10 @@ def filter_guesses_by_position_in_word(current_words_with_count, must_chars, cou
     for item in current_words_with_count:
         word = item[0]
         position_score = count_and_position.score_on_position_counts(word)
-        score = item[1] + position_score
+        if Configuration.high_char_add_to_previous:
+            score = item[1] + position_score
+        else:
+            score = position_score
         out_words.append([word, score])
         if score > max_position_score:
             max_position_score = score
@@ -204,7 +207,10 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
     for item in current_words_with_count:
         word = item[0]
         position_score = score_on_not_here_counts(word, not_here_chars, count_and_position.positions)
-        score = item[1] + position_score
+        if Configuration.position_add_to_previous:
+            score = item[1] + position_score
+        else:
+            score = position_score
         out_words.append([word, score])
         if score > max_position_score:
             max_position_score = score

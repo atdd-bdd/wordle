@@ -31,7 +31,7 @@ class GameRound:
         # Trace.write("Time to filter " + str(t1.stop()))
         Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars))
         #Log.write("Filtered count " + str(filtered.count()))
-        Trace.write("Filtered words " + list_to_str(filtered.words))
+        Trace.write("Filtered answers " + list_to_str(filtered.words))
         if filtered.count() <= 2:
             Trace.write("Selecting from one or two words " + str(filtered.count()))
             return filtered.first_word()

@@ -13,9 +13,11 @@ def run_a_game(game, server, first_guess=""):
     guesses = []
     matches = []
     turns = 0
-    guess = game.get_guess(guesses, matches)
+
     if first_guess != "":
         guess = first_guess
+    else:
+        guess = game.get_guess(guesses, matches)
     for _ in range(7):
         turns += 1
         guess, match = server_guess_match(server, guess)
@@ -149,6 +151,7 @@ def main():
 
     ]
     results = []
+    ResultLog.write(Configuration.get_string())
     for first_guess in first_guesses:
         average = play_full_game_with_first_guess(first_guess)
         results.append([first_guess, average])

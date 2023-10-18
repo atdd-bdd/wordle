@@ -1,4 +1,5 @@
 from Log import Trace
+from config import Configuration
 from timer import Timer
 
 
@@ -65,7 +66,7 @@ class CountAndPosition:
             char_score = self.positions[c][i]
             score += char_score
             i = i + 1
-        score /= 2
+        score *= Configuration.position_score_weighting
         score = int(score)
         return score
 
@@ -78,6 +79,6 @@ class CountAndPosition:
                 print("***Did not find pair in two letters:", pair)
                 Trace.write("@@@ Did not find pair in two letters:" + pair)
                 char_score = 0
-            score += char_score / 2
+            score += char_score * Configuration.two_letter_score_weighting
             score = int(score)
         return score
