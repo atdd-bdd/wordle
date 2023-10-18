@@ -3,6 +3,15 @@ from Log import *
 from Words import filter_guesses_by_highest_char_occurrence
 from timer import Timer
 
+
+def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars):
+    s = "Must chars [" + must_chars + "} "
+    s += "Not chars [" + not_chars + "] "
+    s += "Not here chars " + list_to_str_with_quotes(not_here_chars) + " "
+    s += "Position chars " + list_to_str_with_quotes(position_chars)
+    return s
+
+
 class GameRound:
     def __init__(self, all_words_filename, answers_filename):
         self.all_words = Words(all_words_filename)
@@ -20,6 +29,7 @@ class GameRound:
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
         # Trace.write("Time to filter " + str(t1.stop()))
+        Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars))
         #Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered words " + list_to_str(filtered.words))
         if filtered.count() <= 2:
