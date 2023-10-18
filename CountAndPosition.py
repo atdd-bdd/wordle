@@ -67,6 +67,7 @@ class CountAndPosition:
             score += char_score
             i = i + 1
         score /= 2
+        score = int(score)
         return score
 
     def score_on_two_letters(self, word):
@@ -78,4 +79,5 @@ class CountAndPosition:
                 print("***Did not find pair in two letters:", pair)
                 char_score = 0
             score += char_score / 2
+            score = int(score)
         return score

@@ -101,7 +101,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, [['WRECK', 20.0], ['WREAK', 19.5]])
+        self.assertEqual(current_words, [['WRECK', 20], ['WREAK', 19]])
 
     def test_create_guess(self):
         words = words_for_testing()
@@ -153,7 +153,7 @@ class MyTestCase(unittest.TestCase):
                     'STAVE': 4,
                     'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4, 'SHARE': 3,
                     'SNARE': 3,
-                    'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 6,
+                    'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
                     'WINCH': 5,
                     'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3, 'ESTER': 3, 'RESET': 3}
 
