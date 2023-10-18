@@ -1,0 +1,1176 @@
+Must chars WCK
+Words by highest char WREAK WREST
+Max score is 12
+Words by position in word WREST
+Max position score is 10
+WREST
+Must chars WCK
+Words by highest char WREAK WREST
+Max score is 12
+Words by position in word WRECK
+Max position score is 20
+Length of words002.txt 9403
+Length of answers.txt 2309
+Doing test games 
+ *-- Test Game 
+Answer=FOCAL
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match YNYNN
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words AFOUL AGLOW AGONY ALLOW ALLOY ALONG ALOOF ALOUD AMONG ANNOY AUDIO AVOID AXIOM AXION BACON BANJO BAYOU CACAO CANON CLOAK COCOA COMMA DOGMA FOCAL GONAD HAVOC LASSO LOCAL LOYAL MACHO MAMBO MANGO MASON MOCHA MODAL NOMAD POLKA SALON SALVO SAVOY SHOAL VIOLA VOCAL VODKA VOILA WAGON WOMAN ZONAL
+Must chars OA
+Words by highest char CLING
+Max score is 71
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess CLING match YYNNN
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words FOCAL LOCAL VOCAL
+Must chars OACL
+Words by highest char FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max score is 2
+Words by position in word FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess FAUVE match EYNNN
+Time to filter Elapsed time: 0.0052 seconds
+Filtered words FOCAL
+Selecting from one or two words 1
+Guess FOCAL match EEEEE
+---Answer=FOCAL in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=LOCAL
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match YNYNN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words AFOUL AGLOW AGONY ALLOW ALLOY ALONG ALOOF ALOUD AMONG ANNOY AUDIO AVOID AXIOM AXION BACON BANJO BAYOU CACAO CANON CLOAK COCOA COMMA DOGMA FOCAL GONAD HAVOC LASSO LOCAL LOYAL MACHO MAMBO MANGO MASON MOCHA MODAL NOMAD POLKA SALON SALVO SAVOY SHOAL VIOLA VOCAL VODKA VOILA WAGON WOMAN ZONAL
+Must chars OA
+Words by highest char CLING
+Max score is 71
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess CLING match YYNNN
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words FOCAL LOCAL VOCAL
+Must chars OACL
+Words by highest char FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max score is 2
+Words by position in word FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess FAUVE match NYNNN
+Time to filter Elapsed time: 0.0052 seconds
+Filtered words LOCAL
+Selecting from one or two words 1
+Guess LOCAL match EEEEE
+---Answer=LOCAL in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=STATE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNEEE
+Time to filter Elapsed time: 0.0035 seconds
+Filtered words ABATE AGATE ELATE PLATE SKATE SLATE STATE
+Must chars ATE
+Words by highest char BALKS BILKS BLAGS BLIPS BLOGS BULKS GLOBS GLOPS GULPS KELPS PLEBS PLUGS PULKS SKELP
+Max score is 8
+Words by position in word PLEBS PLUGS SKELP
+Max position score is 4
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess PLEBS match NNYNY
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words SKATE STATE
+Selecting from one or two words 2
+Guess SKATE match ENEEE
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words STATE
+Selecting from one or two words 1
+Guess STATE match EEEEE
+---Answer=STATE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=STEAK
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0058 seconds
+Guess ORATE match NNYYY
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words ADEPT AGENT ASSET BEGAT BLEAT CADET CHEAT CLEAT EATEN ECLAT FACET FETAL MATEY METAL PETAL PLEAT STEAD STEAK STEAL STEAM SWEAT TAKEN TWEAK VALET WHEAT
+Must chars ATE
+Words by highest char CALKS CALMS CLADS CLAMS CLANS CLAPS CLASP CLAWS CLEWS CLIPS CLODS CLONS CLOPS COLDS COWLS CULMS LACKS LICKS LOCKS LUCKS SCALD SCALP SCOLD SCOWL SCULK SCULP SLACK SLICK
+Max score is 24
+Words by position in word SCOWL SLACK SLICK
+Max position score is 10
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess SCOWL match ENNNN
+Time to filter Elapsed time: 0.0043 seconds
+Filtered words STEAD STEAK STEAM
+Must chars ATES
+Words by highest char DUMKA DUMKY MIKED
+Max score is 3
+Words by position in word MIKED
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess MIKED match NNYYN
+Time to filter Elapsed time: 0.0052 seconds
+Filtered words STEAK
+Selecting from one or two words 1
+Guess STEAK match EEEEE
+---Answer=STEAK in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=TEASE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNEYE
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words STAGE STAKE STALE STAVE TEASE
+Must chars ATE
+Words by highest char VLOGS VOLKS
+Max score is 8
+Words by position in word VLOGS VOLKS
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess VLOGS match NNNNY
+Time to filter Elapsed time: 0.0043 seconds
+Filtered words STAKE TEASE
+Selecting from one or two words 2
+Guess STAKE match YYENE
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words TEASE
+Selecting from one or two words 1
+Guess TEASE match EEEEE
+---Answer=TEASE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=VOCAL
+Time to filter Elapsed time: 0.0025 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0055 seconds
+Guess ORATE match YNYNN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words AFOUL AGLOW AGONY ALLOW ALLOY ALONG ALOOF ALOUD AMONG ANNOY AUDIO AVOID AXIOM AXION BACON BANJO BAYOU CACAO CANON CLOAK COCOA COMMA DOGMA FOCAL GONAD HAVOC LASSO LOCAL LOYAL MACHO MAMBO MANGO MASON MOCHA MODAL NOMAD POLKA SALON SALVO SAVOY SHOAL VIOLA VOCAL VODKA VOILA WAGON WOMAN ZONAL
+Must chars OA
+Words by highest char CLING
+Max score is 71
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess CLING match YYNNN
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words FOCAL LOCAL VOCAL
+Must chars OACL
+Words by highest char FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max score is 2
+Words by position in word FAUVE FAVAS FAVES FAVOR FAVUS FEVER FIVER FIVES FLAVA FOVEA VIFFS
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess FAUVE match NYNYN
+Time to filter Elapsed time: 0.0050 seconds
+Filtered words VOCAL
+Selecting from one or two words 1
+Guess VOCAL match EEEEE
+---Answer=VOCAL in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=YEAST
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNEYY
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words BEAST DEALT ENACT EXACT EXALT FEAST LEANT LEAPT LEAST MEANT TEACH YEAST
+Must chars ATE
+Words by highest char CLANS CLONS
+Max score is 15
+Words by position in word CLANS CLONS
+Max position score is 2
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess CLANS match NNENY
+Time to filter Elapsed time: 0.0044 seconds
+Filtered words BEAST FEAST YEAST
+Must chars ATES
+Words by highest char BAFFY BEEFY BIFFY BUFFY FLYBY FORBY FUBSY
+Max score is 3
+Words by position in word BAFFY BEEFY BIFFY BUFFY FLYBY FORBY FUBSY
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess BAFFY match NYNNY
+Time to filter Elapsed time: 0.0053 seconds
+Filtered words YEAST
+Selecting from one or two words 1
+Guess YEAST match EEEEE
+---Answer=YEAST in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=LEAST
+Time to filter Elapsed time: 0.0024 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0064 seconds
+Guess ORATE match NNEYY
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words BEAST DEALT ENACT EXACT EXALT FEAST LEANT LEAPT LEAST MEANT TEACH YEAST
+Must chars ATE
+Words by highest char CLANS CLONS
+Max score is 15
+Words by position in word CLANS CLONS
+Max position score is 2
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess CLANS match NYENY
+Time to filter Elapsed time: 0.0042 seconds
+Filtered words LEAST
+Selecting from one or two words 1
+Guess LEAST match EEEEE
+---Answer=LEAST in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=STAVE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNEYE
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words STAGE STAKE STALE STAVE TEASE
+Must chars ATE
+Words by highest char VLOGS VOLKS
+Max score is 8
+Words by position in word VLOGS VOLKS
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0051 seconds
+Guess VLOGS match YNNNY
+Time to filter Elapsed time: 0.0043 seconds
+Filtered words STAVE
+Selecting from one or two words 1
+Guess STAVE match EEEEE
+---Answer=STAVE in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=TRUSS
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NENYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words BRUNT CRUST CRYPT DRIFT FRUIT GRUNT PRINT TRICK TRUCK TRULY TRUMP TRUNK TRUSS TRUST TRYST WRIST
+Must chars RT
+Words by highest char INCUS
+Max score is 29
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess INCUS match NNNYE
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words TRUSS
+Selecting from one or two words 1
+Guess TRUSS match EEEEE
+---Answer=TRUSS in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=TRUST
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0085 seconds
+Guess ORATE match NENYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words BRUNT CRUST CRYPT DRIFT FRUIT GRUNT PRINT TRICK TRUCK TRULY TRUMP TRUNK TRUSS TRUST TRYST WRIST
+Must chars RT
+Words by highest char INCUS
+Max score is 29
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess INCUS match NNNYY
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words TRUST
+Selecting from one or two words 1
+Guess TRUST match EEEEE
+---Answer=TRUST in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=CRUST
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NENYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words BRUNT CRUST CRYPT DRIFT FRUIT GRUNT PRINT TRICK TRUCK TRULY TRUMP TRUNK TRUSS TRUST TRYST WRIST
+Must chars RT
+Words by highest char INCUS
+Max score is 29
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess INCUS match NNYYY
+Time to filter Elapsed time: 0.0044 seconds
+Filtered words CRUST
+Selecting from one or two words 1
+Guess CRUST match EEEEE
+---Answer=CRUST in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=SWEAT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNYYY
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words ADEPT AGENT ASSET BEGAT BLEAT CADET CHEAT CLEAT EATEN ECLAT FACET FETAL MATEY METAL PETAL PLEAT STEAD STEAK STEAL STEAM SWEAT TAKEN TWEAK VALET WHEAT
+Must chars ATE
+Words by highest char CALKS CALMS CLADS CLAMS CLANS CLAPS CLASP CLAWS CLEWS CLIPS CLODS CLONS CLOPS COLDS COWLS CULMS LACKS LICKS LOCKS LUCKS SCALD SCALP SCOLD SCOWL SCULK SCULP SLACK SLICK
+Max score is 24
+Words by position in word SCOWL SLACK SLICK
+Max position score is 10
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess SCOWL match ENNYN
+Time to filter Elapsed time: 0.0042 seconds
+Filtered words SWEAT
+Selecting from one or two words 1
+Guess SWEAT match EEEEE
+---Answer=SWEAT in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=POUND
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match YNNNN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words [132]  BINGO BISON BLOCK BLOND BLOOD BLOOM BLOWN BOBBY BONGO BONUS BOOBY BOOZY BOSOM BOSSY BOUGH BOUND BUXOM CHOCK CLOCK CLOUD CLOWN COLON COMFY COMIC CONCH CONDO CONIC COUCH COUGH COULD COYLY DINGO DISCO DODGY DOING DOLLY DOUGH DOWDY DOWNY FLOCK FLOOD FLOSS FLOWN FOCUS FOGGY FOLIO FOLLY FOUND GHOUL GLOOM
+Must chars O
+Words by highest char LYSIN
+Max score is 220
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess LYSIN match NNNNY
+Time to filter Elapsed time: 0.0048 seconds
+Filtered words BONGO BOUND CONCH CONDO FOUND HOUND KNOCK MOUND POUND WOUND
+Must chars ON
+Words by highest char CUBED DUCHY DUCKS DUCKY DUNCH DUTCH
+Max score is 19
+Words by position in word CUBED
+Max position score is 8
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess CUBED match NYNNE
+Time to filter Elapsed time: 0.0054 seconds
+Filtered words FOUND HOUND MOUND POUND WOUND
+Must chars ONUD
+Words by highest char WHOMP WHUMP
+Max score is 4
+Words by position in word WHOMP WHUMP
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess WHOMP match NNYNY
+Time to filter Elapsed time: 0.0062 seconds
+Filtered words POUND
+Selecting from one or two words 1
+Guess POUND match EEEEE
+---Answer=POUND in turns 5
+Turns 5
+---End test game 
+ *-- Test Game 
+Answer=PRIZE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0058 seconds
+Guess ORATE match NENNE
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words BRIBE BRIDE BRINE CREME CREPE CRIME CRUDE DRIVE GRIME GRIPE PRICE PRIDE PRIME PRIZE PRUDE PRUNE URINE
+Must chars RE
+Words by highest char CUPID PUDIC
+Max score is 34
+Words by position in word PUDIC
+Max position score is 6
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess PUDIC match ENNYN
+Time to filter Elapsed time: 0.0044 seconds
+Filtered words PRIME PRIZE
+Selecting from one or two words 2
+Guess PRIME match EEENE
+Time to filter Elapsed time: 0.0048 seconds
+Filtered words PRIZE
+Selecting from one or two words 1
+Guess PRIZE match EEEEE
+---Answer=PRIZE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=SHAVE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNENE
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words ABASE ADAGE AGAPE AMAZE AWAKE BLADE BLAME BLAZE CEASE CHAFE CHASE EVADE FLAKE FLAME GLADE GLAZE HEAVE IMAGE INANE KNAVE LEASE LEAVE PEACE PHASE PLACE PLANE QUAKE SCALE SHADE SHAKE SHALE SHAME SHAPE SHAVE SNAKE SPACE SPADE SUAVE USAGE WEAVE WHALE
+Must chars AE
+Words by highest char PLUSH
+Max score is 53
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess PLUSH match NNNYY
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words SHADE SHAKE SHAME SHAVE
+Must chars AESH
+Words by highest char DUMKA DUMKY MIKED MIKVA MOVED VODKA
+Max score is 3
+Words by position in word DUMKA DUMKY MIKVA VODKA
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess DUMKA match NNNNY
+Time to filter Elapsed time: 0.0054 seconds
+Filtered words SHAVE
+Selecting from one or two words 1
+Guess SHAVE match EEEEE
+---Answer=SHAVE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=SHARE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NYENE
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words AWARE BLARE FLARE GLARE SCARE SHARE SNARE SPARE
+Must chars RAE
+Words by highest char [84]  BAWLS BLAGS BLAHS BLAWS BLIPS BLOCS BLOGS BLOWS BLUSH BOWLS BUHLS CALFS CLAGS CLANS CLAPS CLASH CLASP CLAWS CLEFS CLEGS CLEWS CLIPS CLOGS CLONS CLOPS CLUBS COWLS FLABS FLAGS FLANS FLAPS FLASH FLAWS FLESH FLEWS FLICS FLIPS FLOCS FLOGS FLOPS FLOWS FLUBS FLUSH FOWLS GLANS GLENS GLOBS GLOPS GLOWS GOLFS
+Max score is 9
+Words by position in word SLANG SLING SLUNG
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess SLANG match ENENN
+Time to filter Elapsed time: 0.0044 seconds
+Filtered words SCARE SHARE SPARE
+Must chars RAES
+Words by highest char CAPHS CHAMP CHAPE CHAPS CHAPT CHEAP CHEEP CHIMP CHIPS CHIRP CHOMP CHOPS CHUMP EPOCH PACHA PARCH PATCH PEACH PECHS PERCH PINCH PITCH POACH POOCH PORCH POUCH PSYCH PUNCH
+Max score is 3
+Words by position in word CHAMP CHAPE CHAPS CHAPT CHEAP CHEEP CHIMP CHIPS CHIRP CHOMP CHOPS CHUMP EPOCH
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess CHAMP match NEENN
+Time to filter Elapsed time: 0.0051 seconds
+Filtered words SHARE
+Selecting from one or two words 1
+Guess SHARE match EEEEE
+---Answer=SHARE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=SNARE
+Time to filter Elapsed time: 0.0024 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NYENE
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words AWARE BLARE FLARE GLARE SCARE SHARE SNARE SPARE
+Must chars RAE
+Words by highest char [84]  BAWLS BLAGS BLAHS BLAWS BLIPS BLOCS BLOGS BLOWS BLUSH BOWLS BUHLS CALFS CLAGS CLANS CLAPS CLASH CLASP CLAWS CLEFS CLEGS CLEWS CLIPS CLOGS CLONS CLOPS CLUBS COWLS FLABS FLAGS FLANS FLAPS FLASH FLAWS FLESH FLEWS FLICS FLIPS FLOCS FLOGS FLOPS FLOWS FLUBS FLUSH FOWLS GLANS GLENS GLOBS GLOPS GLOWS GOLFS
+Max score is 9
+Words by position in word SLANG SLING SLUNG
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess SLANG match ENEYN
+Time to filter Elapsed time: 0.0042 seconds
+Filtered words SNARE
+Selecting from one or two words 1
+Guess SNARE match EEEEE
+---Answer=SNARE in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=SPARE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NYENE
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words AWARE BLARE FLARE GLARE SCARE SHARE SNARE SPARE
+Must chars RAE
+Words by highest char [84]  BAWLS BLAGS BLAHS BLAWS BLIPS BLOCS BLOGS BLOWS BLUSH BOWLS BUHLS CALFS CLAGS CLANS CLAPS CLASH CLASP CLAWS CLEFS CLEGS CLEWS CLIPS CLOGS CLONS CLOPS CLUBS COWLS FLABS FLAGS FLANS FLAPS FLASH FLAWS FLESH FLEWS FLICS FLIPS FLOCS FLOGS FLOPS FLOWS FLUBS FLUSH FOWLS GLANS GLENS GLOBS GLOPS GLOWS GOLFS
+Max score is 9
+Words by position in word SLANG SLING SLUNG
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess SLANG match ENENN
+Time to filter Elapsed time: 0.0044 seconds
+Filtered words SCARE SHARE SPARE
+Must chars RAES
+Words by highest char CAPHS CHAMP CHAPE CHAPS CHAPT CHEAP CHEEP CHIMP CHIPS CHIRP CHOMP CHOPS CHUMP EPOCH PACHA PARCH PATCH PEACH PECHS PERCH PINCH PITCH POACH POOCH PORCH POUCH PSYCH PUNCH
+Max score is 3
+Words by position in word CHAMP CHAPE CHAPS CHAPT CHEAP CHEEP CHIMP CHIPS CHIRP CHOMP CHOPS CHUMP EPOCH
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess CHAMP match NNENY
+Time to filter Elapsed time: 0.0051 seconds
+Filtered words SPARE
+Selecting from one or two words 1
+Guess SPARE match EEEEE
+---Answer=SPARE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=TAUNT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess LUNCH match NYYNN
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words DAUNT GAUNT JAUNT TAUNT VAUNT
+Must chars ATUN
+Words by highest char GADJE GADJO GYVED JIVED JUDGE
+Max score is 3
+Words by position in word GADJE GADJO GYVED JIVED JUDGE
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess GADJE match NENNN
+Time to filter Elapsed time: 0.0054 seconds
+Filtered words TAUNT VAUNT
+Selecting from one or two words 2
+Guess TAUNT match EEEEE
+---Answer=TAUNT in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=JAUNT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0039 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess LUNCH match NYYNN
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words DAUNT GAUNT JAUNT TAUNT VAUNT
+Must chars ATUN
+Words by highest char GADJE GADJO GYVED JIVED JUDGE
+Max score is 3
+Words by position in word GADJE GADJO GYVED JIVED JUDGE
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess GADJE match NENYN
+Time to filter Elapsed time: 0.0050 seconds
+Filtered words JAUNT
+Selecting from one or two words 1
+Guess JAUNT match EEEEE
+---Answer=JAUNT in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=HAUNT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess LUNCH match NYYNY
+Time to filter Elapsed time: 0.0043 seconds
+Filtered words HAUNT
+Selecting from one or two words 1
+Guess HAUNT match EEEEE
+---Answer=HAUNT in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=GAUNT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess LUNCH match NYYNN
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words DAUNT GAUNT JAUNT TAUNT VAUNT
+Must chars ATUN
+Words by highest char GADJE GADJO GYVED JIVED JUDGE
+Max score is 3
+Words by position in word GADJE GADJO GYVED JIVED JUDGE
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess GADJE match EENNN
+Time to filter Elapsed time: 0.0050 seconds
+Filtered words GAUNT
+Selecting from one or two words 1
+Guess GAUNT match EEEEE
+---Answer=GAUNT in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=VAUNT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0055 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess LUNCH match NYYNN
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words DAUNT GAUNT JAUNT TAUNT VAUNT
+Must chars ATUN
+Words by highest char GADJE GADJO GYVED JIVED JUDGE
+Max score is 3
+Words by position in word GADJE GADJO GYVED JIVED JUDGE
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess GADJE match NENNN
+Time to filter Elapsed time: 0.0053 seconds
+Filtered words TAUNT VAUNT
+Selecting from one or two words 2
+Guess TAUNT match YEEEE
+Time to filter Elapsed time: 0.0054 seconds
+Filtered words VAUNT
+Selecting from one or two words 1
+Guess VAUNT match EEEEE
+---Answer=VAUNT in turns 5
+Turns 5
+---End test game 
+ *-- Test Game 
+Answer=WATCH
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NNYYN
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words ADMIT ADULT ANGST ANTIC APTLY ATTIC AUDIT BATCH CAPUT CATCH DATUM DAUNT FAINT FATAL FAULT GAMUT GAUNT HABIT HATCH HAUNT JAUNT LATCH MATCH NATAL PAINT PATCH PATSY SAINT SATIN SPLAT SQUAT TABBY TACIT TACKY TAFFY TAINT TALLY TANGY TAUNT TAWNY TIBIA TIDAL TITAN TUBAL VAULT VAUNT VITAL WAIST WATCH YACHT
+Must chars AT
+Words by highest char INCUS LUNCH
+Max score is 70
+Words by position in word LUNCH
+Max position score is 18
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess LUNCH match NNNEE
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words BATCH CATCH HATCH MATCH PATCH WATCH
+Must chars ATCH
+Words by highest char ABAMP BLIMP BUMPH BUMPS BUMPY EMBOW PLUMB POMBE SWAMP UPBOW WHOMP WHUMP WIMPS WIMPY WOMBS WOMBY
+Max score is 3
+Words by position in word BLIMP BUMPH BUMPS BUMPY PLUMB POMBE WHOMP WHUMP WIMPS WIMPY WOMBS WOMBY
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess BLIMP match NNNNN
+Time to filter Elapsed time: 0.0055 seconds
+Filtered words CATCH HATCH WATCH
+Must chars ATCH
+Words by highest char [710]  ADOWN AGLOW ALLOW ALWAY ARROW ASKEW ASWIM AVOWS AWAIT AWAKE AWARD AWARE AWASH AWFUL AWING AWNED AWOKE AWOLS BAWDS BAWDY BAWKS BAWLS BAWNS BAWTY BEDEW BELOW BEWIG BLAWN BLAWS BLOWN BLOWS BLOWY BOWED BOWEL BOWER BOWLS BOWSE BRAWL BRAWN BRAWS BREWS BROWN BROWS BWANA BYLAW BYWAY CAHOW CAWED CHAWS CHEWS
+Max score is 1
+Words by position in word [310]  WACKE WACKO WACKS WACKY WADDY WADED WADER WADES WADIS WAFER WAFFS WAFTS WAGED WAGER WAGES WAGON WAHOO WAIFS WAILS WAINS WAIRS WAIST WAITS WAIVE WAKED WAKEN WAKER WAKES WALED WALER WALES WALIS WALKS WALLA WALLS WALLY WALTZ WAMES WAMUS WANDS WANED WANES WANEY WANKS WANLY WANTS WARDS WARED WARES WAREZ
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0049 seconds
+Guess WACKE match EEYNN
+Time to filter Elapsed time: 0.0058 seconds
+Filtered words WATCH
+Selecting from one or two words 1
+Guess WATCH match EEEEE
+---Answer=WATCH in turns 5
+Turns 5
+---End test game 
+ *-- Test Game 
+Answer=WIGHT
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNNYN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words [63]  BLUNT BUILT BUTCH DIGIT DITCH DUTCH FIGHT FLINT GLINT GUILT HITCH HUTCH INPUT ITCHY LIGHT LIMIT MIDST MIGHT NIGHT PITCH PITHY QUILT SHIFT SHUNT SIGHT SPILT SPLIT STICK STIFF STILL STILT STING STINK STINT STUCK STUDY STUFF STUMP STUNG STUNK STUNT SWIFT THICK THIGH THING THINK THUMB THUMP TIGHT TIMID
+Must chars T
+Words by highest char HILUS
+Max score is 144
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess HILUS match YENNN
+Time to filter Elapsed time: 0.0047 seconds
+Filtered words DITCH FIGHT MIGHT NIGHT PITCH PITHY TIGHT WIGHT WITCH
+Must chars THI
+Words by highest char CADGY
+Max score is 10
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess CADGY match NNNYN
+Time to filter Elapsed time: 0.0055 seconds
+Filtered words FIGHT MIGHT NIGHT TIGHT WIGHT
+Must chars THIG
+Words by highest char FANUM FAWNS FAWNY FLOWN FROWN UNMEW WOMAN WOMEN WOMYN
+Max score is 3
+Words by position in word FANUM FAWNS FAWNY FLOWN FROWN WOMAN WOMEN WOMYN
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess FANUM match NNNNN
+Time to filter Elapsed time: 0.0060 seconds
+Filtered words TIGHT WIGHT
+Selecting from one or two words 2
+Guess TIGHT match YEEEE
+Time to filter Elapsed time: 0.0063 seconds
+Filtered words WIGHT
+Selecting from one or two words 1
+Guess WIGHT match EEEEE
+---Answer=WIGHT in turns 6
+Turns 6
+---End test game 
+ *-- Test Game 
+Answer=WINCH
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNNNN
+Time to filter Elapsed time: 0.0034 seconds
+Filtered words [194]  BIDDY BILLY BLIMP BLIND BLINK BLISS BLUFF BLUSH BUDDY BUGGY BUILD BULKY BULLY BUNCH BUNNY BUSHY CHICK CHILD CHILI CHILL CHUCK CHUMP CHUNK CINCH CIVIC CIVIL CLICK CLIFF CLIMB CLING CLINK CLUCK CLUMP CLUNG CUBIC CUMIN CYNIC DILLY DIMLY DINGY DIZZY DUCHY DULLY DUMMY DUMPY DUSKY DYING FICUS FILLY FILMY
+Must chars 
+Words by highest char SULCI
+Max score is 462
+Time to create guess - all wordsElapsed time: 0.0048 seconds
+Guess SULCI match NNNEY
+Time to filter Elapsed time: 0.0049 seconds
+Filtered words CHICK CINCH FINCH PINCH WHICH WINCH
+Must chars CI
+Words by highest char NOHOW SHAWN SHEWN SHOWN WENCH WHANG WHEEN WHENS WHINE WHINS WHINY WINCH
+Max score is 13
+Words by position in word WENCH WINCH
+Max position score is 11
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess WENCH match ENEEE
+Time to filter Elapsed time: 0.0049 seconds
+Filtered words WINCH
+Selecting from one or two words 1
+Guess WINCH match EEEEE
+---Answer=WINCH in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=WOUND
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0055 seconds
+Guess ORATE match YNNNN
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words [132]  BINGO BISON BLOCK BLOND BLOOD BLOOM BLOWN BOBBY BONGO BONUS BOOBY BOOZY BOSOM BOSSY BOUGH BOUND BUXOM CHOCK CLOCK CLOUD CLOWN COLON COMFY COMIC CONCH CONDO CONIC COUCH COUGH COULD COYLY DINGO DISCO DODGY DOING DOLLY DOUGH DOWDY DOWNY FLOCK FLOOD FLOSS FLOWN FOCUS FOGGY FOLIO FOLLY FOUND GHOUL GLOOM
+Must chars O
+Words by highest char LYSIN
+Max score is 220
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess LYSIN match NNNNY
+Time to filter Elapsed time: 0.0048 seconds
+Filtered words BONGO BOUND CONCH CONDO FOUND HOUND KNOCK MOUND POUND WOUND
+Must chars ON
+Words by highest char CUBED DUCHY DUCKS DUCKY DUNCH DUTCH
+Max score is 19
+Words by position in word CUBED
+Max position score is 8
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess CUBED match NYNNE
+Time to filter Elapsed time: 0.0054 seconds
+Filtered words FOUND HOUND MOUND POUND WOUND
+Must chars ONUD
+Words by highest char WHOMP WHUMP
+Max score is 4
+Words by position in word WHOMP WHUMP
+Max position score is 1
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess WHOMP match ENYNN
+Time to filter Elapsed time: 0.0061 seconds
+Filtered words WOUND
+Selecting from one or two words 1
+Guess WOUND match EEEEE
+---Answer=WOUND in turns 5
+Turns 5
+---End test game 
+ *-- Test Game 
+Answer=GRAZE
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NEENE
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words BRACE BRAKE BRAVE CRANE CRAVE CRAZE DRAKE DRAPE ERASE FRAME GRACE GRADE GRAPE GRAVE GRAZE
+Must chars RAE
+Words by highest char CADGE CADGY CAGED GECKS GUCKS
+Max score is 13
+Words by position in word GECKS GUCKS
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0045 seconds
+Guess GECKS match EYNNN
+Time to filter Elapsed time: 0.0043 seconds
+Filtered words GRADE GRAPE GRAVE GRAZE
+Must chars RAEG
+Words by highest char PAVED PAVID VAPID
+Max score is 3
+Words by position in word PAVED PAVID VAPID
+Max position score is 0
+@@@ No scoring by char position
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess PAVED match NYNYN
+Time to filter Elapsed time: 0.0052 seconds
+Filtered words GRAZE
+Selecting from one or two words 1
+Guess GRAZE match EEEEE
+---Answer=GRAZE in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=SNAIL
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNENN
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words [71]  ABACK AGAIN AMASS AVAIL AWASH BLACK BLAND BLANK CHAFF CHAIN CHALK CHAMP CHASM CLACK CLAIM CLAMP CLANG CLANK CLASH CLASP CLASS FLACK FLAIL FLAKY FLANK FLASH FLASK GLAND GLASS GNASH GUAVA KHAKI KNACK LLAMA PLAID PLAIN PLANK PLAZA PSALM QUACK QUAIL QUALM QUASH QUASI SCALD SCALP SCALY SCAMP SHACK SHADY
+Must chars A
+Words by highest char LICKS SLICK
+Max score is 156
+Words by position in word SLICK
+Max position score is 84
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess SLICK match EYYNN
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words SNAIL
+Selecting from one or two words 1
+Guess SNAIL match EEEEE
+---Answer=SNAIL in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=SKUNK
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NNNNN
+Time to filter Elapsed time: 0.0035 seconds
+Filtered words [194]  BIDDY BILLY BLIMP BLIND BLINK BLISS BLUFF BLUSH BUDDY BUGGY BUILD BULKY BULLY BUNCH BUNNY BUSHY CHICK CHILD CHILI CHILL CHUCK CHUMP CHUNK CINCH CIVIC CIVIL CLICK CLIFF CLIMB CLING CLINK CLUCK CLUMP CLUNG CUBIC CUMIN CYNIC DILLY DIMLY DINGY DIZZY DUCHY DULLY DUMMY DUMPY DUSKY DYING FICUS FILLY FILMY
+Must chars 
+Words by highest char SULCI
+Max score is 462
+Time to create guess - all wordsElapsed time: 0.0048 seconds
+Guess SULCI match EYNNN
+Time to filter Elapsed time: 0.0049 seconds
+Filtered words SHUSH SKUNK SNUFF SPUNK SWUNG
+Must chars SU
+Words by highest char ANKHS CHINK CHUNK FINKS FLANK FLUNK FRANK FUNKS FUNKY HANKS HANKY HINKY HONKS HONKY HUNKS HUNKY KENAF KENCH KHANS KNIFE KNISH NAKFA NIKAH SHANK THANK THINK THUNK
+Max score is 9
+Words by position in word CHINK CHUNK SHANK THANK THINK THUNK
+Max position score is 6
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess CHINK match NNNEE
+Time to filter Elapsed time: 0.0057 seconds
+Filtered words SKUNK SPUNK
+Selecting from one or two words 2
+Guess SKUNK match EEEEE
+---Answer=SKUNK in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=STEER
+Time to filter Elapsed time: 0.0024 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NYNYY
+Time to filter Elapsed time: 0.0038 seconds
+Filtered words BERET DETER EGRET ENTER ENTRY ESTER ETHER EXERT INERT INTER MERIT METER REBUT RECUT REFIT REMIT RESET RETCH RETRY RIVET STEER STERN THEIR THREW TIGER TIMER TUBER UTTER
+Must chars RTE
+Words by highest char MINUS MUNIS
+Max score is 26
+Words by position in word MINUS MUNIS
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess MINUS match NNNNY
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words ESTER RESET STEER
+Must chars RTES
+Words by highest char [9403]  AAHED AALII AARGH ABACA ABACI ABACK ABAFT ABAKA ABAMP ABASE ABASH ABATE ABAYA ABBAS ABBES ABBEY ABBOT ABEAM ABELE ABETS ABHOR ABIDE ABLED ABLER ABLES ABMHO ABODE ABOHM ABOIL ABOMA ABOON ABORT ABOUT ABOVE ABRIS ABUSE ABUTS ABUZZ ABYES ABYSM ABYSS ACAIS ACARI ACERB ACETA ACHED ACHES ACHOO ACIDS ACIDY
+Max score is 0
+@@@ No words found in by high chars
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+@@@No guesses from create guess - now use the words themselves. 
+Must chars 
+Words by highest char ESTER RESET STEER
+Max score is 15
+Words by position in word ESTER STEER
+Max position score is 8
+Time to create guess from filtered Elapsed time: 0.0000 seconds
+Guess ESTER match YYYEE
+Time to filter Elapsed time: 0.0048 seconds
+Filtered words STEER
+Selecting from one or two words 1
+Guess STEER match EEEEE
+---Answer=STEER in turns 4
+Turns 4
+---End test game 
+ *-- Test Game 
+Answer=ESTER
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0056 seconds
+Guess ORATE match NYNYY
+Time to filter Elapsed time: 0.0036 seconds
+Filtered words BERET DETER EGRET ENTER ENTRY ESTER ETHER EXERT INERT INTER MERIT METER REBUT RECUT REFIT REMIT RESET RETCH RETRY RIVET STEER STERN THEIR THREW TIGER TIMER TUBER UTTER
+Must chars RTE
+Words by highest char MINUS MUNIS
+Max score is 26
+Words by position in word MINUS MUNIS
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0046 seconds
+Guess MINUS match NNNNY
+Time to filter Elapsed time: 0.0045 seconds
+Filtered words ESTER RESET STEER
+Must chars RTES
+Words by highest char [9403]  AAHED AALII AARGH ABACA ABACI ABACK ABAFT ABAKA ABAMP ABASE ABASH ABATE ABAYA ABBAS ABBES ABBEY ABBOT ABEAM ABELE ABETS ABHOR ABIDE ABLED ABLER ABLES ABMHO ABODE ABOHM ABOIL ABOMA ABOON ABORT ABOUT ABOVE ABRIS ABUSE ABUTS ABUZZ ABYES ABYSM ABYSS ACAIS ACARI ACERB ACETA ACHED ACHES ACHOO ACIDS ACIDY
+Max score is 0
+@@@ No words found in by high chars
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+@@@No guesses from create guess - now use the words themselves. 
+Must chars 
+Words by highest char ESTER RESET STEER
+Max score is 15
+Words by position in word ESTER STEER
+Max position score is 8
+Time to create guess from filtered Elapsed time: 0.0000 seconds
+Guess ESTER match EEEEE
+---Answer=ESTER in turns 3
+Turns 3
+---End test game 
+ *-- Test Game 
+Answer=RESET
+Time to filter Elapsed time: 0.0023 seconds
+Filtered words [2309]  ABACK ABASE ABATE ABBEY ABBOT ABHOR ABIDE ABLED ABODE ABORT ABOUT ABOVE ABUSE ABYSS ACORN ACRID ACTOR ACUTE ADAGE ADAPT ADEPT ADMIN ADMIT ADOBE ADOPT ADORE ADORN ADULT AFFIX AFIRE AFOOT AFOUL AFTER AGAIN AGAPE AGATE AGENT AGILE AGING AGLOW AGONY AGREE AHEAD AIDER AISLE ALARM ALBUM ALERT ALGAE ALIBI
+Must chars 
+Words by highest char OATER ORATE
+Max score is 4584
+Words by position in word ORATE
+Max position score is 1175
+Time to create guess - all wordsElapsed time: 0.0057 seconds
+Guess ORATE match NYNYY
+Time to filter Elapsed time: 0.0037 seconds
+Filtered words BERET DETER EGRET ENTER ENTRY ESTER ETHER EXERT INERT INTER MERIT METER REBUT RECUT REFIT REMIT RESET RETCH RETRY RIVET STEER STERN THEIR THREW TIGER TIMER TUBER UTTER
+Must chars RTE
+Words by highest char MINUS MUNIS
+Max score is 26
+Words by position in word MINUS MUNIS
+Max position score is 7
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+Guess MINUS match NNNNY
+Time to filter Elapsed time: 0.0046 seconds
+Filtered words ESTER RESET STEER
+Must chars RTES
+Words by highest char [9403]  AAHED AALII AARGH ABACA ABACI ABACK ABAFT ABAKA ABAMP ABASE ABASH ABATE ABAYA ABBAS ABBES ABBEY ABBOT ABEAM ABELE ABETS ABHOR ABIDE ABLED ABLER ABLES ABMHO ABODE ABOHM ABOIL ABOMA ABOON ABORT ABOUT ABOVE ABRIS ABUSE ABUTS ABUZZ ABYES ABYSM ABYSS ACAIS ACARI ACERB ACETA ACHED ACHES ACHOO ACIDS ACIDY
+Max score is 0
+@@@ No words found in by high chars
+Time to create guess - all wordsElapsed time: 0.0047 seconds
+@@@No guesses from create guess - now use the words themselves. 
+Must chars 
+Words by highest char ESTER RESET STEER
+Max score is 15
+Words by position in word ESTER STEER
+Max position score is 8
+Time to create guess from filtered Elapsed time: 0.0000 seconds
+Guess ESTER match YYYEY
+Time to filter Elapsed time: 0.0048 seconds
+Filtered words RESET
+Selecting from one or two words 1
+Guess RESET match EEEEE
+---Answer=RESET in turns 4
+Turns 4
+---End test game 
+Answer is WOUND

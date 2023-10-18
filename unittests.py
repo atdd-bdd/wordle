@@ -171,6 +171,14 @@ class MyTestCase(unittest.TestCase):
         Log.close()
         Trace.close()
 
+    def test_position_and_count(self):
+        word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
+        position_count = CountAndPosition(word_list)
+        t1 = Timer()
+        t1.start()
+        for word in word_list:
+            position_count.score_on_totals(word)
+        print(" ***** Time to position count score ", t1.stop())
 
 def setup_game():
     data_filename = "words002.txt"
