@@ -21,12 +21,12 @@ def main():
                                 for Configuration.cutoff_two_letter in [90]:
                                     for Configuration.not_there_score_weighting in [1]:
                                         for Configuration.position_score_weighting in [.66]:
-                                            for Configuration.two_letter_score_weighting in [ .66]:
+                                            for Configuration.two_letter_score_weighting in [.66]:
                                                 for Configuration.repeated_char_weighting in [0., .2, .4, .5]:
                                                     print(Configuration.get_string())
                                                     print(Configuration.get_short_string())
                                                     Trace.write(Configuration.get_string())
-                                                    average = play_game_for_various_starting_words(results)
+                                                    average = play_game_for_various_starting_words()
                                                     results.append([Configuration.get_short_string(), average])
                                                     results.sort(reverse=True, key=sort_function)
                                                     ResultLog.write(list_list_to_str(results))
@@ -34,16 +34,21 @@ def main():
     log.close()
     trace.close()
     ResultLog.write(list_list_to_str(results))
-    results.sort(reverse=True,key=sort_function)
+    results.sort(reverse=True, key=sort_function)
     ResultLog.write(list_list_to_str(results))
     print(list_list_to_str(results))
-def play_game_for_various_starting_words(results):
-    for first_guess in ["CRATE"]:
+
+
+def play_game_for_various_starting_words(results=None):
+    if results is None:
+        results = ["CRATE"]
+    average = 0
+    for first_guess in results:
         average = play_full_game_with_first_guess(first_guess)
     return average
 
-def play_full_game_with_first_guess(first_guess=""):
 
+def play_full_game_with_first_guess(first_guess=""):
     data_filename = "words002.txt"
     answers_filename = "answers.txt"
     game = GameRound(data_filename, answers_filename)

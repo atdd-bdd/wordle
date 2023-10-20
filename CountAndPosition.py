@@ -5,6 +5,7 @@ from timer import Timer
 
 class CountAndPosition:
     letters = "ABCDEFGHIJKLMNOPQRSTURVWXYZ"
+
     def __init__(self, words):
         t1 = Timer()
         t1.start()
@@ -48,7 +49,7 @@ class CountAndPosition:
                 self.two_letters[c + d] = 0
                 self.two_letters[d + c] = 0
 
-    def alter_by_repeats(self,repeats):
+    def alter_by_repeats(self, repeats):
         for c in repeats:
             self.totals[c] += 0
 

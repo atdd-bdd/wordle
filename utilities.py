@@ -46,6 +46,7 @@ def check_repeats(word):
             out += key
     return out
 
+
 def check_repeats_for_list(words):
     out = ""
     for word in words:

@@ -40,6 +40,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(['', '', '', '', ''], not_here_chars)
         self.assertEqual(['', '', '', '', ''], position_chars)
         self.assertEqual("", repeated_chars)
+
     def test_make_filter_one_guess(self):
         guesses = []
         matches = []
@@ -77,6 +78,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(['', 'O', 'V', 'EN', 'NC'], not_here_chars)
         self.assertEqual(['W', 'R', 'E', '', ''], position_chars)
         self.assertEqual("", repeated_chars)
+
     def test_make_filter_three_guesses(self):
         guesses = []
         matches = []
@@ -92,6 +94,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(['SCI', 'U', 'A', 'RD', 'EY'], not_here_chars)
         self.assertEqual(['', 'O', 'N', 'I', 'C'], position_chars)
         self.assertEqual("", repeated_chars)
+
     def test_filter_list(self):
         word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         guesses = ["WOCNK"]
@@ -147,7 +150,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual( [['WRECK', 23], ['WREAK', 22], ['WREST', 21]] , current_words)
+        self.assertEqual([['WRECK', 23], ['WREAK', 22], ['WREST', 21]], current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
@@ -242,7 +245,7 @@ class MyTestCase(unittest.TestCase):
             self.assertLess(turns, 7, " For word " + word)
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
         # print(new_map)
-        self.assertEqual(previous_total_turns,total_turns)
+        self.assertEqual(previous_total_turns, total_turns)
         Log.close()
         Trace.close()
 
