@@ -200,12 +200,11 @@ class MyTestCase(unittest.TestCase):
         #             'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
         #             'WINCH': 5,
         #             'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3, 'ESTER': 3, 'RESET': 3}
-        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
-        #             'STAVE': 4, 'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
-        #             'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
-        #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
-        #             'ESTER': 3, 'RESET': 3, 'TONIC': 4}
-        word_map = {'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
+                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
+                    'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
+                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
+                    'ESTER': 3, 'RESET': 3, 'TONIC': 4, 'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
         print("---Test Games ----")
         new_map = {}
         previous_total_turns = 0
