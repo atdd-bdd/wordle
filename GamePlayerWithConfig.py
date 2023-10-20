@@ -8,6 +8,8 @@ from timer import Timer
 def main():
     log = Log("log_GamePlayerWithConfig.txt")
     trace = Trace("trace_GamePlayerWithConfig.txt")
+    Configuration.log_output = False
+    Configuration.trace_output = False
     results = []
     for Configuration.position_add_to_previous in [True, False]:
         for Configuration.high_char_add_to_previous in [True, False]:
@@ -18,8 +20,8 @@ def main():
                             for Configuration.cutoff_position in [90,95]:
                                 for Configuration.cutoff_two_letter in [90,95]:
                                     for Configuration.not_there_score_weighting in [1,2]:
-                                        for Configuration.position_score_weighting in [.33, .66, 1.0]:
-                                            for Configuration.two_letter_score_weighting in [.5, .75, 1]:
+                                        for Configuration.position_score_weighting in [.33, .66]:
+                                            for Configuration.two_letter_score_weighting in [.33, .66]:
                                                 print(Configuration.get_string())
                                                 print(Configuration.get_short_string())
                                                 Trace.write(Configuration.get_string())
