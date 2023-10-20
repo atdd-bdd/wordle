@@ -30,3 +30,18 @@ def list_list_to_str(a_list):
 
 def sort_function(e):
     return e[1]
+
+
+def check_repeats(word):
+    chars = {}
+    for c in word:
+        if chars.get(c) is None:
+            chars[c] = 1
+        else:
+            chars[c] += 1
+    out = ""
+    for key in chars.keys():
+        count = chars[key]
+        if count > 1:
+            out += key
+    return out

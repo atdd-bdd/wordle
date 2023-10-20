@@ -1,25 +1,5 @@
 from Words import *
-from timer import Timer
-
-
-def check_repeats(word):
-    chars = {}
-    for c in word:
-        if chars.get(c) is None:
-            chars[c] = 1
-        else:
-            chars[c] += 1
-        if chars[c] > 2:
-            print("@@@@ triple")
-    repeated = False
-    out = ""
-    for key in chars.keys():
-        # print (key)
-        count = chars[key]
-        if count > 1:
-            out += key
-    return out
-
+from utilities import check_repeats
 
 
 def main():
@@ -40,9 +20,7 @@ def main():
         if len(repeated) > 0:
             print(word, " has repeated ", repeated)
             if len(repeated) > 1:
-                print ("** two repeated")
-
-
+                print("** two repeated")
 
 
 if __name__ == "__main__":
