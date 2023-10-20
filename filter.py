@@ -70,6 +70,26 @@ def has_all_must_chars(must_chars, skip, word):
     return skip
 
 
+def determine_repeated_chars(guess, match, repeated_chars):
+    value_IN_WORD_MATCH = 'Y'
+    value_EXACT_MATCH = 'E'
+    chars = {}
+    for i in range(len(guess)):
+        c = guess[i]
+        if match[i] == value_EXACT_MATCH or match[i] == value_IN_WORD_MATCH:
+            if chars.get(c) is None:
+                chars[c] = 1
+            else:
+                chars[c] += 1
+    print (" values are ", chars)
+    for key in chars.keys():
+        count = chars[key]
+        if count > 1:
+            repeated_chars = add_to_string(key, repeated_chars)
+    return repeated_chars
+
+
+
 def make_filter_values(guesses, matches):
     value_NO_MATCH = 'N'
     value_IN_WORD_MATCH = 'Y'
@@ -97,7 +117,7 @@ def make_filter_values(guesses, matches):
             if m == value_EXACT_MATCH:
                 position_chars[i] = g
                 must_chars = add_to_string(g, must_chars)
-
+        repeated_chars = determine_repeated_chars(guess, match, repeated_chars)
     # if guess word had repeated characters, but one of them was marked yes.
     for c in must_chars:
         not_chars = not_chars.replace(c, "")

@@ -24,6 +24,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(7, words.count())
         self.assertEqual(['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST'], words.words)
 
+    def test_determine_repeated_chars(self):
+        guess = "AABBC"
+        match = "EEYYN"
+        repeated_chars = ""
+        out = determine_repeated_chars(guess, match, repeated_chars)
+        self.assertEqual("AB", out)
+
     def test_make_filter_no_guesses(self):
         guesses = []
         matches = []
@@ -144,7 +151,6 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual("A", check_repeats("AAAAA"))
         self.assertEqual("M", check_repeats("MOMMY"))
         self.assertEqual("AL", check_repeats("ALLAY"))
-
 
     def test_create_guess(self):
         words = words_for_testing()
