@@ -4,36 +4,7 @@ import os
 from filter import *
 from CountAndPosition import *
 from timer import Timer
-
-
-def list_to_str(a_list):
-    maxy = len(a_list)
-    if maxy > 50:
-        maxy = 50
-    out = "[" + str(len(a_list)) + "] "
-    for index in range(maxy):
-        out += ' ' + str(a_list[index])
-    return out
-
-
-def list_to_str_with_quotes(a_list):
-    maxy = len(a_list)
-    if maxy > 50:
-        maxy = 50
-    out = "[" + str(len(a_list)) + "] "
-    for index in range(maxy):
-        out += ' "' + a_list[index] + '" '
-    return out
-
-
-def list_list_to_str(a_list):
-    maxy = len(a_list)
-    if maxy > 50:
-        maxy = 50
-    out = "[" + str(len(a_list)) + "] "
-    for index in range(maxy):
-        out += ' ' + str(a_list[index][0]) + '=' + str(a_list[index][1])
-    return out
+from utilities import list_list_to_str, sort_function, list_to_str
 
 
 def make_word_list_with_count(words):
@@ -171,10 +142,6 @@ def count_position_chars(position_chars):
             size += 1
     Trace.write("Size of position chars " + str(size))
     return size
-
-
-def sort_function(e):
-    return e[1]
 
 
 def filter_by_percentage_maximum(current_words, max_total_score, percentage):

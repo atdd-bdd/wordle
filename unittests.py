@@ -6,6 +6,16 @@ from timer import Timer
 
 
 # noinspection SpellCheckingInspection
+def test_position_and_count():
+    word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
+    position_count = CountAndPosition(word_list)
+    t1 = Timer()
+    t1.start()
+    for word in word_list:
+        position_count.score_on_totals(word)
+    print(" ***** Time to position count score ", t1.stop())
+
+
 class MyTestCase(unittest.TestCase):
 
     def test_word_read(self):
@@ -30,7 +40,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         self.assertEqual(must_chars, 'WE')
         self.assertEqual(not_chars, 'OVN')
-        self.assertEqual(not_here_chars, ['', '', '', 'E', ''])
+        self.assertEqual(not_here_chars, ['', 'O', 'V', 'E', 'N'])
         self.assertEqual(position_chars, ['W', '', '', '', ''])
 
     def test_make_filter_two_guesses(self):
@@ -43,8 +53,23 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         self.assertEqual(must_chars, 'WERC')
         self.assertEqual(not_chars, 'OVN')
-        self.assertEqual(not_here_chars, ['', '', '', 'E', 'C'])
+        self.assertEqual(not_here_chars, ['', 'O', 'V', 'EN', 'NC'])
         self.assertEqual(position_chars, ['W', 'R', 'E', '', ''])
+
+    def test_make_filter_three_guesses(self):
+        guesses = []
+        matches = []
+        guesses.append("SOARE")
+        matches.append("NENNN")
+        guesses.append("CUNDY")
+        matches.append("YNENN")
+        guesses.append("IONIC")
+        matches.append("NEEEE")
+        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        self.assertEqual(must_chars, 'OCNI')
+        self.assertEqual(not_chars, 'SAREUDY')
+        self.assertEqual(not_here_chars, ['SCI', 'U', 'A', 'RD', 'EY'])
+        self.assertEqual(position_chars, ['', 'O', 'N', 'I', 'C'])
 
     def test_filter_list(self):
         word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
@@ -103,6 +128,16 @@ class MyTestCase(unittest.TestCase):
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
         self.assertEqual(current_words, [['WREAK', 16], ['WRECK', 16]])
 
+    def test_find_matches(self):
+        result = find_matches("BOOBY", "BOBBY")
+        self.assertEqual("EENEE", result, )
+        result = find_matches("ABABB", "BOBBY")
+        self.assertEqual("NYNEY", result)
+        result = find_matches("AOABB", "BOBBY")
+        self.assertEqual("NENEY", result)
+        result = find_matches("AAABB", "BOBBY")
+        self.assertEqual("NNNEY", result)
+
     def test_create_guess(self):
         words = words_for_testing()
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
@@ -127,6 +162,7 @@ class MyTestCase(unittest.TestCase):
         result = server.check_guess("WOUND")
         self.assertEqual(result, 'WOUND EEEEE')
 
+    # @unittest.skip("For speed")
     def test_games(self):
         game, server = setup_game()
         Trace()
@@ -160,8 +196,8 @@ class MyTestCase(unittest.TestCase):
                     'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
                     'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
                     'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
-                    'ESTER': 3, 'RESET': 3}
-
+                    'ESTER': 3, 'RESET': 3, 'TONIC': 4}
+        print("---Test Games ----")
         new_map = {}
         previous_total_turns = 0
         total_turns = 0
@@ -177,21 +213,11 @@ class MyTestCase(unittest.TestCase):
                 print("** Better or worse ? ")
             total_turns += turns
             self.assertLess(turns, 7, " For word " + word)
-            print("One game ", t.stop())
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
-        print(new_map)
-        self.assertEqual(total_turns, previous_total_turns)
+        # print(new_map)
+        self.assertEqual(previous_total_turns, total_turns)
         Log.close()
         Trace.close()
-
-    def test_position_and_count(self):
-        word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
-        position_count = CountAndPosition(word_list)
-        t1 = Timer()
-        t1.start()
-        for word in word_list:
-            position_count.score_on_totals(word)
-        print(" ***** Time to position count score ", t1.stop())
 
 
 def setup_game():

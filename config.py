@@ -1,6 +1,4 @@
 class Configuration:
-    trace_output = True
-    log_output = True
     cutoff_high_char = 95
     cutoff_two_letter = 95
     cutoff_not_there = 95
