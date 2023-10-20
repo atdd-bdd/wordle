@@ -39,7 +39,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual("", not_chars)
         self.assertEqual(['', '', '', '', ''], not_here_chars)
         self.assertEqual(['', '', '', '', ''], position_chars)
-
+        self.assertEqual("", repeated_chars)
     def test_make_filter_one_guess(self):
         guesses = []
         matches = []
@@ -50,6 +50,19 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual('OVN', not_chars)
         self.assertEqual(['', 'O', 'V', 'E', 'N'], not_here_chars)
         self.assertEqual(['W', '', '', '', ''], position_chars)
+        self.assertEqual("", repeated_chars)
+
+    def test_make_filter_with_repeated_guess(self):
+        guesses = []
+        matches = []
+        guesses.append("ABCAB")
+        matches.append("ENNYN")
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        self.assertEqual('A', must_chars)
+        self.assertEqual('BC', not_chars)
+        self.assertEqual(['', 'B', 'C', 'A', 'B'], not_here_chars)
+        self.assertEqual(['A', '', '', '', ''], position_chars)
+        self.assertEqual("A", repeated_chars)
 
     def test_make_filter_two_guesses(self):
         guesses = []
@@ -63,7 +76,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual('OVN', not_chars)
         self.assertEqual(['', 'O', 'V', 'EN', 'NC'], not_here_chars)
         self.assertEqual(['W', 'R', 'E', '', ''], position_chars)
-
+        self.assertEqual("", repeated_chars)
     def test_make_filter_three_guesses(self):
         guesses = []
         matches = []
@@ -78,7 +91,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual('SAREUDY', not_chars)
         self.assertEqual(['SCI', 'U', 'A', 'RD', 'EY'], not_here_chars)
         self.assertEqual(['', 'O', 'N', 'I', 'C'], position_chars)
-
+        self.assertEqual("", repeated_chars)
     def test_filter_list(self):
         word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         guesses = ["WOCNK"]

@@ -1,6 +1,7 @@
 import re
 
-from utilities import list_to_str_with_quotes
+from Log import Trace
+from utilities import list_to_str_with_quotes, check_repeats
 
 
 def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars, repeated_chars):
@@ -10,6 +11,27 @@ def filter_values_to_string(must_chars, not_chars, not_here_chars, position_char
     s += "Position chars " + list_to_str_with_quotes(position_chars)
     s += "Repeated chars {" + repeated_chars + "} "
     return s
+
+
+def does_not_have_repeated_chars(repeated_chars, skip, word):
+    if len(repeated_chars) == 0:
+        return skip
+    word_repeat = check_repeats(word)
+    # word must have repeats, but doesn't
+    if len(word_repeat) == 0:
+        return False
+    if len(word_repeat) != len(repeated_chars):
+        return False
+    if len(word_repeat) == 1:
+        if word_repeat != repeated_chars:
+            Trace.write(" Skip on repeated chars " + word_repeat + " " + repeated_chars)
+            return False
+    repeated_chars = ''.join(sorted(repeated_chars))
+    word_repeat = ''.join(sorted(word_repeat))
+    if word_repeat != repeated_chars:
+        Trace.write(" Skip on repeated chars " + word_repeat + " " + repeated_chars)
+        return False
+    return skip
 
 
 def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars, repeated_chars):
@@ -30,6 +52,9 @@ def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars
         if skip:
             continue
         skip = has_all_must_chars(must_chars, skip, word)
+        if skip:
+            continue
+        skip = does_not_have_repeated_chars(repeated_chars, skip, word)
         if not skip:
             new_word_list.append(word)
     return new_word_list
@@ -81,7 +106,7 @@ def determine_repeated_chars(guess, match, repeated_chars):
                 chars[c] = 1
             else:
                 chars[c] += 1
-    print (" values are ", chars)
+
     for key in chars.keys():
         count = chars[key]
         if count > 1:
@@ -118,6 +143,8 @@ def make_filter_values(guesses, matches):
                 position_chars[i] = g
                 must_chars = add_to_string(g, must_chars)
         repeated_chars = determine_repeated_chars(guess, match, repeated_chars)
+        if len(repeated_chars) > 0:
+            Trace.write("Repeated chars for " + guess + " " + match + " are " + repeated_chars)
     # if guess word had repeated characters, but one of them was marked yes.
     for c in must_chars:
         not_chars = not_chars.replace(c, "")
