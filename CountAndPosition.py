@@ -51,7 +51,7 @@ class CountAndPosition:
 
     def alter_by_repeats(self, repeats):
         for c in repeats:
-            self.totals[c] += 0
+            self.totals[c] += Configuration.repeated_char_weighting
 
     def score_on_totals(self, word):
         score = 0

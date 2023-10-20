@@ -10,7 +10,7 @@ class Configuration:
     two_letter_score_weighting = .66
     position_score_weighting = .66
     not_there_score_weighting = 1
-    repeated_char_weighting = .5
+    repeated_char_weighting = 0  # Seems to not be needed
     trace_output = True
     log_output = True
 
