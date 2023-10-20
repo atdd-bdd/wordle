@@ -13,7 +13,7 @@ def main():
     results = []
     for Configuration.position_add_to_previous in [True]:
         for Configuration.high_char_add_to_previous in [True]:
-            for Configuration.not_there_add_to_previous in [True]:
+            for Configuration.not_there_add_to_previous in [False, True]:
                 for Configuration.two_letter_add_to_previous in [True]:
                     for Configuration.cutoff_not_there in [90]:
                         for Configuration.cutoff_high_char in [90]:
