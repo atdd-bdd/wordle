@@ -3,6 +3,15 @@ from Log import *
 from timer import Timer
 
 
+def count_repeats(words):
+    count = 0
+    for word in words:
+        if len(check_repeats(word)) > 0:
+            count += 1
+    return count
+
+
+
 class GameRound:
     def __init__(self, all_words_filename, answers_filename):
         self.all_words = Words(all_words_filename)
@@ -24,6 +33,7 @@ class GameRound:
         Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars, repeated_chars))
         # Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered answers " + list_to_str(filtered.words))
+        Trace.write("Number with repeats " + str(count_repeats(filtered.words)))
         if filtered.count() <= 2:
             Trace.write("Selecting from one or two words " + str(filtered.count()))
             return filtered.first_word()
