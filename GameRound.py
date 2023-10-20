@@ -1,15 +1,6 @@
 from Words import *
 from Log import *
-from Words import filter_guesses_by_highest_char_occurrence
 from timer import Timer
-
-
-def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars):
-    s = "Must chars [" + must_chars + "} "
-    s += "Not chars [" + not_chars + "] "
-    s += "Not here chars " + list_to_str_with_quotes(not_here_chars) + " "
-    s += "Position chars " + list_to_str_with_quotes(position_chars)
-    return s
 
 
 class GameRound:
@@ -30,7 +21,7 @@ class GameRound:
         filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
         # Trace.write("Time to filter " + str(t1.stop()))
         Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars))
-        #Log.write("Filtered count " + str(filtered.count()))
+        # Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered answers " + list_to_str(filtered.words))
         if filtered.count() <= 2:
             Trace.write("Selecting from one or two words " + str(filtered.count()))
@@ -38,7 +29,7 @@ class GameRound:
         t2 = Timer()
         t2.start()
         filtered.count_chars()
-        guesses = self.all_words.create_guess(must_chars,not_here_chars,filtered.count_and_position )
+        guesses = self.all_words.create_guess(must_chars, not_here_chars, filtered.count_and_position)
         # Trace.write("Time to create guess - all words " + str(t2.stop()) )
         if len(guesses) >= 1:
             return guesses[0]
@@ -53,4 +44,3 @@ class GameRound:
         if len(guesses) >= 1:
             return guesses[0]
         return "ZZZZZ"
-

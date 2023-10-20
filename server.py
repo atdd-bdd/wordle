@@ -29,9 +29,16 @@ def find_matches(guess, answer):
 	guess_size = len(guess)
 	answer_size = len(answer) 
 	matches= [value_NO_MATCH for i in range(guess_size)]
-	last_answer_index = answer_size - 1
-	last_guess_index = guess_size - 1 
-
+	# print("Starting is ", matches)
+	chars_in_answers = {}
+	# do character count  in word
+	for a in answer:
+		if chars_in_answers.get(a) is None:
+			chars_in_answers[a] = 1
+		else:
+			chars_in_answers[a] += 1
+	# print("chars ", chars_in_answers)
+	# set exact matches
 	for i in range(guess_size):
 		g = guess[i]
 		a = ' '
@@ -39,12 +46,24 @@ def find_matches(guess, answer):
 			a = answer[i]
 		if g==a:
 			matches[i]=value_EXACT_MATCH
+			chars_in_answers[a] -= 1
+			# print("chars in answers, exact match ", chars_in_answers)
 			continue
+	# now set in word matches, but based on char count
+	for i in range(guess_size):
+		g = guess[i]
+		a = ' '
+		if i < answer_size:
+			a = answer[i]
 		for j in range(answer_size):
 			a = answer[j]
+			if matches[i] == value_EXACT_MATCH:
+				break
 			if g==a:
-				matches[i]= value_IN_WORD_MATCH 
-				break 
+				if chars_in_answers[a] > 0:
+					matches[i]= value_IN_WORD_MATCH
+					chars_in_answers[a] -= 1
+					break
 	match = "".join(matches)
 	return match
 

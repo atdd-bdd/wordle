@@ -1,5 +1,15 @@
 import re
 
+from utilities import list_to_str_with_quotes
+
+
+def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars):
+    s = "Must chars {" + must_chars + "} "
+    s += "Not chars {" + not_chars + "} "
+    s += "Not here chars " + list_to_str_with_quotes(not_here_chars) + " "
+    s += "Position chars " + list_to_str_with_quotes(position_chars)
+    return s
+
 
 def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars):
     new_word_list = []
@@ -68,7 +78,6 @@ def make_filter_values(guesses, matches):
     position_chars = ["", "", "", "", ""]
     not_here_chars = ["", "", "", "", ""]
     number_guesses = len(guesses)
-
     for j in range(number_guesses):
         guess_size = len(guesses[0])
         guess = guesses[j]
@@ -76,14 +85,20 @@ def make_filter_values(guesses, matches):
         for i in range(guess_size):
             g = guess[i]
             m = match[i]
+
             if m == value_NO_MATCH:
                 not_chars = add_to_string(g, not_chars)
+                not_here_chars[i] = add_to_string(g, not_here_chars[i])
             if m == value_IN_WORD_MATCH:
                 must_chars = add_to_string(g, must_chars)
                 not_here_chars[i] = add_to_string(g, not_here_chars[i])
             if m == value_EXACT_MATCH:
                 position_chars[i] = g
                 must_chars = add_to_string(g, must_chars)
+
+    # if guess word had repeated characters, but one of them was marked yes.
+    for c in must_chars:
+        not_chars = not_chars.replace(c, "")
 
     return must_chars, not_chars, not_here_chars, position_chars
 

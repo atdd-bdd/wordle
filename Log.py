@@ -30,7 +30,6 @@ class Trace:
     opened = False
 
     def __init__(self, trace_filename="trace.txt"):
-        print("Opening ", trace_filename)
         Trace.check_for_open(trace_filename)
 
     @staticmethod
@@ -42,9 +41,11 @@ class Trace:
     def check_for_open(trace_filename="trace.txt"):
         if Trace.trace is None:
             if not Trace.opened:
+                print("Opening ", trace_filename)
                 Trace.trace = open(trace_filename, "w")
                 Trace.opened = True
             else:
+                print("Appending to ", trace_filename)
                 Trace.trace = open(trace_filename, "a")
 
     @staticmethod

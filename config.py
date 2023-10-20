@@ -1,14 +1,14 @@
 class Configuration:
-    cutoff_high_char = 95
-    cutoff_two_letter = 95
-    cutoff_not_there = 95
-    cutoff_position = 95
+    cutoff_high_char = 90
+    cutoff_two_letter = 90
+    cutoff_not_there = 90
+    cutoff_position = 90
     high_char_add_to_previous = True
     two_letter_add_to_previous = True
     position_add_to_previous = True
     not_there_add_to_previous = True
-    two_letter_score_weighting = .5
-    position_score_weighting = .33
+    two_letter_score_weighting = .66
+    position_score_weighting = .66
     not_there_score_weighting = 1
     @staticmethod
     def get_string():
