@@ -29,6 +29,7 @@ def main():
                                                     average = play_game_for_various_starting_words()
                                                     results.append([Configuration.get_short_string(), average])
                                                     results.sort(reverse=True, key=sort_function)
+                                                    ResultLog.write(Configuration.get_short_string())
                                                     ResultLog.write(list_list_to_str(results))
                                                     print(list_list_to_str(results))
     log.close()
