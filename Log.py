@@ -1,6 +1,3 @@
-from config import Configuration
-
-
 class Log:
     log = None
     opened = False
@@ -10,9 +7,8 @@ class Log:
 
     @staticmethod
     def write(message):
-        if Configuration.log_output:
-            Log.check_for_open()
-            Log.log.write(message + "\n")
+        Log.check_for_open()
+        Log.log.write(message + "\n")
 
     @staticmethod
     def check_for_open(log_filename="log.txt"):
@@ -38,9 +34,8 @@ class Trace:
 
     @staticmethod
     def write(message):
-        if Configuration.trace_output:
-            Trace.check_for_open()
-            Trace.trace.write(message + "\n")
+        Trace.check_for_open()
+        Trace.trace.write(message + "\n")
 
     @staticmethod
     def check_for_open(trace_filename="trace.txt"):

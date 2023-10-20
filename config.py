@@ -10,6 +10,8 @@ class Configuration:
     two_letter_score_weighting = .5
     position_score_weighting = .33
     not_there_score_weighting = 1
+    trace_output = True
+    log_output = True
     @staticmethod
     def get_string():
         s = " two_letter_score_weighting= " + str(Configuration.two_letter_score_weighting)
