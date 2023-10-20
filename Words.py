@@ -67,9 +67,10 @@ class Words:
     def count_chars(self):
         self.count_and_position = CountAndPosition(self.words)
 
-    def create_filtered_words(self, position_chars, must_chars, not_chars, not_here_chars):
+    def create_filtered_words(self, position_chars, must_chars, not_chars, not_here_chars, repeated_chars):
         ret = Words()
-        ret.words = filter_list(self.words, position_chars, must_chars, not_chars, not_here_chars)
+        ret.words = filter_list(self.words, position_chars, must_chars, not_chars, not_here_chars,
+                                repeated_chars)
         return ret
 
     def create_guess(self, must_chars, not_here_chars, count_and_position):

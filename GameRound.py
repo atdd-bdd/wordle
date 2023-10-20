@@ -17,10 +17,11 @@ class GameRound:
     def get_guess(self, guesses, matches):
         t1 = Timer()
         t1.start()
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        filtered = self.answers.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars,
+                                                      repeated_chars)
         # Trace.write("Time to filter " + str(t1.stop()))
-        Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars))
+        Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars, repeated_chars))
         # Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered answers " + list_to_str(filtered.words))
         if filtered.count() <= 2:

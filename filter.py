@@ -3,15 +3,16 @@ import re
 from utilities import list_to_str_with_quotes
 
 
-def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars):
+def filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars, repeated_chars):
     s = "Must chars {" + must_chars + "} "
     s += "Not chars {" + not_chars + "} "
     s += "Not here chars " + list_to_str_with_quotes(not_here_chars) + " "
     s += "Position chars " + list_to_str_with_quotes(position_chars)
+    s += "Repeated chars {" + repeated_chars + "} "
     return s
 
 
-def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars):
+def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars, repeated_chars):
     new_word_list = []
     for word in word_list:
         skip = False
@@ -75,6 +76,7 @@ def make_filter_values(guesses, matches):
     value_EXACT_MATCH = 'E'
     not_chars = ""
     must_chars = ""
+    repeated_chars = ''
     position_chars = ["", "", "", "", ""]
     not_here_chars = ["", "", "", "", ""]
     number_guesses = len(guesses)
@@ -100,7 +102,7 @@ def make_filter_values(guesses, matches):
     for c in must_chars:
         not_chars = not_chars.replace(c, "")
 
-    return must_chars, not_chars, not_here_chars, position_chars
+    return must_chars, not_chars, not_here_chars, position_chars, repeated_chars
 
 
 def add_to_string(g, not_chars):

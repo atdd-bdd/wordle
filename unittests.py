@@ -27,7 +27,7 @@ class MyTestCase(unittest.TestCase):
     def test_make_filter_no_guesses(self):
         guesses = []
         matches = []
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         self.assertEqual("", must_chars)
         self.assertEqual("", not_chars)
         self.assertEqual(['', '', '', '', ''], not_here_chars)
@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
         matches = []
         guesses.append("WOVEN")
         matches.append("ENNYN")
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         self.assertEqual('WE', must_chars)
         self.assertEqual('OVN', not_chars)
         self.assertEqual(['', 'O', 'V', 'E', 'N'], not_here_chars)
@@ -51,7 +51,7 @@ class MyTestCase(unittest.TestCase):
         matches.append("ENNYN")
         guesses.append("WRENC")
         matches.append("EEENY")
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         self.assertEqual('WERC', must_chars)
         self.assertEqual('OVN', not_chars)
         self.assertEqual(['', 'O', 'V', 'EN', 'NC'], not_here_chars)
@@ -66,7 +66,7 @@ class MyTestCase(unittest.TestCase):
         matches.append("YNENN")
         guesses.append("IONIC")
         matches.append("NEEEE")
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         self.assertEqual('OCNI', must_chars)
         self.assertEqual('SAREUDY', not_chars)
         self.assertEqual(['SCI', 'U', 'A', 'RD', 'EY'], not_here_chars)
@@ -76,8 +76,8 @@ class MyTestCase(unittest.TestCase):
         word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        filtered_words = filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        filtered_words = filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars, repeated_chars)
         self.assertEqual(['WRACK', 'WRECK'], filtered_words)
 
     def test_create_filtered_list(self):
@@ -86,8 +86,8 @@ class MyTestCase(unittest.TestCase):
         words.count_chars()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        filtered = words.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        filtered = words.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars, repeated_chars)
         self.assertEqual(['WRACK', 'WRECK'], filtered.words)
 
     def test_count_chars_and_sort(self):
@@ -113,7 +113,7 @@ class MyTestCase(unittest.TestCase):
         words.count_chars()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
@@ -152,7 +152,7 @@ class MyTestCase(unittest.TestCase):
         words.count_chars()
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
-        must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
+        must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
         self.assertEqual(['WREST', 'WREAK'], guesses)
