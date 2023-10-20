@@ -20,17 +20,17 @@ class MyTestCase(unittest.TestCase):
 
     def test_word_read(self):
         words = words_for_testing()
-        self.assertEqual(words.count(), 7)
-        self.assertEqual(words.words, ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST'])
+        self.assertEqual(7, words.count())
+        self.assertEqual(['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST'], words.words)
 
     def test_make_filter_no_guesses(self):
         guesses = []
         matches = []
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        self.assertEqual(must_chars, "")
-        self.assertEqual(not_chars, "")
-        self.assertEqual(not_here_chars, ['', '', '', '', ''])
-        self.assertEqual(position_chars, ['', '', '', '', ''])
+        self.assertEqual("", must_chars)
+        self.assertEqual("", not_chars)
+        self.assertEqual(['', '', '', '', ''], not_here_chars)
+        self.assertEqual(['', '', '', '', ''], position_chars)
 
     def test_make_filter_one_guess(self):
         guesses = []
@@ -38,10 +38,10 @@ class MyTestCase(unittest.TestCase):
         guesses.append("WOVEN")
         matches.append("ENNYN")
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        self.assertEqual(must_chars, 'WE')
-        self.assertEqual(not_chars, 'OVN')
-        self.assertEqual(not_here_chars, ['', 'O', 'V', 'E', 'N'])
-        self.assertEqual(position_chars, ['W', '', '', '', ''])
+        self.assertEqual('WE', must_chars)
+        self.assertEqual('OVN', not_chars)
+        self.assertEqual(['', 'O', 'V', 'E', 'N'], not_here_chars)
+        self.assertEqual(['W', '', '', '', ''], position_chars)
 
     def test_make_filter_two_guesses(self):
         guesses = []
@@ -51,10 +51,10 @@ class MyTestCase(unittest.TestCase):
         guesses.append("WRENC")
         matches.append("EEENY")
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        self.assertEqual(must_chars, 'WERC')
-        self.assertEqual(not_chars, 'OVN')
-        self.assertEqual(not_here_chars, ['', 'O', 'V', 'EN', 'NC'])
-        self.assertEqual(position_chars, ['W', 'R', 'E', '', ''])
+        self.assertEqual('WERC', must_chars)
+        self.assertEqual('OVN', not_chars)
+        self.assertEqual(['', 'O', 'V', 'EN', 'NC'], not_here_chars)
+        self.assertEqual(['W', 'R', 'E', '', ''], position_chars)
 
     def test_make_filter_three_guesses(self):
         guesses = []
@@ -66,10 +66,10 @@ class MyTestCase(unittest.TestCase):
         guesses.append("IONIC")
         matches.append("NEEEE")
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
-        self.assertEqual(must_chars, 'OCNI')
-        self.assertEqual(not_chars, 'SAREUDY')
-        self.assertEqual(not_here_chars, ['SCI', 'U', 'A', 'RD', 'EY'])
-        self.assertEqual(position_chars, ['', 'O', 'N', 'I', 'C'])
+        self.assertEqual('OCNI', must_chars)
+        self.assertEqual('SAREUDY', not_chars)
+        self.assertEqual(['SCI', 'U', 'A', 'RD', 'EY'], not_here_chars)
+        self.assertEqual(['', 'O', 'N', 'I', 'C'], position_chars)
 
     def test_filter_list(self):
         word_list = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
@@ -77,7 +77,7 @@ class MyTestCase(unittest.TestCase):
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered_words = filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars)
-        self.assertEqual(filtered_words, ['WRACK', 'WRECK'])
+        self.assertEqual(['WRACK', 'WRECK'], filtered_words)
 
     def test_create_filtered_list(self):
         words = words_for_testing()
@@ -87,23 +87,23 @@ class MyTestCase(unittest.TestCase):
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         filtered = words.create_filtered_words(position_chars, must_chars, not_chars, not_here_chars)
-        self.assertEqual(filtered.words, ['WRACK', 'WRECK'])
+        self.assertEqual(['WRACK', 'WRECK'], filtered.words)
 
     def test_count_chars_and_sort(self):
         words = words_for_testing()
         words.words = ['WOUND', 'WOVEN', 'WRACK', 'WRATH', 'WREAK', 'WRECK', 'WREST']
 
         words.count_chars()
-        self.assertEqual(words.count_and_position.totals, {'A': 3, 'B': 0, 'C': 2, 'D': 1, 'E': 4, 'F': 0,
-                                                           'G': 0,
-                                                           'H': 1,
-                                                           'I': 0, 'J': 0, 'K': 3, 'L': 0, 'M': 0, 'N': 2,
-                                                           'O': 2,
-                                                           'P': 0,
-                                                           'Q': 0, 'R': 5, 'S': 1, 'T': 2, 'U': 1, 'V': 1,
-                                                           'W': 7,
-                                                           'X': 0,
-                                                           'Y': 0, 'Z': 0})
+        self.assertEqual({'A': 3, 'B': 0, 'C': 2, 'D': 1, 'E': 4, 'F': 0,
+                          'G': 0,
+                          'H': 1,
+                          'I': 0, 'J': 0, 'K': 3, 'L': 0, 'M': 0, 'N': 2,
+                          'O': 2,
+                          'P': 0,
+                          'Q': 0, 'R': 5, 'S': 1, 'T': 2, 'U': 1, 'V': 1,
+                          'W': 7,
+                          'X': 0,
+                          'Y': 0, 'Z': 0}, words.count_and_position.totals)
 
     def test_filter_guesses_by_highest_char_occurrence(self):
         data_filename = "test_answers.txt"
@@ -116,7 +116,7 @@ class MyTestCase(unittest.TestCase):
         current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
-        self.assertEqual(current_words, [['WREAK', 12], ['WREST', 12], ['WRATH', 11]])
+        self.assertEqual([['WREAK', 12], ['WREST', 12], ['WRATH', 11]], current_words)
 
     def test_filter_guesses_by_position_in_word(self):
         data_filename = "test_answers.txt"
@@ -126,7 +126,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual(current_words, [['WRECK', 23], ['WREAK', 22], ['WREST', 21]])
+        self.assertEqual([['WRECK', 23], ['WREAK', 22], ['WREST', 21]], current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
@@ -147,7 +147,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(guesses, ['WREST', 'WREAK'])
+        self.assertEqual(['WREST', 'WREAK'], guesses)
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -155,12 +155,12 @@ class MyTestCase(unittest.TestCase):
         server = Server(data_filename, answers_filename)
         server.set_answer(1)
         Trace.write("Answer is " + server.answer)
-        self.assertEqual(server.answer, "WOUND")
+        self.assertEqual("WOUND", server.answer)
         result = server.check_guess("WORSE")
-        self.assertEqual(result, 'WORSE EENNN')
+        self.assertEqual('WORSE EENNN', result)
 
         result = server.check_guess("WOUND")
-        self.assertEqual(result, 'WOUND EEEEE')
+        self.assertEqual('WOUND EEEEE', result)
 
     # @unittest.skip("For speed")
     def test_games(self):
@@ -192,11 +192,12 @@ class MyTestCase(unittest.TestCase):
         #             'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
         #             'WINCH': 5,
         #             'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3, 'ESTER': 3, 'RESET': 3}
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
-                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
-                    'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
-                    'ESTER': 3, 'RESET': 3, 'TONIC': 4}
+        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
+        #             'STAVE': 4, 'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
+        #             'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
+        #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
+        #             'ESTER': 3, 'RESET': 3, 'TONIC': 4}
+        word_map = {'GEESE': 3, 'ERROR': 3, 'FEMME': 4, 'FREER': 5}
         print("---Test Games ----")
         new_map = {}
         previous_total_turns = 0
@@ -215,7 +216,7 @@ class MyTestCase(unittest.TestCase):
             self.assertLess(turns, 7, " For word " + word)
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
         # print(new_map)
-        self.assertEqual(previous_total_turns, total_turns)
+        self.assertEqual(total_turns, previous_total_turns)
         Log.close()
         Trace.close()
 
