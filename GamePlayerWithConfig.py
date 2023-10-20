@@ -11,25 +11,26 @@ def main():
     Configuration.log_output = False
     Configuration.trace_output = False
     results = []
-    for Configuration.position_add_to_previous in [True, False]:
-        for Configuration.high_char_add_to_previous in [True, False]:
-            for Configuration.not_there_add_to_previous in [True, False]:
-                for Configuration.two_letter_add_to_previous in [True, False]:
-                    for Configuration.cutoff_not_there in [90, 95]:
-                        for Configuration.cutoff_high_char in [90,95]:
-                            for Configuration.cutoff_position in [90,95]:
-                                for Configuration.cutoff_two_letter in [90,95]:
-                                    for Configuration.not_there_score_weighting in [1,2]:
-                                        for Configuration.position_score_weighting in [.33, .66]:
-                                            for Configuration.two_letter_score_weighting in [.33, .66]:
-                                                print(Configuration.get_string())
-                                                print(Configuration.get_short_string())
-                                                Trace.write(Configuration.get_string())
-                                                average = play_game_for_various_starting_words(results)
-                                                results.append([Configuration.get_short_string(), average])
-                                                results.sort(reverse=True, key=sort_function)
-                                                ResultLog.write(list_list_to_str(results))
-                                                print(list_list_to_str(results))
+    for Configuration.position_add_to_previous in [True]:
+        for Configuration.high_char_add_to_previous in [True]:
+            for Configuration.not_there_add_to_previous in [True]:
+                for Configuration.two_letter_add_to_previous in [True]:
+                    for Configuration.cutoff_not_there in [90]:
+                        for Configuration.cutoff_high_char in [90]:
+                            for Configuration.cutoff_position in [90]:
+                                for Configuration.cutoff_two_letter in [90]:
+                                    for Configuration.not_there_score_weighting in [1]:
+                                        for Configuration.position_score_weighting in [.66]:
+                                            for Configuration.two_letter_score_weighting in [ .66]:
+                                                for Configuration.repeated_char_weighting in [0., .2, .4, .5]:
+                                                    print(Configuration.get_string())
+                                                    print(Configuration.get_short_string())
+                                                    Trace.write(Configuration.get_string())
+                                                    average = play_game_for_various_starting_words(results)
+                                                    results.append([Configuration.get_short_string(), average])
+                                                    results.sort(reverse=True, key=sort_function)
+                                                    ResultLog.write(list_list_to_str(results))
+                                                    print(list_list_to_str(results))
     log.close()
     trace.close()
     ResultLog.write(list_list_to_str(results))
@@ -53,8 +54,6 @@ def play_full_game_with_first_guess(first_guess=""):
     t.start()
     word_count = game.answers.words
     for i in range(len(word_count)):
-        if i > 10:
-            break
         server.set_answer(i + 1)
         Log.write("---Answer= " + server.answer)
         Trace.write("---Answer=" + server.answer)

@@ -137,7 +137,7 @@ class MyTestCase(unittest.TestCase):
         current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
-        self.assertEqual([['WREAK', 12], ['WREST', 12]], current_words)
+        self.assertEqual([['WREAK', 12], ['WREST', 12], ['WRATH', 11]], current_words)
 
     def test_filter_guesses_by_position_in_word(self):
         data_filename = "test_answers.txt"
@@ -147,7 +147,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual([['WREAK', 16], ['WRECK', 16]], current_words)
+        self.assertEqual( [['WRECK', 23], ['WREAK', 22], ['WREST', 21]] , current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
@@ -174,7 +174,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(['WREST'], guesses)
+        self.assertEqual(['WREST', 'WREAK'], guesses)
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -222,7 +222,7 @@ class MyTestCase(unittest.TestCase):
         word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
                     'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
                     'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
+                    'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
                     'ESTER': 3, 'RESET': 3, 'TONIC': 4, 'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
         print("---Test Games ----")
         new_map = {}
