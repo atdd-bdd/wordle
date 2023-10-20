@@ -1,6 +1,7 @@
 from Words import *
 from Log import *
 from timer import Timer
+from utilities import check_repeats_for_list
 
 
 def count_repeats(words):
@@ -33,13 +34,15 @@ class GameRound:
         Trace.write(filter_values_to_string(must_chars, not_chars, not_here_chars, position_chars, repeated_chars))
         # Log.write("Filtered count " + str(filtered.count()))
         Trace.write("Filtered answers " + list_to_str(filtered.words))
-        Trace.write("Number with repeats " + str(count_repeats(filtered.words)))
+
         if filtered.count() <= 2:
             Trace.write("Selecting from one or two words " + str(filtered.count()))
             return filtered.first_word()
         t2 = Timer()
         t2.start()
         filtered.count_chars()
+        repeats = check_repeats_for_list(filtered.words)
+        filtered.count_and_position.alter_by_repeats(repeats)
         guesses = self.all_words.create_guess(must_chars, not_here_chars, filtered.count_and_position)
         # Trace.write("Time to create guess - all words " + str(t2.stop()) )
         if len(guesses) >= 1:

@@ -174,7 +174,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(['WREST', 'WREAK'], guesses)
+        self.assertEqual(['WREST'], guesses)
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -242,7 +242,7 @@ class MyTestCase(unittest.TestCase):
             self.assertLess(turns, 7, " For word " + word)
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
         # print(new_map)
-        self.assertEqual(total_turns, previous_total_turns)
+        self.assertEqual(previous_total_turns,total_turns)
         Log.close()
         Trace.close()
 

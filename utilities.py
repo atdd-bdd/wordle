@@ -45,3 +45,9 @@ def check_repeats(word):
         if count > 1:
             out += key
     return out
+
+def check_repeats_for_list(words):
+    out = ""
+    for word in words:
+        out += check_repeats(word)
+    return out

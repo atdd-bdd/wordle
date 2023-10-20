@@ -4,12 +4,13 @@ from timer import Timer
 
 
 class CountAndPosition:
+    letters = "ABCDEFGHIJKLMNOPQRSTURVWXYZ"
     def __init__(self, words):
         t1 = Timer()
         t1.start()
         self.positions = {}
-        letters = "ABCDEFGHIJKLMNOPQRSTURVWXYZ"
-        for c in letters:
+
+        for c in CountAndPosition.letters:
             self.positions[c] = [0, 0, 0, 0, 0]
 
         for word in words:
@@ -28,8 +29,8 @@ class CountAndPosition:
         # print("totals ", self.totals)
 
         self.two_letters = {}
-        for c in letters:
-            for d in letters:
+        for c in CountAndPosition.letters:
+            for d in CountAndPosition.letters:
                 self.two_letters[c + d] = 0
 
         for word in words:
@@ -43,6 +44,13 @@ class CountAndPosition:
         for c in char_seq:
             self.totals[c] = 0
             self.positions[c] = [0, 0, 0, 0, 0]
+            for d in CountAndPosition.letters:
+                self.two_letters[c + d] = 0
+                self.two_letters[d + c] = 0
+
+    def alter_by_repeats(self,repeats):
+        for c in repeats:
+            self.totals[c] += 1
 
     def score_on_totals(self, word):
         score = 0
