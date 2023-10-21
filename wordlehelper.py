@@ -3,12 +3,19 @@ from GameRound import *
 
 def main():
     args = sys.argv[1:]
+    data_filename = Configuration.data_filename
+    answers_filename = Configuration.answer_filename
     if len(args) < 2:
-        sys.exit("NeedTwoArguments" + " <word_filename>  <answers_filename")
+        print("Using default filenames ")
+        # sys.exit("NeedTwoArguments" + " <word_filename>  <answers_filename")
+    else:
+        data_filename = args[0]
+        answers_filename = args[1]
+    print(Configuration.get_files())
+    Trace.write(Configuration.get_files())
     log = Log("log_word_helper.txt")
     trace = Trace("trace_word_helper.txt")
-    data_filename = args[0]
-    answers_filename = args[1]
+    Trace.write(Configuration.get_files())
     game = GameRound(data_filename, answers_filename)
     guesses = []
     matches = []

@@ -227,8 +227,9 @@ class MyTestCase(unittest.TestCase):
 
 
 def setup_game():
-    data_filename = "words002.txt"
-    answers_filename = "answers.txt"
+    data_filename = Configuration.data_filename
+    answers_filename = Configuration.answer_filename
+    Trace.write(Configuration.get_files())
     game = GameRound(data_filename, answers_filename)
     server = Server(data_filename, answers_filename)
     return game, server

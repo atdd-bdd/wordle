@@ -1,4 +1,8 @@
 class Configuration:
+    # answer_filename = "wordlist_hidden"
+    # data_filename="wordlist_all"
+    answer_filename = "answers.txt"
+    data_filename= "words002.txt"
     hard_mode = False
     cutoff_high_char = 90
     cutoff_two_letter = 90
@@ -17,6 +21,9 @@ class Configuration:
     log_output = True
 
     @staticmethod
+    def get_files():
+        return "Data file " + Configuration.data_filename + " answer file " + Configuration.data_filename
+    @staticmethod
     def get_string():
         s = " two_letter_score_weighting= " + str(Configuration.two_letter_score_weighting)
         s += " position_score_weighting= " + str(Configuration.position_score_weighting)
@@ -32,6 +39,7 @@ class Configuration:
         s += " repeated_char_weighting= " + str(Configuration.repeated_char_weighting)
         s += " repeated_char_scoring= " + str(Configuration.repeated_char_scoring)
         s += " hard_mode= " + str(Configuration.hard_mode)
+
         return s
 
     @classmethod

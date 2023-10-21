@@ -5,10 +5,10 @@ from timer import Timer
 def main():
     Trace("trace_list_map_timing")
 
-    words = Words("words002.txt")
+    words = Words(Configuration.answer_filename)
     words.read_words()
     print("size of words", len(words.words))
-    answers = Words("answers.txt")
+    answers = Words(Configuration.answer_filename)
     answers.read_words()
     print("size of answers", len(answers.words))
 

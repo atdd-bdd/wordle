@@ -5,11 +5,12 @@ from utilities import check_repeats
 def main():
     Trace("trace_repeated_letters.txt ")
 
-    words = Words("words002.txt")
+    words = Words(Configuration.data_filename)
     words.read_words()
     print("size of words", len(words.words))
-    answers = Words("answers.txt")
+    answers = Words(Configuration.answer_filename)
     answers.read_words()
+    print(Configuration.get_files())
     print("size of answers", len(answers.words))
     count = 0
     for word in answers.words:

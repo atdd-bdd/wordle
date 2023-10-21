@@ -50,8 +50,9 @@ def play_game_for_various_starting_words(results=None):
 
 
 def play_full_game_with_first_guess(first_guess=""):
-    data_filename = "words002.txt"
-    answers_filename = "answers.txt"
+    data_filename = Configuration.data_filename
+    answers_filename = Configuration.answer_filename
+    Trace.write(Configuration.get_files())
     game = GameRound(data_filename, answers_filename)
     server = Server(data_filename, answers_filename)
     total_turns = 0
