@@ -78,7 +78,12 @@ class Words:
         tall.start()
         t1 = Timer()
         t1.start()
-        current_words_with_count = make_word_list_with_count(self.words)
+        current_words = self.words
+        if Configuration.hard_mode:
+            current_words = filter_list(current_words, ["", "", "", "", ""], must_chars, "",
+                                    ["", "", "", "", ""], "")
+            Trace.write("Filtered current words " + list_to_str(current_words))
+        current_words_with_count = make_word_list_with_count(current_words)
         # Trace.write(" Making word list time " + t1.stop())
         t2 = Timer()
         t2.start()
@@ -163,7 +168,8 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     t1 = Timer()
     t1.start()
     # Trace.write("Must chars " + must_chars)
-    count_and_position.zero_in_totals(must_chars)
+    if not Configuration.hard_mode:
+        count_and_position.zero_in_totals(must_chars)
 
     max_total_score = 0
     out_words = []

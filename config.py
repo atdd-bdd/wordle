@@ -1,4 +1,5 @@
 class Configuration:
+    hard_mode = False
     cutoff_high_char = 90
     cutoff_two_letter = 90
     cutoff_not_there = 90
@@ -30,6 +31,7 @@ class Configuration:
         s += " not_there_add_to_previous= " + str(Configuration.not_there_add_to_previous)
         s += " repeated_char_weighting= " + str(Configuration.repeated_char_weighting)
         s += " repeated_char_scoring= " + str(Configuration.repeated_char_scoring)
+        s += " hard_mode= " + str(Configuration.hard_mode)
         return s
 
     @classmethod
@@ -47,4 +49,5 @@ class Configuration:
         s += " ntadd= " + str(Configuration.not_there_add_to_previous)
         s += " repwgt= " + str(Configuration.repeated_char_weighting)
         s += " repscr= " + str(Configuration.repeated_char_scoring)
+        s += " hard_mode= " + str(Configuration.hard_mode)
         return s
