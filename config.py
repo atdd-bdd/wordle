@@ -11,6 +11,7 @@ class Configuration:
     position_score_weighting = .66
     not_there_score_weighting = 1
     repeated_char_weighting = 0  # Seems to not be needed
+    repeated_char_scoring = 0  # check this out - seems to get worse
     trace_output = True
     log_output = True
 
@@ -28,6 +29,7 @@ class Configuration:
         s += " position_add_to_previous= " + str(Configuration.position_add_to_previous)
         s += " not_there_add_to_previous= " + str(Configuration.not_there_add_to_previous)
         s += " repeated_char_weighting= " + str(Configuration.repeated_char_weighting)
+        s += " repeated_char_scoring= " + str(Configuration.repeated_char_scoring)
         return s
 
     @classmethod
@@ -44,4 +46,5 @@ class Configuration:
         s += " posadd= " + str(Configuration.position_add_to_previous)
         s += " ntadd= " + str(Configuration.not_there_add_to_previous)
         s += " repwgt= " + str(Configuration.repeated_char_weighting)
+        s += " repscr= " + str(Configuration.repeated_char_scoring)
         return s

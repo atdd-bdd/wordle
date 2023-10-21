@@ -198,30 +198,6 @@ class MyTestCase(unittest.TestCase):
         Trace()
         Log()
         Trace.write("Doing test games ")
-
-        # word_map = {'FOCAL': 4,
-        #             'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 4, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
-        #             'STAVE': 3, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
-        #             'SHARE': 4, 'SNARE': 3, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
-        #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
-        #             'ESTER': 3, 'RESET': 4}
-        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
-        #             'STAVE': 3, 'TRUSS': 3, 'TRUST': 5, 'CRUST': 4, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
-        #             'SHARE': 4, 'SNARE': 4, 'SPARE': 4, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 5,
-        #             'WATCH': 5, 'WIGHT': 4, 'WINCH': 4, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 5,
-        #             'ESTER': 4, 'RESET': 3}
-        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
-        #             'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
-        #             'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
-        #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
-        #             'ESTER': 3, 'RESET': 3}
-        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
-        #             'STAVE': 4,
-        #             'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4, 'SHARE': 3,
-        #             'SNARE': 3,
-        #             'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
-        #             'WINCH': 5,
-        #             'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3, 'ESTER': 3, 'RESET': 3}
         word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
                     'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
                     'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,

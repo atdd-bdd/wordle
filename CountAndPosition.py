@@ -56,15 +56,12 @@ class CountAndPosition:
     def score_on_totals(self, word):
         score = 0
         scored_already = ""
+        weight = 1
         for c in word:
             if c in scored_already:
-                continue
+                weight = Configuration.repeated_char_scoring
             scored_already += c
-            char_score = self.totals.get(c, -1)
-            if char_score == -1:
-                Trace.write("@@@ Did not find char in score on totals: " + c)
-                print("***Did not find char in score on totals", c)
-                char_score = 0
+            char_score = self.totals[c] * weight
             score += char_score
         return score
 

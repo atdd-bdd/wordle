@@ -14,24 +14,36 @@ def filter_values_to_string(must_chars, not_chars, not_here_chars, position_char
 
 
 def does_not_have_repeated_chars(repeated_chars, skip, word):
-    if len(repeated_chars) == 0:
+    len_repeated_chars = len(repeated_chars)
+    if len_repeated_chars == 0:
         return skip
     word_repeat = check_repeats(word)
-    # word must have repeats, but doesn't
-    if len(word_repeat) == 0:
-        return False
-    if len(word_repeat) != len(repeated_chars):
-        return False
-    if len(word_repeat) == 1:
-        if word_repeat != repeated_chars:
-            Trace.write(" Skip on repeated chars " + word_repeat + " " + repeated_chars)
-            return False
+    len_word_repeat = len(word_repeat)
+    # word must have repeats, but doesn't have
+    if len_word_repeat == 0:
+        return True
+    if len_word_repeat == 1:
+        if word_repeat not in repeated_chars:
+            # Trace.write(" Skip on repeated chars len 1 " + word + " " + word_repeat + " " + repeated_chars)
+            return True
+        else:
+            return skip
+    if len_word_repeat == 2:
+        if len_repeated_chars == 1:
+            if repeated_chars not in word_repeat:
+                # Trace.write(" Skip on repeated chars len 2 / 1  " + word + " " + word_repeat + " " + repeated_chars)
+                return True
+            else:
+                return skip
+    # len of both is 2
     repeated_chars = ''.join(sorted(repeated_chars))
     word_repeat = ''.join(sorted(word_repeat))
-    if word_repeat != repeated_chars:
-        Trace.write(" Skip on repeated chars " + word_repeat + " " + repeated_chars)
-        return False
-    return skip
+    Trace.write(" Both have two Word " + word + " repeated " + repeated_chars + " word repeat " + word_repeat)
+    if repeated_chars != word_repeat:
+        Trace.write("Skipping on length 2 ")
+        return True
+    else:
+        return skip
 
 
 def filter_list(word_list, position_chars, must_chars, not_chars, not_here_chars, repeated_chars):
@@ -112,7 +124,6 @@ def determine_repeated_chars(guess, match, repeated_chars):
         if count > 1:
             repeated_chars = add_to_string(key, repeated_chars)
     return repeated_chars
-
 
 
 def make_filter_values(guesses, matches):
