@@ -1,3 +1,42 @@
+https://github.com/alex1770/wordle/blob/main/wordlist_hidden
+https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Wordle#Assumptions_about_the_rules_of_Wordle
+https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Wordle#Top_105_first_guesses_in_normal_mode
+
+
+Easy 	2309 	5,6 	7897 	3.4201 	SALET
+Hard 	2309 	5 	8181 	3.5431 	PALET
+Hard 	2309 	6 	8099 	3.5076 	SALET
+Easy 	2315 	5,6 	7920 	3.4212 	SALET
+Hard 	2315 	5 	8206 	3.5447 	PALET
+Hard 	2315 	6 	8122 	3.5084 	SALET
+Easy 	12972 	6 	52896 	4.07771 	LANTS
+Hard 	12972 	7 	58715 	4.52629 	THUMP
+
+1 	TARSE 3.5526 	3.5526 	11219
+2 	SALET 3.5576 	3.5576 	11235
+3 	CARET 3.5630 	3.5630 	11252
+4 	SATER 3.5659 	3.5659 	11261
+5 	TORSE 3.5671 	3.5671 	11265
+6 	CARTE 3.5681 	3.5681 	11268
+=7 	CARLE 3.5687 	3.5687 	11270
+=7 	REAST 3.5687 	3.5687 	11270
+9 	TARED 3.5693 	3.5693 	11272
+10 	TRACE 3.5703 	3.5703 	11275
+n LAKES or KALES, w
+ROATE 	60.4
+RAISE 	61.0
+RAILE 	61.3
+SOARE 	62.3
+ARISE 	63.7
+IRATE 	63.8
+ORATE 	63.9
+ARIEL 	65.3
+AROSE 	66.0
+RAINE
+CARSE DOILT
+
+https://puzzling.stackexchange.com/questions/114316/whats-the-optimal-strategy-for-wordle
+
 list AUGHT BIGHT DIGHT EIGHT FIGHT GARTH GATCH GAVOT GHAST GHATS GHAUT GHOST GIRTH GITCH GOETH GOTCH GOTHS GRITH HIGHT LIGHT MIGHT NIGHT OUGHT RIGHT SIGHT TEUGH THANG THEGN THIGH THING THONG THUGS THUJA TIGHT TOUGH VETCH VUGHS WIGHT
 This is the list of words  for G H J T V
 It matches scrabble word finder
