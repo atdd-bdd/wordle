@@ -1,7 +1,9 @@
 import unittest
-from GamePlayer import *
-from Words import filter_guesses_by_highest_char_occurrence, filter_guesses_by_position_in_word
 
+from GamePlayer import *
+from GameRound import GameRound
+from Words import filter_guesses_by_highest_char_occurrence, filter_guesses_by_position_in_word
+from game_helper import run_a_game
 from timer import Timer
 from utilities import check_repeats
 
@@ -198,11 +200,24 @@ class MyTestCase(unittest.TestCase):
         Trace()
         Log()
         Trace.write("Doing test games ")
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
-                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
-                    'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
-                    'ESTER': 3, 'RESET': 3, 'TONIC': 4, 'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
+        # word map for smaller files (answers.txt, words002.txt)
+        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
+        #             'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 3, 'SWEAT': 3, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4,
+        #             'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 5, 'JAUNT': 5, 'HAUNT': 4, 'GAUNT': 4, 'VAUNT': 5,
+        #             'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
+        #             'ESTER': 3, 'RESET': 3, 'TONIC': 4, 'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
+        # Word map for large files (words-hidden, words-all)
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
+                    'STAVE': 5,
+                    'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 5, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4, 'SHARE': 3,
+                    'SNARE': 3,
+                    'SPARE': 3, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
+                    'WINCH': 5,
+                    'WOUND': 5, 'GRAZE': 6, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 4, 'ESTER': 3, 'RESET': 3, 'TONIC': 4,
+                    'GEESE': 4,
+                    'ERROR': 3, 'FEMME': 4, 'FREER': 5,
+                    'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7}
+
         print("---Test Games ----")
         new_map = {}
         previous_total_turns = 0
@@ -213,11 +228,13 @@ class MyTestCase(unittest.TestCase):
             t = Timer()
             t.start()
             turns = test_game(word, game, server)
-            print("Word ", word, " turns ", turns, " previous turns ", previous_turns)
+            # print("Word ", word, )
             new_map[word] = turns
             if turns != previous_turns:
-                print("** Better or worse ? ")
+                print("** Better or worse ? for ", word, " turns ", turns, " previous turns ", previous_turns)
             total_turns += turns
+            if turns >= 7:
+                print("*********  Failed game ************** ", word)
             # self.assertLess(turns, 7, " For word " + word)
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
         # print(new_map)
@@ -230,6 +247,7 @@ def setup_game():
     data_filename = Configuration.data_filename
     answers_filename = Configuration.answer_filename
     Trace.write(Configuration.get_files())
+    print(Configuration.get_files())
     game = GameRound(data_filename, answers_filename)
     server = Server(data_filename, answers_filename)
     return game, server

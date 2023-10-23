@@ -5,18 +5,10 @@ def main():
     args = sys.argv[1:]
     data_filename = Configuration.data_filename
     answers_filename = Configuration.answer_filename
-    Trace("trace_word_helper.txt")
-    if len(args) < 2:
-        print("Using default filenames ")
-        # sys.exit("NeedTwoArguments" + " <word_filename>  <answers_filename")
-    else:
-        data_filename = args[0]
-        answers_filename = args[1]
-    print(Configuration.get_files())
-    Trace.write(Configuration.get_files())
-    log = Log("log_word_helper.txt")
+    print("Using " + Configuration.get_files())
     trace = Trace("trace_word_helper.txt")
     Trace.write(Configuration.get_files())
+    log = Log("log_word_helper.txt")
     game = GameRound(data_filename, answers_filename)
     guesses = []
     matches = []
