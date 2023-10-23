@@ -1,5 +1,6 @@
 from Words import *
 from Log import *
+from short_words import get_short_word_list
 from timer import Timer
 from utilities import check_repeats_for_list
 

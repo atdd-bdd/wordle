@@ -1,6 +1,7 @@
 class Configuration:
     answer_filename = "wordlist_hidden"
     data_filename="wordlist_all"
+    use_short_answer_list = True
     # answer_filename = "answers.txt"
     # data_filename= "words002.txt"
     hard_mode = False

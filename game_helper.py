@@ -40,6 +40,42 @@ def play_full_game_with_first_guess(first_guess=""):
     ResultLog.write(elapsed)
     return average
 
+def play_partial_game_with_first_guess(first_guess=""):
+    data_filename = Configuration.data_filename
+    answers_filename = Configuration.answer_filename
+    Trace.write(Configuration.get_files())
+    game = GameRound(data_filename, answers_filename)
+    server = Server(data_filename, answers_filename)
+    total_turns = 0
+    turn_counts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    t = Timer()
+    t.start()
+    answers_to_try = get_short_word_list()
+    word_count = answers_to_try
+    for answer in answers_to_try:
+        server.answer = answer
+        Log.write("---Answer= " + server.answer)
+        Trace.write("---Answer=" + server.answer)
+        turns = run_a_game(game, server, first_guess)
+        # print("Answer " + server.answer + " Turns " + str(turns))
+        if turns < len(turn_counts):
+            turn_counts[turns - 1] += 1
+        else:
+            Trace.write("*** Turns too many")
+            print("*** Turns too many ")
+        total_turns += turns
+    elapsed = t.stop()
+    print("Elapsed time is ", elapsed)
+    print("Turn counts ", list_to_str(turn_counts))
+    average = total_turns / len(word_count)
+    print('average ' + round_to_string(average), " first guess ", first_guess)
+    Log.write("Average is " + round_to_string(average))
+    Trace.write("Turn counts " + list_to_str(turn_counts))
+    ResultLog.write(
+        "Turn counts " + list_to_str(turn_counts) + " Average is " + round_to_string(average) + " first guess " +
+        first_guess)
+    ResultLog.write(elapsed)
+    return average
 
 def run_a_game(game, server, first_guess=""):
     guesses = []

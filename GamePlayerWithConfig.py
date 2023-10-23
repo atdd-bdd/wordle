@@ -1,5 +1,6 @@
 from Log import *
 from OneGamePlayer import play_full_game_with_first_guess
+from game_helper import play_partial_game_with_first_guess
 from server import *
 
 
@@ -7,7 +8,8 @@ def main():
     log = Log("log_GamePlayerWithConfig.txt")
     trace = Trace("trace_GamePlayerWithConfig.txt")
     Configuration.log_output = False
-    Configuration.trace_output = False
+    # Configuration.trace_output = False
+    Configuration.use_short_answer_list = True
     ResultLog.write("----Game with Configuration Player End  " + Configuration.get_files())
     ResultLog.write(Configuration.get_string())
     results = []
@@ -43,10 +45,13 @@ def main():
 
 def play_game_for_various_starting_words(results=None):
     if results is None:
-        results = ["CRATE"]
+        results = ["SARED"]
     average = 0
     for first_guess in results:
-        average = play_full_game_with_first_guess(first_guess)
+        if Configuration.use_short_answer_list:
+            average = play_partial_game_with_first_guess(first_guess)
+        else:
+            average = play_full_game_with_first_guess(first_guess)
     return average
 
 

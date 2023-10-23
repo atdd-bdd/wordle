@@ -39,6 +39,12 @@ class Words:
         return len(self.words)
 
     def read_words(self):
+        self.read_words_from_file()
+
+        for word in self.words:
+            self.word_map[word] = 1
+
+    def read_words_from_file(self):
         if not os.path.isfile(self.data_filename):
             exit_with_message("FileNotExist")
         with open(self.data_filename, encoding='utf-8') as f:
@@ -54,8 +60,6 @@ class Words:
                     break
         if len(self.words) < 1:
             exit_with_message("EmptyFile")
-        for word in self.words:
-            self.word_map[word] = 1
 
     def print(self):
         for word in self.words:
