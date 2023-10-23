@@ -1,8 +1,8 @@
 class Configuration:
-    # answer_filename = "wordlist_hidden"
-    # data_filename="wordlist_all"
-    answer_filename = "answers.txt"
-    data_filename= "words002.txt"
+    answer_filename = "wordlist_hidden"
+    data_filename="wordlist_all"
+    # answer_filename = "answers.txt"
+    # data_filename= "words002.txt"
     hard_mode = False
     cutoff_high_char = 90
     cutoff_two_letter = 90
