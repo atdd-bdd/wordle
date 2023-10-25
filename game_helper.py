@@ -30,15 +30,15 @@ def play_full_game_with_first_guess(first_guess=""):
     elapsed = t.stop()
     print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
-    average = total_turns / len(word_count)
+    average = round(total_turns / len(word_count),4)
     print('average ' + round_to_string(average), " first guess ", first_guess)
     Log.write("Average is " + round_to_string(average))
     Trace.write("Turn counts " + list_to_str(turn_counts))
     ResultLog.write(
         "Turn counts " + list_to_str(turn_counts) + " Average is " + round_to_string(average) + " first guess " +
         first_guess)
-    ResultLog.write(elapsed)
-    return average
+    return average, turn_counts
+
 
 def play_partial_game_with_first_guess(first_guess=""):
     data_filename = Configuration.data_filename
@@ -67,7 +67,7 @@ def play_partial_game_with_first_guess(first_guess=""):
     elapsed = t.stop()
     print("Elapsed time is ", elapsed)
     print("Turn counts ", list_to_str(turn_counts))
-    average = total_turns / len(word_count)
+    average = round(total_turns / len(word_count),4)
     print('average ' + round_to_string(average), " first guess ", first_guess)
     Log.write("Average is " + round_to_string(average))
     Trace.write("Turn counts " + list_to_str(turn_counts))
@@ -75,7 +75,8 @@ def play_partial_game_with_first_guess(first_guess=""):
         "Turn counts " + list_to_str(turn_counts) + " Average is " + round_to_string(average) + " first guess " +
         first_guess)
     ResultLog.write(elapsed)
-    return average
+    return average, turn_counts
+
 
 def run_a_game(game, server, first_guess=""):
     guesses = []

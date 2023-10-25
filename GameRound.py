@@ -56,7 +56,7 @@ class GameRound:
         # No more information from guess list,  uses the filtered answers
         not_here_chars = ["", "", "", "", ""]
         guesses = filtered.create_guess("", not_here_chars, filtered.count_and_position)
-        Trace.write("Time to create guess from filtered " + str(t3.stop()))
+        # Trace.write("Time to create guess from filtered " + str(t3.stop()))
         if len(guesses) >= 1:
             return guesses[0]
         return "ZZZZZ"

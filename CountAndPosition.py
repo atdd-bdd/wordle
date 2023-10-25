@@ -54,15 +54,11 @@ class CountAndPosition:
             self.totals[c] += Configuration.repeated_char_weighting
 
     def score_on_totals(self, word):
+        # If word is AAAAA and totals[A] = 2000,   score =2000
         score = 0
-        scored_already = ""
-        weight = 1
-        for c in word:
-            if c in scored_already:
-                weight = Configuration.repeated_char_scoring
-            scored_already += c
-            char_score = self.totals[c] * weight
-            score += char_score
+        totals = self.totals
+        for c in set(word):
+            score += totals[c]
         return score
 
     def score_on_position_counts(self, word):
@@ -72,10 +68,10 @@ class CountAndPosition:
             char_score = self.positions[c][i]
             score += char_score
             i = i + 1
-        score = int(score * Configuration.position_score_weighting)
+        score = round(score * Configuration.position_score_weighting, 2)
         return score
 
-    def score_on_two_letters(self, word):
+    def score_on_pair_occurance(self, word):
         score = 0
         for i in range(len(word) - 1):
             pair = word[i] + word[i + 1]
@@ -85,5 +81,5 @@ class CountAndPosition:
                 Trace.write("@@@ Did not find pair in two letters:" + pair)
                 char_score = 0
             score += char_score
-        score = int(score * Configuration.two_letter_score_weighting)
+        score = round(score * Configuration.two_letter_score_weighting, 2)
         return score

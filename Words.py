@@ -206,7 +206,7 @@ def filter_guesses_by_highest_pair_occurrence(current_words, count_and_position)
     out_words = []
     for item in current_words:
         word = item[0]
-        score = count_and_position.score_on_two_letters(word)
+        score = count_and_position.score_on_pair_occurance(word)
         if Configuration.two_letter_add_to_previous:
             total_score = item[1] + score
         else:

@@ -10,8 +10,8 @@ def main():
     ResultLog.write(Configuration.get_files())
     ResultLog.write("----One Game Player Start " + Configuration.get_files())
     results = []
-    for first_guess in ["", "CRATE"]:
-        average = play_full_game_with_first_guess(first_guess)
+    for first_guess in ["", Configuration.first_word]:
+        average, turn_counts = play_full_game_with_first_guess(first_guess)
         results.append([first_guess, average])
         results.sort(key=sort_function)
         print(results)

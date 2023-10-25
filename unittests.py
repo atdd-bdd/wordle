@@ -142,7 +142,9 @@ class MyTestCase(unittest.TestCase):
         current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
-        self.assertEqual([['WREAK', 12], ['WREST', 12], ['WRATH', 11]], current_words)
+        self.assertEqual(
+            [['WREAK', 12], ['WREST', 12], ['WRATH', 11], ['WOVEN', 9], ['WRECK', 9], ['WRACK', 8], ['WOUND', 6]],
+            current_words)
 
     def test_filter_guesses_by_position_in_word(self):
         data_filename = "test_answers.txt"
@@ -152,7 +154,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual([['WRECK', 23], ['WREAK', 22], ['WREST', 21]], current_words)
+        self.assertEqual([['WRECK', 23.2], ['WREAK', 22.54], ['WREST', 21.22]], current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
@@ -179,7 +181,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(['WREST', 'WREAK'], guesses)
+        self.assertEqual(['WREST', 'WREAK', 'WRATH', 'WRECK', 'WRACK'], guesses)
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -207,16 +209,23 @@ class MyTestCase(unittest.TestCase):
         #             'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 4, 'GRAZE': 4, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 3,
         #             'ESTER': 3, 'RESET': 3, 'TONIC': 4, 'GEESE': 3, 'ERROR': 4, 'FEMME': 4, 'FREER': 5}
         # Word map for large files (words-hidden, words-all)
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
-                    'STAVE': 5,
-                    'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 5, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4, 'SHARE': 3,
-                    'SNARE': 3,
-                    'SPARE': 3, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
-                    'WINCH': 5,
-                    'WOUND': 5, 'GRAZE': 6, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 4, 'ESTER': 3, 'RESET': 3, 'TONIC': 4,
-                    'GEESE': 4,
-                    'ERROR': 3, 'FEMME': 4, 'FREER': 5,
-                    'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7}
+        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 3, 'TEASE': 3, 'VOCAL': 4, 'YEAST': 4, 'LEAST': 3,
+        #             'STAVE': 5,
+        #             'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 5, 'POUND': 4, 'PRIZE': 4, 'SHAVE': 4, 'SHARE': 3,
+        #             'SNARE': 3,
+        #             'SPARE': 3, 'TAUNT': 6, 'JAUNT': 5, 'HAUNT': 5, 'GAUNT': 5, 'VAUNT': 5, 'WATCH': 5, 'WIGHT': 5,
+        #             'WINCH': 5,
+        #             'WOUND': 5, 'GRAZE': 6, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 4, 'ESTER': 3, 'RESET': 3, 'TONIC': 4,
+        #             'GEESE': 4,
+        #             'ERROR': 3, 'FEMME': 4, 'FREER': 5,
+        #             'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7}
+        # reduced using new starting word TARED
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 5, 'TEASE': 3, 'VOCAL': 5, 'YEAST': 4, 'LEAST': 3,
+                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 4, 'SWEAT': 5, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 5,
+                    'SHARE': 4, 'SNARE': 4, 'SPARE': 3, 'TAUNT': 4, 'JAUNT': 5, 'HAUNT': 3, 'GAUNT': 5, 'VAUNT': 5,
+                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 6, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
+                    'ESTER': 3, 'RESET': 3, 'TONIC': 3, 'GEESE': 4, 'ERROR': 4, 'FEMME': 4, 'FREER': 5, 'TETRA': 3,
+                    'TATER': 3, 'FAXED': 6, 'EARED': 5, 'MOOED': 5, 'TEMPO':4}
 
         print("---Test Games ----")
         new_map = {}
@@ -237,7 +246,7 @@ class MyTestCase(unittest.TestCase):
                 print("*********  Failed game ************** ", word)
             # self.assertLess(turns, 7, " For word " + word)
         print(" Total turns ", total_turns, " previous total turns ", previous_total_turns)
-        # print(new_map)
+        print(new_map)
         self.assertEqual(previous_total_turns, total_turns)
         Log.close()
         Trace.close()
@@ -262,10 +271,11 @@ def words_for_testing():
 
 def test_game(word, game, server):
     Trace.write(" *-- Test Game ")
+    Trace.write("Configuration " + Configuration.get_string())
     server.answer = word
     Log.write("Answer=" + server.answer)
     Trace.write("Answer=" + server.answer)
-    turns = run_a_game(game, server)
+    turns = run_a_game(game, server, Configuration.first_word)
     Trace.write("Turns " + str(turns))
     Trace.write("---End test game ")
     return turns

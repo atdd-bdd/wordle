@@ -38,9 +38,9 @@ def does_not_have_repeated_chars(repeated_chars, skip, word):
     # len of both is 2
     repeated_chars = ''.join(sorted(repeated_chars))
     word_repeat = ''.join(sorted(word_repeat))
-    Trace.write(" Both have two Word " + word + " repeated " + repeated_chars + " word repeat " + word_repeat)
+    # Trace.write(" Both have two Word " + word + " repeated " + repeated_chars + " word repeat " + word_repeat)
     if repeated_chars != word_repeat:
-        Trace.write("Skipping on length 2 ")
+        # Trace.write("Skipping on length 2 ")
         return True
     else:
         return skip

@@ -1,29 +1,32 @@
 class Configuration:
     answer_filename = "wordlist_hidden"
-    data_filename="wordlist_all"
-    use_short_answer_list = True
+    data_filename = "wordlist_all"
+    use_short_answer_list = False
     # answer_filename = "answers.txt"
     # data_filename= "words002.txt"
     hard_mode = False
-    cutoff_high_char = 90
-    cutoff_two_letter = 90
-    cutoff_not_there = 90
-    cutoff_position = 90
-    high_char_add_to_previous = True
+    cutoff_high_char = 50
+    cutoff_two_letter = 50
+    cutoff_not_there = 50
+    cutoff_position = 50
+    high_char_add_to_previous = False
     two_letter_add_to_previous = True
     position_add_to_previous = True
-    not_there_add_to_previous = True
-    two_letter_score_weighting = .66
+    not_there_add_to_previous = False
+    two_letter_score_weighting = .33
     position_score_weighting = .66
-    not_there_score_weighting = 1
+    not_there_score_weighting = .5
     repeated_char_weighting = 0  # Seems to not be needed
     repeated_char_scoring = 0  # check this out - seems to get worse
     trace_output = True
     log_output = True
+    trace_detail = False
+    first_word = "TARED"
 
     @staticmethod
     def get_files():
         return "Data file " + Configuration.data_filename + " answer file " + Configuration.answer_filename
+
     @staticmethod
     def get_string():
         s = " two_letter_score_weighting= " + str(Configuration.two_letter_score_weighting)

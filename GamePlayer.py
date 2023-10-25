@@ -1,5 +1,6 @@
 from Log import *
 from OneGamePlayer import play_full_game_with_first_guess
+from game_helper import play_partial_game_with_first_guess
 from server import *
 
 
@@ -13,7 +14,7 @@ def main():
         'ALONE',
         'ALERT',
         'ARGUE',
-        'ARIAL',
+        'ARIEL',
         'ARISE',
         'AROSE',
         'AUDIO',
@@ -112,12 +113,27 @@ def main():
     ResultLog.write(Configuration.get_string())
     ResultLog.write("----Game Player Start " + Configuration.get_files())
     results = []
+    results_with_all_solved = []
     for first_guess in first_guesses:
-        average = play_full_game_with_first_guess(first_guess)
+        if Configuration.use_short_answer_list:
+            average, turn_counts = play_partial_game_with_first_guess(first_guess)
+        else:
+            average, turn_counts = play_full_game_with_first_guess(first_guess)
+        if turn_counts[6] == 0:
+            print("**** Solved all ")
+            ResultLog.write("**** Solved all")
+            results_with_all_solved.append([first_guess, average])
+            results_with_all_solved.sort(key=sort_function)
+            print("Solved all ", results_with_all_solved)
+        else:
+            print("Did not solve all ", turn_counts)
+            ResultLog.write("Did not solve all " + list_to_str(turn_counts))
         results.append([first_guess, average])
         results.sort(key=sort_function)
         print(results)
-        ResultLog.write(list_list_to_str(results))
+    ResultLog.write(list_list_to_str(results))
+    results_with_all_solved.sort(key=sort_function)
+    ResultLog.write("All solved" + list_list_to_str(results_with_all_solved))
     ResultLog.write("----Game Player End " + Configuration.get_files())
     log.close()
     trace.close()

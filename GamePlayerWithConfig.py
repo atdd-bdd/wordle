@@ -9,50 +9,60 @@ def main():
     trace = Trace("trace_GamePlayerWithConfig.txt")
     Configuration.log_output = False
     # Configuration.trace_output = False
-    Configuration.use_short_answer_list = True
+    Configuration.use_short_answer_list = False
     ResultLog.write("----Game with Configuration Player End  " + Configuration.get_files())
     ResultLog.write(Configuration.get_string())
     results = []
-    for Configuration.position_add_to_previous in [True]:
-        for Configuration.high_char_add_to_previous in [True]:
+    results_solved_all = []
+    for Configuration.position_add_to_previous in [False,True]:
+        for Configuration.high_char_add_to_previous in [False, True]:
             for Configuration.not_there_add_to_previous in [False, True]:
-                for Configuration.two_letter_add_to_previous in [True]:
+                for Configuration.two_letter_add_to_previous in [False, True]:
                     for Configuration.cutoff_not_there in [50, 90]:
                         for Configuration.cutoff_high_char in [50, 90]:
                             for Configuration.cutoff_position in [50, 90]:
                                 for Configuration.cutoff_two_letter in [50, 90]:
-                                    for Configuration.not_there_score_weighting in [1]:
-                                        for Configuration.position_score_weighting in [.66]:
-                                            for Configuration.two_letter_score_weighting in [.66]:
+                                    for Configuration.not_there_score_weighting in [.5, 1]:
+                                        for Configuration.position_score_weighting in [.33,.66]:
+                                            for Configuration.two_letter_score_weighting in [.33, .66]:
                                                 for Configuration.repeated_char_weighting in [0., .2, ]:
                                                     print(Configuration.get_string())
                                                     print(Configuration.get_short_string())
                                                     Trace.write(Configuration.get_string())
-                                                    average = play_game_for_various_starting_words()
-                                                    results.append([Configuration.get_short_string(), average])
-                                                    results.sort(reverse=True, key=sort_function)
+                                                    average, turn_counts = play_game_for_various_starting_words()
+                                                    print(" Results average= ", average, " turn_counts= ", turn_counts)
+                                                    if turn_counts[6] == 0:
+                                                        print("**** Solved all ")
+                                                        # ResultLog.write("**** Solved all")
+                                                    results.append([Configuration.get_short_string() + "==", average])
+                                                    results_solved_all.append([Configuration.get_short_string() + "==", average])
+                                                    # results.sort(key=sort_function)
                                                     ResultLog.write(Configuration.get_short_string())
-                                                    ResultLog.write(list_list_to_str(results))
-                                                    print(list_list_to_str(results))
+                                                    # ResultLog.write(list_list_to_str(results))
+                                                    # print(list_list_to_str(results))
     log.close()
     trace.close()
     ResultLog.write(list_list_to_str(results))
-    results.sort(reverse=True, key=sort_function)
+    results.sort(key=sort_function)
     ResultLog.write(list_list_to_str(results))
+    ResultLog.write("Solved all "+ list_list_to_str(results_solved_all))
+    results_solved_all.sort(key=sort_function)
+    ResultLog.write(list_list_to_str(results_solved_all))
     ResultLog.write("----Game with Configuration Player End " + Configuration.get_files())
     print(list_list_to_str(results))
 
 
 def play_game_for_various_starting_words(results=None):
     if results is None:
-        results = ["SARED"]
+        results = [Configuration.first_word]
     average = 0
+    turn_counts = []
     for first_guess in results:
         if Configuration.use_short_answer_list:
-            average = play_partial_game_with_first_guess(first_guess)
+            average, turn_counts = play_partial_game_with_first_guess(first_guess)
         else:
-            average = play_full_game_with_first_guess(first_guess)
-    return average
+            average, turn_counts = play_full_game_with_first_guess(first_guess)
+    return average, turn_counts
 
 
 if __name__ == "__main__":
