@@ -154,7 +154,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual([['WRECK', 23.2], ['WREAK', 22.54], ['WREST', 21.22]], current_words)
+        self.assertEqual([['WRECK', 16.6], ['WREAK', 16.27], ['WREST', 15.61]], current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
@@ -181,7 +181,7 @@ class MyTestCase(unittest.TestCase):
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
-        self.assertEqual(['WREST', 'WREAK', 'WRATH', 'WRECK', 'WRACK'], guesses)
+        self.assertEqual(['WREST', 'WREAK', 'WRATH', 'WRECK', 'WRACK', 'WOVEN', 'WOUND'], guesses)
 
     def test_server(self):
         answers_filename = "test_answers.txt"
@@ -220,12 +220,20 @@ class MyTestCase(unittest.TestCase):
         #             'ERROR': 3, 'FEMME': 4, 'FREER': 5,
         #             'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7}
         # reduced using new starting word TARED
-        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 5, 'TEASE': 3, 'VOCAL': 5, 'YEAST': 4, 'LEAST': 3,
-                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 4, 'SWEAT': 5, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 5,
-                    'SHARE': 4, 'SNARE': 4, 'SPARE': 3, 'TAUNT': 4, 'JAUNT': 5, 'HAUNT': 3, 'GAUNT': 5, 'VAUNT': 5,
-                    'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 6, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
-                    'ESTER': 3, 'RESET': 3, 'TONIC': 3, 'GEESE': 4, 'ERROR': 4, 'FEMME': 4, 'FREER': 5, 'TETRA': 3,
-                    'TATER': 3, 'FAXED': 6, 'EARED': 5, 'MOOED': 5, 'TEMPO':4}
+        # word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 5, 'STEAK': 5, 'TEASE': 3, 'VOCAL': 5, 'YEAST': 4, 'LEAST': 3,
+        #             'STAVE': 4, 'TRUSS': 3, 'TRUST': 3, 'CRUST': 4, 'SWEAT': 5, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 5,
+        #             'SHARE': 4, 'SNARE': 4, 'SPARE': 3, 'TAUNT': 4, 'JAUNT': 5, 'HAUNT': 3, 'GAUNT': 5, 'VAUNT': 5,
+        #             'WATCH': 5, 'WIGHT': 6, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 6, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
+        #             'ESTER': 3, 'RESET': 3, 'TONIC': 3, 'GEESE': 4, 'ERROR': 4, 'FEMME': 4, 'FREER': 5, 'TETRA': 3,
+        #             'TATER': 3, 'FAXED': 6, 'EARED': 5, 'MOOED': 5, 'TEMPO':4,
+        #             'OOZED':4, 'RAZED':4, 'WAXED':4, 'DARED':4, 'FAZED':4}
+        word_map = {'FOCAL': 4, 'LOCAL': 4, 'STATE': 4, 'STEAK': 4, 'TEASE': 2, 'VOCAL': 4, 'YEAST': 3, 'LEAST': 3,
+                    'STAVE': 4, 'TRUSS': 3, 'TRUST': 4, 'CRUST': 3, 'SWEAT': 3, 'POUND': 5, 'PRIZE': 4, 'SHAVE': 4,
+                    'SHARE': 3, 'SNARE': 3, 'SPARE': 3, 'TAUNT': 4, 'JAUNT': 4, 'HAUNT': 3, 'GAUNT': 4, 'VAUNT': 4,
+                    'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
+                    'ESTER': 3, 'RESET': 4, 'TONIC': 3, 'GEESE': 3, 'ERROR': 3, 'FEMME': 4, 'FREER': 6, 'TETRA': 3,
+                    'TATER': 3, 'FAXED': 6, 'EARED': 5, 'MOOED': 6, 'TEMPO': 3, 'OOZED': 6, 'RAZED': 4, 'WAXED': 5,
+                    'DARED': 4, 'FAZED': 5}
 
         print("---Test Games ----")
         new_map = {}

@@ -133,7 +133,10 @@ def main():
         print(results)
     ResultLog.write(list_list_to_str(results))
     results_with_all_solved.sort(key=sort_function)
-    ResultLog.write("All solved" + list_list_to_str(results_with_all_solved))
+    ResultLog.write("Solved all " + list_list_to_str(results_with_all_solved))
+    good_words = [item[0] for item in results_with_all_solved]
+    ResultLog.write("Good words " + list_to_str(good_words))
+    print("Good words ", good_words)
     ResultLog.write("----Game Player End " + Configuration.get_files())
     log.close()
     trace.close()
