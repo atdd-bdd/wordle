@@ -143,7 +143,7 @@ class MyTestCase(unittest.TestCase):
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
         self.assertEqual(
-            [['WREAK', 12], ['WREST', 12], ['WRATH', 11], ['WOVEN', 9], ['WRECK', 9], ['WRACK', 8], ['WOUND', 6]],
+            [('WREAK', 12), ('WREST', 12), ('WRATH', 11), ('WOVEN', 9), ('WRECK', 9), ('WRACK', 8), ('WOUND', 6)],
             current_words)
 
     def test_filter_guesses_by_position_in_word(self):
@@ -154,7 +154,7 @@ class MyTestCase(unittest.TestCase):
         current_words = [['WREAK', 10], ['WRECK', 10], ['WREST', 10]]
         must_chars = ''
         current_words = filter_guesses_by_position_in_word(current_words, must_chars, words.count_and_position)
-        self.assertEqual([['WRECK', 16.6], ['WREAK', 16.27], ['WREST', 15.61]], current_words)
+        self.assertEqual([('WRECK', 16.6), ('WREAK', 16.27), ('WREST', 15.61)], current_words)
 
     def test_find_matches(self):
         result = find_matches("BOOBY", "BOBBY")
