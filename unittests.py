@@ -233,7 +233,7 @@ class MyTestCase(unittest.TestCase):
                     'WATCH': 5, 'WIGHT': 5, 'WINCH': 5, 'WOUND': 5, 'GRAZE': 4, 'SNAIL': 3, 'SKUNK': 4, 'STEER': 4,
                     'ESTER': 3, 'RESET': 4, 'TONIC': 3, 'GEESE': 3, 'ERROR': 3, 'FEMME': 4, 'FREER': 6, 'TETRA': 3,
                     'TATER': 3, 'FAXED': 6, 'EARED': 5, 'MOOED': 6, 'TEMPO': 3, 'OOZED': 6, 'RAZED': 4, 'WAXED': 5,
-                    'DARED': 4, 'FAZED': 5, 'RETRY' : 5}
+                    'DARED': 4, 'FAZED': 5, 'RETRY': 5, 'BODED': 6, 'BOOED': 7}
 
         print("---Test Games ----")
         new_map = {}

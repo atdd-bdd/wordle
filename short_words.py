@@ -8,8 +8,8 @@ def get_short_word_list():
                    'WOUND': 5, 'GRAZE': 6, 'SNAIL': 4, 'SKUNK': 4, 'STEER': 4, 'ESTER': 3, 'RESET': 3, 'TONIC': 4,
                    'GEESE': 4,
                    'ERROR': 3, 'FEMME': 4, 'FREER': 5,
-                   'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7, 'TEMPO':4,
-                   'OOZED':4, 'RAZED':4, 'WAXED':4, 'DARED':4, 'FAZED':4}
+                   'TETRA': 5, 'TATER': 6, 'FAXED': 5, 'EARED': 5, 'MOOED': 7, 'TEMPO': 4,
+                   'OOZED': 4, 'RAZED': 4, 'WAXED': 4, 'DARED': 4, 'FAZED': 4, 'RETRY': 5, 'BODED': 6, 'BOOED': 7}
     sorted_list = [word for word, count in short_words.items()]
     return sorted_list
 

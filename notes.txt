@@ -20,6 +20,20 @@ https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Word
     Must chars {TRE} Not chars {ASCUMINVOZHD} Not here chars [5]  "TCV"  "AUO"  "RMZ"  "SIH"  "END"  Position chars [5]  ""  ""  ""  ""  "" Repeated chars {}
         Filtered answers [4]  EXERT GREET PETER RETRY
         guess was GILPY
+
+        Must chars {OYB} Not chars {TARSENILDG} Not here chars [5]  "TN"  "A"  "RID"  "SLG"  "E"  Position chars [5]  "B"  "O"  ""  ""  "Y" Repeated chars {}
+Filtered answers [3]  BOBBY BOOBY BOOZY  came up with ABUZZ  should use BOOBY or BOBBY
+
+Must chars {SO} Not chars {TAREPILU} Not here chars [5]  "TP"  "A"  "RI"  "SL"  "EU"  Position chars [5]  ""  "O"  ""  ""  "" Repeated chars {}
+Filtered answers [3]  BOSOM BOSON SOGGY  came up with BINGY  would BEGEM work?
+
+Must chars {EDOB} Not chars {TARSINLCHUMPWK} Not here chars [5]  "TDC"  "AIH"  "RNUW"  "SLMK"  "EOPS"  Position chars [5]  "B"  ""  ""  ""  "" Repeated chars {}
+Filtered answers [3]  BODED BOOED BOXED   -    next was AUXIN.    but BOOED fails on 7
+
+Must chars {TALO} Not chars {RSEGINBF} Not here chars [5]  "TLB"  "AOE"  "RGE"  "SIF"  "ENS"  Position chars [5]  ""  ""  ""  ""  "" Repeated chars {}
+Filtered answers [3]  ALLOT ATOLL OCTAL
+Repeats in filtered words: LL        ATOLL would guarantee in 2 more
+
 efnot
 emopt
 begot
