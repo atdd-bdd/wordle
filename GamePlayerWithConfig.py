@@ -26,7 +26,7 @@ def main():
                                         for Configuration.position_score_weighting in [1.0, .66, .33]:
                                             for Configuration.two_letter_score_weighting in [1.0, .66, .33]:
                                                 for Configuration.repeated_char_weighting in [.1]:
-                                                    print(Configuration.get_string())
+                                                    # print(Configuration.get_string())
                                                     print(Configuration.get_short_string())
                                                     Trace.write(Configuration.get_string())
                                                     average, turn_counts = play_game_for_various_starting_words()
@@ -34,11 +34,12 @@ def main():
                                                     if turn_counts[6] == 0:
                                                         print("**** Solved all ")
                                                         # ResultLog.write("**** Solved all")
+                                                        results_solved_all.append(
+                                                            [Configuration.get_short_string() + "==", average])
                                                     results.append([Configuration.get_short_string() + "==", average])
-                                                    results_solved_all.append(
-                                                        [Configuration.get_short_string() + "==", average])
                                                     # results.sort(key=sort_function)
                                                     ResultLog.write(Configuration.get_short_string())
+                                                    ResultLog.write(" Turn counts " + list_to_str(turn_counts) + average)
                                                     # ResultLog.write(list_list_to_str(results))
                                                     # print(list_list_to_str(results))
     log.close()
