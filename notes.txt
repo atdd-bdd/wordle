@@ -13,6 +13,13 @@ https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Word
 
     answer RETRY   TARED PIOUS (bot said COURT) MINCY  (bot said lucky)
 
+    answer RETRY after TARSE and CUMIN   remaining is DETER ETHER EXERT GREET OTHER OTTER OVERT PETER RETRO RETRY VOTER   tried YOZHD, but bot said VOTER was better
+        Must chars {TRE} Not chars {ASCUMIN} Not here chars [5]  "TC"  "AU"  "RM"  "SI"  "EN"  Position chars [5]  ""  ""  ""  ""  "" Repeated chars {}
+        [42]  HOVED=10 VOZHD=10 DOHYO=9 DOUGH=9 EPHOD=9 EVHOE=9 EVOHE=9 GOTHY=9 GOVED=9 GROVY=9 HAVOC=9 HOAGY=9 HOODY=9 HOOVE=9 HOPED=9 HOPPY=9 HOVEA=9 HOVEL=9 HOVEN=9 HOVER=9 HOVES=9 HOWDY=9 HOXED=9 HOYED=9 HYDRO=9 HYOID=9 HYPOS=9 PHLOX=9 PHONY=9 PHOTY=9 PODGY=9 POHED=9 POOHY=9 POOVY=9 RHODY=9 SHOVE=9 SOPHY=9 VINHO=9 VODDY=9 VOUCH=9 YODHS=9 YOGHS=9
+
+    Must chars {TRE} Not chars {ASCUMINVOZHD} Not here chars [5]  "TCV"  "AUO"  "RMZ"  "SIH"  "END"  Position chars [5]  ""  ""  ""  ""  "" Repeated chars {}
+        Filtered answers [4]  EXERT GREET PETER RETRY
+        guess was GILPY
 efnot
 emopt
 begot

@@ -9,7 +9,7 @@ def main():
     trace = Trace("trace_GamePlayerWithConfig.txt")
     Configuration.log_output = False
     # Configuration.trace_output = False
-    Configuration.use_short_answer_list = True
+    Configuration.use_short_answer_list = False
     ResultLog.write("----Game with Configuration Player End  " + Configuration.get_files())
     ResultLog.write(Configuration.get_string())
     results = []
@@ -18,13 +18,13 @@ def main():
         for Configuration.high_char_add_to_previous in [True]:
             for Configuration.not_there_add_to_previous in [True]:
                 for Configuration.two_letter_add_to_previous in [True]:
-                    for Configuration.cutoff_not_there in [90,50]:
+                    for Configuration.cutoff_not_there in [90, 50]:
                         for Configuration.cutoff_high_char in [90, 50]:
-                            for Configuration.cutoff_position in [90,50]:
-                                for Configuration.cutoff_two_letter in [90,50]:
+                            for Configuration.cutoff_position in [90, 50]:
+                                for Configuration.cutoff_two_letter in [90, 50]:
                                     for Configuration.not_there_score_weighting in [.5, 1]:
-                                        for Configuration.position_score_weighting in [.66, .33]:
-                                            for Configuration.two_letter_score_weighting in [.66, .33]:
+                                        for Configuration.position_score_weighting in [1.0, .66, .33]:
+                                            for Configuration.two_letter_score_weighting in [1.0, .66, .33]:
                                                 for Configuration.repeated_char_weighting in [.1]:
                                                     print(Configuration.get_string())
                                                     print(Configuration.get_short_string())
@@ -35,7 +35,8 @@ def main():
                                                         print("**** Solved all ")
                                                         # ResultLog.write("**** Solved all")
                                                     results.append([Configuration.get_short_string() + "==", average])
-                                                    results_solved_all.append([Configuration.get_short_string() + "==", average])
+                                                    results_solved_all.append(
+                                                        [Configuration.get_short_string() + "==", average])
                                                     # results.sort(key=sort_function)
                                                     ResultLog.write(Configuration.get_short_string())
                                                     # ResultLog.write(list_list_to_str(results))
@@ -45,7 +46,7 @@ def main():
     ResultLog.write(list_list_to_str(results))
     results.sort(key=sort_function)
     ResultLog.write(list_list_to_str(results))
-    ResultLog.write("Solved all "+ list_list_to_str(results_solved_all))
+    ResultLog.write("Solved all " + list_list_to_str(results_solved_all))
     results_solved_all.sort(key=sort_function)
     ResultLog.write(list_list_to_str(results_solved_all))
     ResultLog.write("----Game with Configuration Player End " + Configuration.get_files())
