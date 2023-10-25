@@ -3,7 +3,7 @@ class Configuration:
     # posadd= True ntadd= True repwgt= 0.1 repscr= 0 hard_mode= False===4.0889
     answer_filename = "wordlist_hidden"
     data_filename = "wordlist_all"
-    use_short_answer_list = True
+    use_short_answer_list = False
     # answer_filename = "answers.txt"
     # data_filename= "words002.txt"
     hard_mode = False

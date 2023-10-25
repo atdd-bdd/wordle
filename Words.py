@@ -10,7 +10,7 @@ from utilities import list_list_to_str, sort_function, list_to_str
 def make_word_list_with_count(words):
     out_words = []
     for word in words:
-        out_words.append([word, 0])
+        out_words.append((word, 0))
     return out_words
 
 
@@ -190,7 +190,7 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
             total_score = item[1] + score
         else:
             total_score = score
-        out_words.append([word, total_score])
+        out_words.append((word, total_score))
         if total_score > max_total_score:
             max_total_score = total_score
     # Trace.write("Second part " + t2.stop())
@@ -214,7 +214,7 @@ def filter_guesses_by_highest_pair_occurrence(current_words, count_and_position)
             total_score = item[1] + score
         else:
             total_score = score
-        out_words.append([word, total_score])
+        out_words.append((word, total_score))
         if total_score > max_total_score:
             max_total_score = total_score
     out_words = filter_by_percentage_maximum(out_words, max_total_score, Configuration.two_letter_add_to_previous)
@@ -234,7 +234,7 @@ def filter_guesses_by_position_in_word(current_words_with_count, must_chars, cou
             total_score = item[1] + score
         else:
             total_score = score
-        out_words.append([word, total_score])
+        out_words.append((word, total_score))
         if total_score > max_position_score:
             max_position_score = total_score
     # Trace.write("Max position total_score is " + str(max_position_score))
@@ -258,7 +258,7 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
             total_score = item[1] + score
         else:
             total_score = score
-        out_words.append([word, total_score])
+        out_words.append((word, total_score))
         if total_score > max_position_score:
             max_position_score = total_score
     # Trace.write("Max not here score is " + str(max_position_score) + " not here chars " +

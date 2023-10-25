@@ -14,7 +14,7 @@ def main():
     matches = []
     guess = game.get_guess(guesses, matches)
     Trace.write("initial " + guess)
-    print("Guess could be: ", guess)
+    print("Guess could be: ", guess, " or ", Configuration.first_word)
     for i in range(6):
         guess, match = input_guess_match()
         if match == "EEEEE":

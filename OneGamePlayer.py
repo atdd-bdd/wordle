@@ -12,7 +12,7 @@ def main():
     results = []
     for first_guess in ["", Configuration.first_word]:
         average, turn_counts = play_full_game_with_first_guess(first_guess)
-        results.append([first_guess, average])
+        results.append((first_guess, average))
         results.sort(key=sort_function)
         print(results)
         ResultLog.write(list_list_to_str(results))
