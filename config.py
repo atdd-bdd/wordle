@@ -1,6 +1,6 @@
 class Configuration:
-    # twowgt= 0.66 poswgt= 0.33 notwgt= 0.5 cuthig= 90 cuttwo= 90 cutpos= 90 cutnt= 90 higadd= True twoadd= True
-    # posadd= True ntadd= True repwgt= 0.1 repscr= 0 hard_mode= False===4.0889
+    #  twowgt= 0.33 poswgt= 0.33 notwgt= 0.5 cuthig= 90 cuttwo= 90 cutpos= 90 cutnt= 90 higadd= True twoadd= True
+    #  posadd= True ntadd= True repwgt= 0.1 repscr= 0 hard_mode= False===3.753  with TARSE and 1 failure
     answer_filename = "wordlist_hidden"
     data_filename = "wordlist_all"
     use_short_answer_list = False
@@ -15,7 +15,7 @@ class Configuration:
     two_letter_add_to_previous = True
     position_add_to_previous = True
     not_there_add_to_previous = True
-    two_letter_score_weighting = .66
+    two_letter_score_weighting = .33
     position_score_weighting = .33
     not_there_score_weighting = .5
     minimum_to_filter = 50

@@ -39,7 +39,8 @@ def main():
                                                     results.append([Configuration.get_short_string() + "==", average])
                                                     # results.sort(key=sort_function)
                                                     ResultLog.write(Configuration.get_short_string())
-                                                    ResultLog.write(" Turn counts " + list_to_str(turn_counts) + average)
+                                                    ResultLog.write(" Turn counts " + list_to_str(turn_counts) +
+                                                                    str(average))
                                                     # ResultLog.write(list_list_to_str(results))
                                                     # print(list_list_to_str(results))
     log.close()
