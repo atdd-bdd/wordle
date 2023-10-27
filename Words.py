@@ -160,7 +160,6 @@ def filter_by_percentage_maximum(current_words, max_total_score, percentage):
     out_words = []
     if len(current_words) < Configuration.minimum_to_filter:
         current_words.sort(reverse=True, key=sort_function)
-        Trace.write(list_list_to_str(out_words))
         return current_words
     for item in current_words:
         if item[1] >= cutoff:

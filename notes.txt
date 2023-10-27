@@ -2,6 +2,9 @@ https://github.com/alex1770/wordle/blob/main/wordlist_hidden
 https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Wordle#Assumptions_about_the_rules_of_Wordle
 https://sonorouschocolate.com/notes/index.php?title=The_best_strategies_for_Wordle#Top_105_first_guesses_in_normal_mode
 
+Last full:
+[('TARSE', 3.753), ('TORSE', 3.765), ('CARSE', 3.7818), ('CARTE', 3.7923), ('ROAST', 3.7935), ('RAINE', 3.8122), ('RAISE', 3.8138), ('CLASP', 3.8186), ('SCALP', 3.8284), ('CLAMP', 3.8686), ('RECAP', 3.8705), ('PATIO', 3.8936), ('KALES', 3.8961), ('LAKES', 3.9037), ('THUMP', 3.9481), ('EASEL', 3.9487), ('VIDEO', 3.9614)]
+Good words  ['CLASP', 'SCALP', 'CLAMP', 'RECAP', 'PATIO']
     Trace.write(Configuration.get_files())
 
     with answer smirk,   first guess soare
