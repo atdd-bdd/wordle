@@ -45,6 +45,8 @@ class GameRound:
         repeats = check_repeats_for_list(filtered.words)
         filtered.count_and_position.alter_by_repeats(repeats)
         Trace.write("Repeats in filtered words: " + repeats)
+        if not Configuration.hard_mode:
+            filtered.count_and_position.zero_in_totals(must_chars)
         guesses = self.all_words.create_guess(must_chars, not_here_chars, filtered.count_and_position)
         # Trace.write("Time to create guess - all words " + str(t2.stop()) )
         if len(guesses) >= 1:

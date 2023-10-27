@@ -139,6 +139,7 @@ class MyTestCase(unittest.TestCase):
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        words.count_and_position.zero_in_totals(must_chars)
         current_words = make_word_list_with_count(words.words)
         current_words = filter_guesses_by_highest_char_occurrence(current_words, must_chars,
                                                                   words.count_and_position)
@@ -179,6 +180,7 @@ class MyTestCase(unittest.TestCase):
         guesses = ["WOCNK"]
         matches = ["ENYNE"]
         must_chars, not_chars, not_here_chars, position_chars, repeated_chars = make_filter_values(guesses, matches)
+        words.count_and_position.zero_in_totals(must_chars)
         guesses = words.create_guess(must_chars, not_here_chars, words.count_and_position)
         Trace.write(list_to_str(guesses))
         self.assertEqual(['WREST', 'WREAK', 'WRATH', 'WRECK', 'WRACK', 'WOVEN', 'WOUND'], guesses)

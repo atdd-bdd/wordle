@@ -176,8 +176,7 @@ def filter_guesses_by_highest_char_occurrence(current_words, must_chars, count_a
     t1 = Timer()
     t1.start()
     # Trace.write("Must chars " + must_chars)
-    if not Configuration.hard_mode:
-        count_and_position.zero_in_totals(must_chars)
+
 
     max_total_score = 0
     out_words = []
@@ -226,7 +225,6 @@ def filter_guesses_by_position_in_word(current_words_with_count, must_chars, cou
     if len(current_words_with_count) <= 1:
         return current_words_with_count
     out_words = []
-    count_and_position.zero_in_totals(must_chars)
     max_position_score = 0
     for item in current_words_with_count:
         word = item[0]
@@ -250,7 +248,7 @@ def filter_guesses_by_not_here_in_word(current_words_with_count, must_chars, not
     if len(current_words_with_count) <= 1:
         return current_words_with_count
     out_words = []
-    count_and_position.zero_in_totals(must_chars)
+
     max_position_score = -1000
     for item in current_words_with_count:
         word = item[0]
